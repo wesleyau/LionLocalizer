@@ -1,0 +1,42 @@
+  #at this point - I have formattedSeq, mismatch and match count, databaseSeq, both query alignments
+
+        #compiling lionObjs with all information
+        subject = subjects[i]
+        alignments =[]
+        lions = LocHapPub.objects.filter(haplotype=subject)
+        lionObjs = []# info list of dictionaries   
+
+        #not sure if I need this
+        if len(lions) == 0:
+            continue  # TODO: Handle the situation when a haplotype has no elephants
+        for l in lions:
+            tempAccessionList = []
+            indivs = []
+            try:
+                for indiv in LHPIndividual.objects.filter(LHP=l):
+                    if indiv.genBankAccession != '':
+                        indivs.append(indiv.genBankAccession)
+                        indivs.append(indiv.numLions)
+                        tempAccessionList.append(indiv.genBankAccession) #use accessions to store accuracy instead
+                lo = {"id": l.pk, "seq": l.haplotype.cytB, "alignOutput": formattedSeq, "author": l.author.author, "paperurl": l.author.paperurl,
+                        "locationID":l.location.pk, "genBankAccesion": indivs[0], "numLions":indivs[1], "locationName": l.location.locationName,
+                        "lon": l.location.lon, "lat": l.location.lat, "locationType": l.location.locationType,
+                        "matchNotes": l.location.matchNotes, "locality": l.location.locality,
+                        "accuracy": l.location.accuracy,
+                        "subjectID": subject.id, "subjectSeq": subject.cytB,"alignmentS": databaseSeq, 
+                        "alignmentQ": querySeq, "alignOutput": formattedSeq, "mismatch": mismatchCount, "match": matchCount}
+                lionObjs.append(lo)
+            except Exception as l2:
+                print(l.pk)
+                print(l2)
+        #full list of dictionaries
+        alignments.append({"lions": lionObjs, "subjectID": subject.id, "subjectSeq": subject.cytB,"alignmentS": databaseSeq, 
+                            "alignmentQ": querySeq, "alignOutput": formattedSeq, "mismatch": mismatchCount, "match": matchCount})
+    #if needed - sort alignment output by least to greatest mismatches 
+    
+ #   sortedAlignments = alignments.sort(key=operator.itemgetter('mismatch'))
+    return lionObjs
+ 
+#things to fix:
+#for loops need to be combined so that each output has mismatches - so far only the last one has mismatches because the previous ones get overrided
+#think about putting all info into the
