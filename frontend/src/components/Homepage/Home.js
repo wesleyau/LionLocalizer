@@ -60,7 +60,7 @@ const Home = props => {
                         <Grid sm = {12} md = {10}>
                             <AppBar position="static">
                                 <Toolbar>
-                                    <Typography variant="h3">Lion Localizer</Typography> 
+                                    <Typography variant="h2">Lion Localizer</Typography> 
                                 </Toolbar>
                             </AppBar>
                         </Grid>

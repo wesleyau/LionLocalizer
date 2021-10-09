@@ -9,15 +9,13 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
-      },
+      { test: /\.js$/, exclude: /node_modules/, use: {loader: "babel-loader"}},
+      { test: /\.(jpg|png)$/, use:['file-loader']},
     ],
   },
+
+    
+
   optimization: {
     minimize: true,
   },
