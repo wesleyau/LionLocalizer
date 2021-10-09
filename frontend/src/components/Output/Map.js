@@ -4,16 +4,16 @@ import {GoogleMap, useJsApiLoader, Marker, InfoWindow,} from "@react-google-maps
 import { formatRelative } from "date-fns";
 
 const containerStyle = {
-    width: '1250px',
-    height: '900px'
+    width: '1275px',
+    height: '950px'
 };
   
 const center = {
 lat: 9.1021,
-lng: 0
+lng: 18.2812
 };
   
-const tempMap = () => {
+const Map = () => {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: "AIzaSyCysiv9M6i6-XZaCjuJFFQR0EWtJqMC0k0"
@@ -45,4 +45,4 @@ const tempMap = () => {
     ) : <></>
 }
   
-export default React.memo(tempMap)
+export default React.memo(Map)
