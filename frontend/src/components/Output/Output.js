@@ -3,24 +3,22 @@ import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@ma
 import { makeStyles } from '@material-ui/styles';
 import Map from './Map';
 import Table from './Table';
+import Input from './Input';
 
 const Output = () => {
     return (
         <Grid container>
             <Grid item container>
-                <Grid xs = {7}>
+                <Grid xs = {6}>
                     <Map />
                 </Grid>
-                <Grid item container xs={5}>
-                    <Grid xs = {1}>
-                        
-                    </Grid>
-                    <Grid item container xs={4}>
+                <Grid item container xs={4}>
+                    <Grid item container xs={6}>
                         <Grid xs = {12}>
-                            <Table />
+                            <Input />
                         </Grid>
                         <Grid xs = {12}>
-                            <div>table</div>
+                            <Table />
                         </Grid>
                     </Grid>
                 </Grid>

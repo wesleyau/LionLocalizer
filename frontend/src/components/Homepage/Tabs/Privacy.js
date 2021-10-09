@@ -1,7 +1,7 @@
 import React from "react";
 
 const Privacy = () => {
-    return <div>This is the Privacy Statement and Terms of Use tab, more to come</div>
+    return <div>We are currently updating this information. Please check back again.</div>
 };
 
 export default Privacy;

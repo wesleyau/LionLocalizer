@@ -1,7 +1,7 @@
 import React from "react";
 
 const Extraction = () => {
-    return <div>This is the DNA Extraction Protocals tab, more to come hello</div>
+    return <div>We are currently updating this information. Please check back again.</div>
 };
 
 export default Extraction;

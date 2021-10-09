@@ -1,7 +1,7 @@
 import React from "react";
 
 const FAQ = () => {
-    return <div>This is the FAQ tab, more to come</div>
+    return <div>We are currently updating this information. Please check back again.</div>
 };
 
 export default FAQ;
