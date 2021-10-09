@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
 import { Router, Route, Switch, Redirect, Link } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
@@ -51,6 +51,7 @@ const Content = () => {
 
     //For the dropdown selects
     const [select, setSelect] = useState('0')
+    const [existing, setExisting] = useState('')
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
@@ -73,7 +74,6 @@ const Content = () => {
         }
 
     }
-
 
     return (
         <Grid container>
@@ -130,14 +130,14 @@ const Content = () => {
                     </Button>
                     <FormControl className={classes.formControl1}>
                         <Typography className={classes.typography}>Or select an existing sequence for demonstration: </Typography> 
-                            <Select onChange={(e) => setSelect(e.target.value)} error={selectError}>
+                            <Select onChange={(e) => setExisting(e.target.value)} error={selectError}>
                                 <MenuItem value=''>None</MenuItem>
-                                <MenuItem value='1'>LL0001</MenuItem>
-                                <MenuItem value='2'>LL0002</MenuItem>
-                                <MenuItem value='3'>LL0003</MenuItem>
-                                <MenuItem value='4'>LL0004</MenuItem>
-                                <MenuItem value='5'>LL0005</MenuItem>
-                                <MenuItem value='6'>LL0006</MenuItem>
+                                <MenuItem value='LL0001'>LL0001</MenuItem>
+                                <MenuItem value='LL0002'>LL0002</MenuItem>
+                                <MenuItem value='LL0003'>LL0003</MenuItem>
+                                <MenuItem value='LL0004'>LL0004</MenuItem>
+                                <MenuItem value='LL0005'>LL0005</MenuItem>
+                                <MenuItem value='LL0006'>LL0006</MenuItem>
                             </Select>
                     </FormControl>
                 </form>
