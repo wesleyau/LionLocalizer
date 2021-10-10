@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, Button } from "@material-ui/core";
 import { createGenerateClassName, makeStyles } from '@material-ui/styles';
 import { Route, Switch, Redirect, Link } from "react-router-dom";
+import Home from './Home'
 import uLogo from '../../../static/images/uLogo.png';
 import uLogoOrange from '../../../static/images/uLogoOrange.png';
 import USAID from '../../../static/images/Horizontal_RGB_294.png';
@@ -24,6 +25,7 @@ const useStyles = makeStyles({
 })
 
 const Footer = () => {
+    
     const classes = useStyles()
     return (
         
@@ -39,9 +41,9 @@ const Footer = () => {
                     <AppBar color="secondary" position="static">
                         <Toolbar>
                             <Tabs>
-                                <Tab to="/contactus" component={Link} label="Contact Us" />
-                                <Tab to="/copy" component={Link} label="Copyright" />
-                                <Tab to="/tos" component={Link} label="Privacy Statement and Terms of Use" />
+                                <Tab value='contact' to="/contactus" component={Link} label="Contact Us" />
+                                <Tab value='copyright1' to="/copy" component={Link} label="Copyright" />
+                                <Tab value='privacy' to="/tos" component={Link} label="Privacy Statement and Terms of Use" />
                             </Tabs>
                         </Toolbar>
                     </AppBar>

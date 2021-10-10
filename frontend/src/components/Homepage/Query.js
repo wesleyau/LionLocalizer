@@ -118,7 +118,7 @@ const Content = () => {
                         fullWidth
                         error={idError}
                     />
-                    {select == 0 &&
+                    {select == 0 && (
                     <TextField 
                         onChange={(e) => setSequence(e.target.value)}
                         label="Enter Lion Sequence"
@@ -130,8 +130,8 @@ const Content = () => {
                         fullWidth
                         error={sequenceError}
                     />
-                    }
-                    {select == 1 &&
+                    )}
+                    {select == 1 && (
                     <Grid container item justifyContent="center" alignItems="center" >
                         <Grid xs={3}>
                         <TextField 
@@ -177,7 +177,7 @@ const Content = () => {
                         />
                         </Grid>
                     </Grid>
-                    }
+                    )}
                     <Button
                         onClick={() => console.log('Query Button Clicked')}
                         Type="Submit Query"
