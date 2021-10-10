@@ -100,7 +100,7 @@ const headCells = [
     label: 'Mismatches',
   },
   {
-    id: 'fat',
+    id: 'matches',
     numeric: true,
     disablePadding: false,
     label: 'Matches',
