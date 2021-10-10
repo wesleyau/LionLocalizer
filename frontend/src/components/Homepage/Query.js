@@ -118,6 +118,7 @@ const Content = () => {
                         fullWidth
                         error={idError}
                     />
+                    {select == 0 &&
                     <TextField 
                         onChange={(e) => setSequence(e.target.value)}
                         label="Enter Lion Sequence"
@@ -125,10 +126,58 @@ const Content = () => {
                         color="secondary"
                         className={classes.field}
                         multiline
-                        rows={4}
+                        rows={5}
                         fullWidth
                         error={sequenceError}
                     />
+                    }
+                    {select == 1 &&
+                    <Grid container item justifyContent="center" alignItems="center" >
+                        <Grid xs={3}>
+                        <TextField 
+                            onChange={(e) => setSequence(e.target.value)}
+                            label="Enter Lion Sequence 1"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            multiline
+                            rows={5}
+                            fullWidth
+                            error={sequenceError}
+                        />
+                        </Grid>
+
+                        <Grid xs={1}/>
+
+                        <Grid xs={3}>
+                        <TextField 
+                            onChange={(e) => setSequence(e.target.value)}
+                            label="Enter Lion Sequence 2"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            multiline
+                            rows={5}
+                            fullWidth
+                            error={sequenceError}
+                        />
+                        </Grid>
+                        <Grid xs={1}/>
+                        <Grid xs={3}>
+                        <TextField 
+                            onChange={(e) => setSequence(e.target.value)}
+                            label="Enter Lion Sequence 3"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            multiline
+                            rows={5}
+                            fullWidth
+                            error={sequenceError}
+                        />
+                        </Grid>
+                    </Grid>
+                    }
                     <Button
                         onClick={() => console.log('Query Button Clicked')}
                         Type="Submit Query"
