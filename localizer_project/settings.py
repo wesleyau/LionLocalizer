@@ -28,8 +28,7 @@ SECRET_KEY = 'django-insecure-8q3=jdwt3d+n*n%1mb^&s%b52c8(%tf%)-tg!*!a#5gs-rs(3w
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["lionlocalizer.org"]
 
 
 # Application definition
@@ -128,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ll/LionLocalizer/frontend/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

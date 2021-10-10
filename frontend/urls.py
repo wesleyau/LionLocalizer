@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import index
-
+from django.conf.urls.static import static
+from django.conf import settings
 urlpatterns = [
     path("", index),
     path("query", index),
@@ -12,4 +13,4 @@ urlpatterns = [
     path("privacy", index),
     path("admin", index),
     path("output", index),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
