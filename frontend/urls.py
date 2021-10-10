@@ -4,7 +4,7 @@ from .views import index
 urlpatterns = [
     path("", index),
     path("query", index),
-    path("protocal", index),
+    path("protocol", index),
     path("publications", index),
     path("faq", index),
     path("contact", index),

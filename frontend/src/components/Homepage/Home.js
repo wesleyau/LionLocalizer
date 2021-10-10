@@ -22,25 +22,25 @@ const Home = props => {
 
     const tabNameToIndex = {
         0: "query",
-        1: "protocal",
+        1: "protocol",
         2: "publications",
         3: "faq",
-        4: "contact",
-        5: "copyright",
-        6: "privacy",
-        7: "admin",
+        4: "admin",
+        5: "contact",
+        6: "copyright",
+        7: "privacy",
         8: "output",
       };
 
       const indexToTabName = {
         query: 0,
-        protocal: 1,
+        protocol: 1,
         publications: 2,
         faq: 3,
-        contact: 4,
-        copyright: 5,
-        privacy: 6,
-        admin: 7,
+        admin: 4,
+        contact: 5,
+        copyright: 6,
+        privacy: 7,
         output: 8,
       };
     
@@ -75,12 +75,9 @@ const Home = props => {
                                 <AppBar color="secondary" position="static">
                                     <Tabs value={selectedTab} onChange={handleChange}>
                                         <Tab label="Query" />
-                                        <Tab label="DNA Extraction Protocals" />
+                                        <Tab label="DNA Extraction Protocols" />
                                         <Tab label="Publications" />
                                         <Tab label="FAQ" />
-                                        <Tab label="Contact Us" />
-                                        <Tab label="Copyright" />
-                                        <Tab label="Privacy Statement and Terms of Use" />
                                         <Tab label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
@@ -88,10 +85,10 @@ const Home = props => {
                                 { selectedTab === 1 && <Extraction /> }
                                 { selectedTab === 2 && <Publications /> }
                                 { selectedTab === 3 && <Faq /> }
-                                { selectedTab === 4 && <Contact /> }
-                                { selectedTab === 5 && <Copyright /> }
-                                { selectedTab === 6 && <Privacy /> }
-                                { selectedTab === 7 && <Admin /> }
+                                { selectedTab === 4 && <Admin /> }
+                                { selectedTab === 5 && <Contact /> }
+                                { selectedTab === 6 && <Copyright /> }
+                                { selectedTab === 7 && <Privacy /> }
                                 { selectedTab === 8 && <Output /> }
                             </>
                         </Grid>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, Box} from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
-import { Route, Switch, Redirect } from "react-router-dom"
+import { Router, Route, Switch, Redirect, Link } from "react-router-dom";
 
 const useStyles = makeStyles({ 
     field: {
@@ -24,6 +24,9 @@ const useStyles = makeStyles({
         marginLeft: 5,
         display: 'block'
     },
+    textItalicize: {
+        fontStyle: 'italic',
+    },
 })
 
 const Introduction = () => {
@@ -34,14 +37,17 @@ const Introduction = () => {
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Introduction</Typography>
             </Grid>    
-            <Grid item xs={12}>
-                <Typography className={classes.text}>• Lion Localizer maps the localities from which mitochondrial DNA sequences have been reported for African lions, Panthera leo, using the dataset described in Bertola et al., 2016, updated with additional sequences.</Typography>
-            </Grid>    
-            <Grid item xs={12}>
-                <Typography className={classes.text}>• Choose between one long cytB region or three short cytB regions.</Typography>
+            <Grid container xs={12} direction="row">
+                <Grid item >
+                    <Typography className={classes.text}>• Lion Localizer maps the localities from which mitochondrial cytochrome b (cytB) sequences have been reported for lions, <i>Panthera leo</i>, using the dataset described in Bertola et al., 2016, updated with additional sequences.</Typography>
+                </Grid>   
+            </Grid> 
+            <Grid item xs={12} direction="row">
+                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/pro" component={Link}>here</Typography> </Typography> 
+                
             </Grid>  
             <Grid item xs={12}>
-                <Typography className={classes.text}>• Enter the corresponding mitochondrial Cytochrome b region sequence(s) from an African lion sample to display the localities from which lion samples with similar sequences have been reported.</Typography>
+                <Typography className={classes.text}>• Enter cytochrome b sequence(s) from a lion sample and click the “submit query” button</Typography>
             </Grid>
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Input Sequences</Typography>

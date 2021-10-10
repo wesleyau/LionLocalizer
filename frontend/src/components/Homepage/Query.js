@@ -37,7 +37,14 @@ const useStyles = makeStyles({
     typography: {
         marginRight: 10,
         fontWeight: 'bold',
-    }
+    },
+    textNotBold: {
+        marginTop: 0,
+        marginBottom: 0,
+        marginLeft: 5,
+        marginRight: 5,
+        display: 'block'
+    },
 })
 
 const Content = () => {
@@ -84,19 +91,22 @@ const Content = () => {
                 <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            1. Choose input cytB sequence
+                            1. Choose the type of cytB sequence that you will enter
                         </Typography>
                     </Grid>   
                     <FormControl className={classes.formControl}>
-                        <InputLabel>CytB Regions</InputLabel>
+                        
                         <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
-                            <MenuItem value='0'>1 long cytB region</MenuItem>
-                            <MenuItem value='1'>3 Short cytB regions</MenuItem>
+                            <MenuItem value='0'>One short cytB sequence</MenuItem>
+                            <MenuItem value='1'>Three Short cytB sequences</MenuItem>
                         </Select>
                     </FormControl>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
                             2. Enter Your Lion Sequence
+                        </Typography>
+                        <Typography className={classes.textNotBold}>
+                        Enter a text description of your lion sample (optional). The description and sequence will be populated to the output page, but <Typography to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
                         </Typography>
                     </Grid>   
                     <TextField 
@@ -129,7 +139,7 @@ const Content = () => {
                         Submit Query
                     </Button>
                     <FormControl className={classes.formControl1}>
-                        <Typography className={classes.typography}>Or select an existing sequence for demonstration: </Typography> 
+                        <Typography className={classes.typography}>Or select an existing lion sequence for demonstration: </Typography> 
                             <Select onChange={(e) => setExisting(e.target.value)} error={selectError}>
                                 <MenuItem value=''>None</MenuItem>
                                 <MenuItem value='LL0001'>LL0001</MenuItem>
