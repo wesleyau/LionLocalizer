@@ -12,8 +12,8 @@ const Output = () => {
                 <Grid xs = {6}>
                     <Map />
                 </Grid>
-                <Grid item container xs={4}>
-                    <Grid item container xs={6}>
+                <Grid item container xs={6}>
+                    <Grid item container xs={12}>
                         <Grid xs = {12}>
                             <Input />
                         </Grid>
