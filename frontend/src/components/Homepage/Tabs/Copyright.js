@@ -5,15 +5,28 @@ import { createGenerateClassName, makeStyles, Classes } from '@material-ui/style
 const useStyles = makeStyles({ 
     typography: {
         fontWeight: 'bold',
+        marginLeft: 5, 
+    },
+    textIntro: {
+        marginTop: 10,
+        marginBottom: 10,
         marginLeft: 5,
-        marginBottom: 665,   
+        fontWeight: 'bold',
+        display: 'block'
     },
 })
 
 const Copyright = () => {
     const classes = useStyles()
     return (
-        <Typography className={classes.typography}>We are currently updating copyright information. Please check back again.</Typography>
+        <Grid container>
+            <Grid item xs={12} style={{background: "#84aeff"}}>
+                <Typography variant="h5" className={classes.textIntro}>Copyright</Typography>
+            </Grid>   
+            <Grid item xs={12}>
+                <Typography className={classes.typography}><p>Copyright 2022. All rights reserved.</p></Typography>
+            </Grid>
+        </Grid>
     );
 };
 

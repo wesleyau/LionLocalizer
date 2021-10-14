@@ -4,16 +4,29 @@ import { createGenerateClassName, makeStyles, Classes } from '@material-ui/style
 
 const useStyles = makeStyles({ 
     typography: {
-        fontWeight: 'bold',
         marginLeft: 5,
-        marginBottom: 665,   
+    },
+    textIntro: {
+        marginTop: 10,
+        marginBottom: 10,
+        marginLeft: 5,
+        fontWeight: 'bold',
+        display: 'block'
     },
 })
 
 const Contact = () => {
     const classes = useStyles()
     return (
-        <Typography className={classes.typography}>We are currently updating contact information. Please check back again.</Typography>
+        <Grid container>
+            <Grid item xs={12} style={{background: "#84aeff"}}>
+                <Typography variant="h5" className={classes.textIntro}>Contact Us</Typography>
+            </Grid>   
+            <Grid item xs={12}>
+            <Typography className={classes.typography}><p>Please send any questions, suggestions or comments to: <b>roca@illinois.edu</b>. using the email subject “Lion Localizer”.</p></Typography>
+            </Grid>
+        </Grid>
+        
     );
 };
 
