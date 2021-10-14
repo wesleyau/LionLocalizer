@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
 import { Router, Route, Switch, Redirect, Link } from "react-router-dom";
 import TextField from '@material-ui/core/TextField';
 import Conclusion from "./Conclusion";
-import Introduction from "./Introduction"
+import Introduction from "./Introduction";
+import axios from "axios";
+
 
 
 const useStyles = makeStyles({ 
@@ -62,6 +64,9 @@ const Content = () => {
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
+
+    const [textFill, setTextFill] = useState();
+
     const handleSubmit = (e) => {
         e.preventDefault()
         setSequenceError(false)
@@ -82,6 +87,22 @@ const Content = () => {
 
     }
 
+    {/* const handleTextFill = (e) => {
+        if (existing != '') {
+            useEffect(() => {
+                axios
+                  .get(`http://127.0.0.1:8000/mapping/sequence-detail/${existing}`)
+                  .then((res) => {
+                    const seqData = res.data;
+                    setTextFill(seqData);
+                  });
+              }, []);
+            const { id: seqId, seq } = seqData || {};
+            setId = 'seqId';
+            setSequence = 'seq';
+        }
+    } */}
+
     return (
         <Grid container>
             <Grid item xs={12} >
@@ -98,7 +119,7 @@ const Content = () => {
                         
                         <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
                             <MenuItem value='0'>One short cytB sequence</MenuItem>
-                            <MenuItem value='1'>Three Short cytB sequences</MenuItem>
+                            <MenuItem value='1'>Three short cytB sequences</MenuItem>
                         </Select>
                     </FormControl>
                     <Grid item xs={12}>
@@ -111,17 +132,22 @@ const Content = () => {
                     </Grid>   
                     <TextField 
                         onChange={(e) => setId(e.target.value)}
-                        label="Enter Lion Id"
+                        label="Enter Lion Description"
                         variant="outlined"
                         color="secondary"
                         className={classes.field}
                         fullWidth
                         error={idError}
                     />
+                    <Grid item xs={12}>
+                        <Typography className={classes.text}>
+                            3. Enter your lion DNA sequence(s)
+                        </Typography>
+                    </Grid>   
                     {select == 0 && (
                     <TextField 
                         onChange={(e) => setSequence(e.target.value)}
-                        label="Enter Lion Sequence"
+                        label="Enter Lion DNA Sequence"
                         variant="outlined"
                         color="secondary"
                         className={classes.field}
@@ -197,6 +223,36 @@ const Content = () => {
                                 <MenuItem value='LL0004'>LL0004</MenuItem>
                                 <MenuItem value='LL0005'>LL0005</MenuItem>
                                 <MenuItem value='LL0006'>LL0006</MenuItem>
+                                <MenuItem value='LL0007'>LL0007</MenuItem>
+                                <MenuItem value='LL0008'>LL0008</MenuItem>
+                                <MenuItem value='LL0009'>LL0009</MenuItem>
+                                <MenuItem value='LL0010'>LL0010</MenuItem>
+                                <MenuItem value='LL0011'>LL0011</MenuItem>
+                                <MenuItem value='LL0012'>LL0012</MenuItem>
+                                <MenuItem value='LL0013'>LL0013</MenuItem>
+                                <MenuItem value='LL0014'>LL0014</MenuItem>
+                                <MenuItem value='LL0015'>LL0015</MenuItem>
+                                <MenuItem value='LL0016'>LL0016</MenuItem>
+                                <MenuItem value='LL0017'>LL0017</MenuItem>
+                                <MenuItem value='LL0018'>LL0018</MenuItem>
+                                <MenuItem value='LL0019'>LL0019</MenuItem>
+                                <MenuItem value='LL0020'>LL0020</MenuItem>
+                                <MenuItem value='LL0021'>LL0021</MenuItem>
+                                <MenuItem value='LL0022'>LL0022</MenuItem>
+                                <MenuItem value='LL0023'>LL0023</MenuItem>
+                                <MenuItem value='LL0024'>LL0024</MenuItem>
+                                <MenuItem value='LL0025'>LL0025</MenuItem>
+                                <MenuItem value='LL0026'>LL0026</MenuItem>
+                                <MenuItem value='LL0027'>LL0027</MenuItem>
+                                <MenuItem value='LL0028'>LL0028</MenuItem>
+                                <MenuItem value='LL0029'>LL0029</MenuItem>
+                                <MenuItem value='LL1001'>LL1001</MenuItem>
+                                <MenuItem value='LL1002'>LL1002</MenuItem>
+                                <MenuItem value='LL1003'>LL1003</MenuItem>
+                                <MenuItem value='LL1004'>LL1004</MenuItem>
+                                <MenuItem value='LL1005'>LL1005</MenuItem>
+                                <MenuItem value='LL1006'>LL1006</MenuItem>
+                                <MenuItem value='LL2001'>LL2001</MenuItem>
                             </Select>
                     </FormControl>
                 </form>

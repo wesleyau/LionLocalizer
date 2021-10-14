@@ -10,11 +10,11 @@ const useStyles = makeStyles({
     },
 })
 
-const Publications = () => {
+const Terms = () => {
     const classes = useStyles()
     return (
-        <Typography className={classes.typography}>We are currently updating publication information. Please check back again.</Typography>
+        <Typography className={classes.typography}>We are currently updating the terms & conditions information. Please check back again.</Typography>
     );
 };
 
-export default Publications;
+export default Terms;

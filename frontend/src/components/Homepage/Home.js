@@ -4,13 +4,15 @@ import { BrowserRouter as Router, Route, Switch, Redirect, Link, useHistory } fr
 import { makeStyles } from '@material-ui/styles';
 import Copyright from './Tabs/Copyright';
 import Faq from './Tabs/Faq';
-import Publications from './Tabs/Publications';
+import References from './Tabs/References';
 import Extraction from './Tabs/Extraction';
 import Contact from './Tabs/Contact';
 import Admin from './Tabs/Admin';
 import Privacy from './Tabs/Privacy';
+import Instructions from './Tabs/Instructions';
 import Query from './Query';
 import Footer from "./Footer";
+import Terms from "./Tabs/Terms";
 import Theme from "../Theme";
 import Output from '../Output/Output';
 
@@ -22,26 +24,30 @@ const Home = props => {
 
     const tabNameToIndex = {
         0: "query",
-        1: "protocol",
-        2: "publications",
+        1: "instructions",
+        2: "protocol",
         3: "faq",
-        4: "admin",
-        5: "contact",
-        6: "copyright",
-        7: "privacy",
-        8: "output",
+        4: "references",
+        5: "admin",
+        6: "contact",
+        7: "copyright",
+        8: "privacy",
+        9: "terms",
+        10: "output",
       };
 
       const indexToTabName = {
         query: 0,
-        protocol: 1,
-        publications: 2,
+        instructions: 1,
+        protocol: 2,
         faq: 3,
-        admin: 4,
-        contact: 5,
-        copyright: 6,
-        privacy: 7,
-        output: 8,
+        references: 4,
+        admin: 5,
+        contact: 6,
+        copyright: 7,
+        privacy: 8,
+        terms: 9,
+        output: 10,
       };
     
 
@@ -52,56 +58,60 @@ const Home = props => {
         setSelectedTab(newValue);
     };
 
+
     return (
         <ThemeProvider theme={Theme}>
             <Grid container direction="column">
                 <Grid item container>
-                    <Grid xs= {0} md = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid sm = {12} md = {10}>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
+                        <Grid xs = {12} lg = {10}>
                             <AppBar position="static">
                                 <Toolbar>
-                                    <Typography variant="h1">Lion Localizer</Typography> 
+                                    <Typography variant="h2">Lion Localizer</Typography> 
                                 </Toolbar>
                             </AppBar>
                         </Grid>
-                    <Grid sm = {0} md = {1} style={{background: "#F8FAFC"}}/>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
                 </Grid>
 
 
                 <Grid item container>
-                    <Grid sm = {0} md = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid sm = {12} md = {10}>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
+                        <Grid xs = {12} lg = {10}>
                             <>
                                 <AppBar color="secondary" position="static">
                                     <Tabs value={selectedTab} onChange={handleChange}>
                                         <Tab label="Query" />
-                                        <Tab label="DNA Extraction Protocols" />
-                                        <Tab label="Publications" />
+                                        <Tab label="Instructions" />
+                                        <Tab label="Laboratory Protocols" />
                                         <Tab label="FAQ" />
+                                        <Tab label="References" />
                                         <Tab label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
                                 { selectedTab === 0 && <Query /> }
-                                { selectedTab === 1 && <Extraction /> }
-                                { selectedTab === 2 && <Publications /> }
+                                { selectedTab === 1 && <Instructions /> }
+                                { selectedTab === 2 && <Extraction /> }
                                 { selectedTab === 3 && <Faq /> }
-                                { selectedTab === 4 && <Admin /> }
-                                { selectedTab === 5 && <Contact /> }
-                                { selectedTab === 6 && <Copyright /> }
-                                { selectedTab === 7 && <Privacy /> }
-                                { selectedTab === 8 && <Output /> }
+                                { selectedTab === 4 && <References /> }
+                                { selectedTab === 5 && <Admin /> }
+                                { selectedTab === 6 && <Contact /> }
+                                { selectedTab === 7 && <Copyright /> }
+                                { selectedTab === 8 && <Privacy /> }
+                                { selectedTab === 9 && <Terms /> }
+                                { selectedTab === 10 && <Output /> }
                             </>
                         </Grid>
-                    <Grid sm = {0} md = {1} style={{background: "#F8FAFC"}}/>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
                 </Grid>    
 
 
                 <Grid item container>
-                    <Grid xs= {0} md = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid sm = {12} md = {10}>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
+                        <Grid xs = {12} lg = {10}>
                             <Footer />
                         </Grid>
-                    <Grid sm = {0} md = {1} style={{background: "#F8FAFC"}}/>
+                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
                 </Grid>  
             </Grid>
         </ThemeProvider>

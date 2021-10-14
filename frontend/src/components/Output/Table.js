@@ -111,7 +111,12 @@ const headCells = [
     disablePadding: false,
     label: 'Publications',
   },
-  
+  {
+    id: 'genbank',
+    numeric: false,
+    disablePadding: false,
+    label: 'GenBank Accession',
+  },
 ];
 
 function EnhancedTableHead(props) {
@@ -334,6 +339,7 @@ export default function EnhancedTable() {
                             <TableCell align="left">{row.calories}</TableCell>
                             <TableCell align="left">{row.fat}</TableCell>
                             <TableCell align="left">{row.carbs}</TableCell>
+                            <TableCell align="left">{row.genbank}</TableCell>
                             </TableRow>
                         
                   );

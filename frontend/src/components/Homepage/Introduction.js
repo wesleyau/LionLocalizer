@@ -39,11 +39,11 @@ const Introduction = () => {
             </Grid>    
             <Grid container xs={12} direction="row">
                 <Grid item >
-                    <Typography className={classes.text}>• Lion Localizer maps the localities from which mitochondrial cytochrome b (cytB) sequences have been reported for lions, <i>Panthera leo</i>, using the dataset described in Bertola et al., 2016, updated with additional sequences.</Typography>
+                    <Typography className={classes.text}>• Lion Localizer maps the localities from which mitochondrial cytochrome b (cytB) sequences have been reported for lions, <i>Panthera leo</i>, using the dataset described in Bertola et al. 2016, updated with additional sequences.</Typography>
                 </Grid>   
             </Grid> 
             <Grid item xs={12} direction="row">
-                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/pro" component={Link}>here</Typography> </Typography> 
+                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/instruction" component={Link}>here</Typography> </Typography> 
                 
             </Grid>  
             <Grid item xs={12}>

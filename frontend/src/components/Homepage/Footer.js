@@ -11,15 +11,17 @@ import USAIDSEAL from '../../../static/images/Seal_RGB_294.png';
 const useStyles = makeStyles({ 
     typography: {
         fontWeight: 'bold',
+        marginTop: 10, 
         marginLeft: 5,   
+        marginBottom: 10
     },
     image: {
-        height: '18%',
-        width: '18%'
+        height: '16%',
+        width: '16%'
     },
     sealImage: {
-        height: '7.5%',
-        width: '7.5%',
+        height: '7%',
+        width: '7%',
         marginLeft: 0
     },
 })
@@ -32,18 +34,21 @@ const Footer = () => {
         <Grid container>
             <Grid item xs={12}>
                 <Typography variant="caption" display="block" className={classes.typography}>
-                    Disclaimer: The Lion Localizer was made possible by the support of the American people through the United States Agency for International Development (USAID). 
+                    The Lion Localizer was made possible by the support of the American people through the United States Agency for International Development (USAID). 
                     The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
+                    
                 </Typography>
             </Grid>
+            
             <Grid item xs={12}>
                 <>
                     <AppBar color="secondary" position="static">
                         <Toolbar>
                             <Tabs>
                                 <Tab value='contact' to="/contactus" component={Link} label="Contact Us" />
-                                <Tab value='copyright1' to="/copy" component={Link} label="Copyright" />
-                                <Tab value='privacy' to="/tos" component={Link} label="Privacy Statement and Terms of Use" />
+                                <Tab value='copyright' to="/copy" component={Link} label="copyright" />
+                                <Tab value='privacy' to="/priv" component={Link} label="Privacy Policy" />
+                                <Tab value='terms' to="/tos" component={Link} label="Terms & Conditions" />
                             </Tabs>
                         </Toolbar>
                     </AppBar>
