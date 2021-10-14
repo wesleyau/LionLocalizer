@@ -47,6 +47,7 @@ const useStyles = makeStyles({
         marginRight: 5,
         display: 'block'
     },
+    
 })
 
 const Content = () => {
@@ -121,15 +122,7 @@ const Content = () => {
                             <MenuItem value='0'>One short cytB sequence</MenuItem>
                             <MenuItem value='1'>Three short cytB sequences</MenuItem>
                         </Select>
-                    </FormControl>
-                    <Grid item xs={12}>
-                        <Typography className={classes.text}>
-                            2. Enter Your Lion Sequence
-                        </Typography>
-                        <Typography className={classes.textNotBold}>
-                        Enter a text description of your lion sample (optional). The description and sequence will be populated to the output page, but <Typography to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
-                        </Typography>
-                    </Grid>   
+                    </FormControl>  
                     <TextField 
                         onChange={(e) => setId(e.target.value)}
                         label="Enter Lion Description"
@@ -141,7 +134,7 @@ const Content = () => {
                     />
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            3. Enter your lion DNA sequence(s)
+                            2. Enter your lion DNA sequence(s)
                         </Typography>
                     </Grid>   
                     {select == 0 && (

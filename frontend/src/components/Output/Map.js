@@ -49,7 +49,7 @@ function Map() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={4}
+        zoom={3}
         
       >
         <Marker

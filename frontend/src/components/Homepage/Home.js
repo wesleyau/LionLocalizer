@@ -16,8 +16,36 @@ import Terms from "./Tabs/Terms";
 import Theme from "../Theme";
 import Output from '../Output/Output';
 
+const useStyles = makeStyles({ 
+    tabsQuery: {
+        minWidth: 140,
+        width: 140,
+    },
+    tabsInstruction: {
+        minWidth: 185,
+        width: 185,
+    },
+    tabsProtocol: {
+        minWidth: 280,
+        width: 280,
+    },
+    tabsFaq: {
+        minWidth: 105,
+        width: 105,
+    },
+    tabsReference: {
+        minWidth: 188,
+        width: 188,
+    },
+    tabsAdmin: {
+        minWidth: 170,
+        width: 170,
+    },
+})
+
 const Home = props => {
-    
+    const classes = useStyles()
+
     const { match, history } = props;
     const { params } = match;
     const { page } = params;
@@ -81,12 +109,12 @@ const Home = props => {
                             <>
                                 <AppBar color="secondary" position="static">
                                     <Tabs value={selectedTab} onChange={handleChange}>
-                                        <Tab label="Query" />
-                                        <Tab label="Instructions" />
-                                        <Tab label="Laboratory Protocols" />
-                                        <Tab label="FAQ" />
-                                        <Tab label="References" />
-                                        <Tab label="Admin Login" />
+                                        <Tab className={classes.tabsQuery} label="Query" />
+                                        <Tab className={classes.tabsInstruction} label="Instructions" />
+                                        <Tab className={classes.tabsProtocol} label="Laboratory Protocols" />
+                                        <Tab className={classes.tabsFaq} label="FAQ" />
+                                        <Tab className={classes.tabsReference} label="References" />
+                                        <Tab className={classes.tabsAdmin} label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
                                 { selectedTab === 0 && <Query /> }

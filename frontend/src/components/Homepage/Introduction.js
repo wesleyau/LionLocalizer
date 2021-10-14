@@ -46,9 +46,9 @@ const Introduction = () => {
                 <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/instruction" component={Link}>here</Typography> </Typography> 
                 
             </Grid>  
-            <Grid item xs={12}>
-                <Typography className={classes.text}>• Enter cytochrome b sequence(s) from a lion sample and click the “submit query” button</Typography>
-            </Grid>
+            <Typography className={classes.text}>
+            • The description and sequence will be populated to the output page, but <Typography to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
+            </Typography>
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Input Sequences</Typography>
             </Grid>       
