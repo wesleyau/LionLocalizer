@@ -30,15 +30,19 @@ const useStyles = makeStyles({
         minWidth: 200,
         marginLeft: 10,
         marginBottom: 5,
+        display: 'block'
     },
     formControl1: {
         minWidth: 200,
         marginLeft: 15,
         marginBottom: 10,
+        overflow: 'visible'
+        
     },
     typography: {
         marginRight: 10,
         fontWeight: 'bold',
+        display: 'block'
     },
     textNotBold: {
         marginTop: 0,
@@ -113,7 +117,7 @@ const Content = () => {
                 <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            1. Enter information on the lion sample that you will query.
+                            1. Enter information on the lion sample that you will query
                         </Typography>
                     </Grid>   
                     <TextField 
@@ -127,7 +131,7 @@ const Content = () => {
                     />
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            2. Choose the type of cytB sequence that you will enter.
+                            2. Choose the type of cytB sequence that you will enter
                         </Typography>
                     </Grid>     
                     <FormControl className={classes.formControl}>
@@ -157,51 +161,51 @@ const Content = () => {
                     )}
                     {select == 1 && (
                     <Grid container item justifyContent="center" alignItems="center" >
-                        <Grid xs={3}>
+                        <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion Sequence 1"
+                            label="Enter Lion DNA Sequence 1"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
                             multiline
-                            rows={5}
+                            rows={3}
                             fullWidth
                             error={sequenceError}
                         />
                         </Grid>
+                        <Typography><p></p></Typography>
 
-                        <Grid xs={1}/>
-
-                        <Grid xs={3}>
+                        <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion Sequence 2"
+                            label="Enter Lion DNA Sequence 2"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
                             multiline
-                            rows={5}
+                            rows={3}
                             fullWidth
                             error={sequenceError}
                         />
                         </Grid>
-                        <Grid xs={1}/>
-                        <Grid xs={3}>
+                        <Typography><p></p></Typography>
+                        <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion Sequence 3"
+                            label="Enter Lion DNA Sequence 3"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
                             multiline
-                            rows={5}
+                            rows={3}
                             fullWidth
                             error={sequenceError}
                         />
                         </Grid>
                     </Grid>
                     )}
+                    
                     <Button
                         onClick={() => console.log('Query Button Clicked')}
                         Type="Submit Query"

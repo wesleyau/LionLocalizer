@@ -50,7 +50,7 @@ const Faq = () => {
                 </Typography>
             </Grid> 
             <Grid item xs={12}>
-                <Typography className={classes.textIntro}><u>Frequntly Asked Questions (FAQs)</u></Typography>
+                <Typography className={classes.textIntro}><u>Frequently Asked Questions (FAQs)</u></Typography>
             </Grid> 
             <Grid item xs={12}>
                 <Typography className={classes.typographyBold}><br /><i> Are there sequences in GenBank or in published sources that are not listed in the Lion Localizer? </i></Typography>
