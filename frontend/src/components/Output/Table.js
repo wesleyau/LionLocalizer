@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { makeStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -30,30 +31,31 @@ import Collapse from '@mui/material/Collapse';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-function createData(name, calories, fat, carbs) {
+function createData(name, calories, fat, carbs, gen) {
   return {
     name,
     calories,
     fat,
     carbs,
+    gen
   };
 }
     
 
 const rows = [
-  createData('LL0001', 0, 100, 'pub1'),
-  createData('LL0002', 1, 99, 'pub2'),
-  createData('LL0003', 2, 98, 'pub3'),
-  createData('LL0004', 3, 97, 'pub4'),
-  createData('LL0005', 4, 96, 'pub5'),
-  createData('LL0006', 5, 95, 'pub6'),
-  createData('LL0007', 6, 94, 'pub7'),
-  createData('LL0008', 7, 93, 'pub8'),
-  createData('LL0009', 8, 92, 'pub9'),
-  createData('LL0010', 9, 91, 'pub10'),
-  createData('LL0011', 10, 90, 'pub11'),
-  createData('LL0012', 11, 89, 'pub12'),
-  createData('LL0013', 12, 88, 'pub13'),
+  createData('LL0001', 0, 100, 'pub1', 'gen1'),
+  createData('LL0002', 1, 99, 'pub2', 'gen2'),
+  createData('LL0003', 2, 98, 'pub3', 'gen3'),
+  createData('LL0004', 3, 97, 'pub4', 'gen4'),
+  createData('LL0005', 4, 96, 'pub5', 'gen5'),
+  createData('LL0006', 5, 95, 'pub6', 'gen6'),
+  createData('LL0007', 6, 94, 'pub7', 'gen7'),
+  createData('LL0008', 7, 93, 'pub8', 'gen8'),
+  createData('LL0009', 8, 92, 'pub9', 'gen9'),
+  createData('LL0010', 9, 91, 'pub10', 'gen10'),
+  createData('LL0011', 10, 90, 'pub11', 'gen11'),
+  createData('LL0012', 11, 89, 'pub12', 'gen12'),
+  createData('LL0013', 12, 88, 'pub13', 'gen13'),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -115,7 +117,7 @@ const headCells = [
     id: 'genbank',
     numeric: false,
     disablePadding: false,
-    label: 'GenBank Accession',
+    label: 'GenBank',
   },
 ];
 
@@ -339,7 +341,7 @@ export default function EnhancedTable() {
                             <TableCell align="left">{row.calories}</TableCell>
                             <TableCell align="left">{row.fat}</TableCell>
                             <TableCell align="left">{row.carbs}</TableCell>
-                            <TableCell align="left">{row.genbank}</TableCell>
+                            <TableCell align="left">{row.gen}</TableCell>
                             </TableRow>
                         
                   );

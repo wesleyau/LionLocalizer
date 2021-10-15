@@ -117,12 +117,12 @@ const Content = () => {
                 <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            1. Enter information on the lion sample that you will query
+                            1. Enter information on the lion sample that you will query (optional)
                         </Typography>
                     </Grid>   
                     <TextField 
                         onChange={(e) => setId(e.target.value)}
-                        label="Enter Lion Description"
+                        label="Enter a description of your lion sample (optional)"
                         variant="outlined"
                         color="secondary"
                         className={classes.field}
@@ -149,7 +149,7 @@ const Content = () => {
                     {select == 0 && (
                     <TextField 
                         onChange={(e) => setSequence(e.target.value)}
-                        label="Enter Lion DNA Sequence"
+                        label="Enter lion DNA sequence"
                         variant="outlined"
                         color="secondary"
                         className={classes.field}
@@ -164,7 +164,7 @@ const Content = () => {
                         <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion DNA Sequence 1"
+                            label="Enter lion DNA sequence 1"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
@@ -179,7 +179,7 @@ const Content = () => {
                         <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion DNA Sequence 2"
+                            label="Enter lion DNA sequence 2"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
@@ -193,7 +193,7 @@ const Content = () => {
                         <Grid xs={12}>
                         <TextField 
                             onChange={(e) => setSequence(e.target.value)}
-                            label="Enter Lion DNA Sequence 3"
+                            label="Enter lion DNA sequence 3"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
