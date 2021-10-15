@@ -89,6 +89,9 @@ const Home = props => {
 
     return (
         <ThemeProvider theme={Theme}>
+            
+
+            {selectedTab != 10 && ( 
             <Grid container direction="column">
                 <Grid item container>
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
@@ -101,7 +104,6 @@ const Home = props => {
                         </Grid>
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
                 </Grid>
-
 
                 <Grid item container>
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
@@ -131,8 +133,7 @@ const Home = props => {
                             </>
                         </Grid>
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                </Grid>    
-
+                </Grid> 
 
                 <Grid item container>
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
@@ -142,6 +143,67 @@ const Home = props => {
                     <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
                 </Grid>  
             </Grid>
+            )}
+            {selectedTab == 10 && ( 
+            <Grid container direction="column">
+                <Grid item container>
+                   
+                        <Grid xs = {12} >
+                            <AppBar position="static">
+                                <Toolbar>
+                                    <Typography variant="h2">Lion Localizer</Typography> 
+                                </Toolbar>
+                            </AppBar>
+                        </Grid>
+                   
+                </Grid>
+
+                <Grid item container>
+                    
+                        <Grid xs = {12}>
+                            <>
+                                <AppBar color="secondary" position="static">
+                                    <Tabs value={selectedTab} onChange={handleChange}>
+                                        <Tab className={classes.tabsQuery} label="Query" />
+                                        <Tab className={classes.tabsInstruction} label="Instructions" />
+                                        <Tab className={classes.tabsProtocol} label="Laboratory Protocols" />
+                                        <Tab className={classes.tabsFaq} label="FAQ" />
+                                        <Tab className={classes.tabsReference} label="References" />
+                                        <Tab className={classes.tabsAdmin} label="Admin Login" />
+                                    </Tabs>
+                                </AppBar>
+                                { selectedTab === 0 && <Query /> }
+                                { selectedTab === 1 && <Instructions /> }
+                                { selectedTab === 2 && <Extraction /> }
+                                { selectedTab === 3 && <Faq /> }
+                                { selectedTab === 4 && <References /> }
+                                { selectedTab === 5 && <Admin /> }
+                                { selectedTab === 6 && <Contact /> }
+                                { selectedTab === 7 && <Copyright /> }
+                                { selectedTab === 8 && <Privacy /> }
+                                { selectedTab === 9 && <Terms /> }
+                                { selectedTab === 10 && <Output /> }
+                            </>
+                        </Grid>
+                    
+                </Grid> 
+
+                <Grid item container>
+                   
+                        <Grid xs = {12}>
+                            <Footer />
+                        </Grid>
+                    
+                </Grid>  
+            </Grid>
+                )} 
+                 
+                
+                
+
+
+                
+            
         </ThemeProvider>
     );
 };

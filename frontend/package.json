@@ -37,8 +37,11 @@
     "date-fns": "^2.25.0",
     "file-loader": "^6.2.0",
     "material-ui-image": "^3.3.2",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "prop-types": "^15.7.2",
     "react-loading-icons": "^1.0.6",
+    "react-moment": "^1.1.1",
     "react-router-dom": "^5.3.0",
     "style-loader": "^3.3.0",
     "url-loader": "^4.1.1"
