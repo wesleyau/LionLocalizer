@@ -5,6 +5,7 @@ import { Route, Switch, Redirect, Link } from "react-router-dom";
 import Home from './Home'
 import uLogo from '../../../static/images/uLogo.png';
 import uLogoOrange from '../../../static/images/uLogoOrange.png';
+import ILogo from '../../../static/images/1.png';
 import USAID from '../../../static/images/Horizontal_RGB_294.png';
 import USAIDSEAL from '../../../static/images/Seal_RGB_294.png';
 
@@ -19,15 +20,20 @@ const useStyles = makeStyles({
         height: '12%',
         width: '12%'
     },
+    ILogo: {
+        height: '2.75%',
+        width: '2.75%',
+        marginLeft: 20
+    },
     USDAIDImage: {
         height: '15%',
         width: '15%',
         marginLeft: 0
     },
     sealImage: {
-        height: '7%',
-        width: '7%',
-        marginLeft: 0
+        height: '6.4%',
+        width: '6.4%',
+        marginLeft: 20
     },
     tabsContact: {
         minWidth: 135,
@@ -80,8 +86,8 @@ const Footer = () => {
             <Grid item xs={12}>
                 <AppBar position="static">
                     <Toolbar>
-                        <img className={classes.image} src={uLogo} />
-                        <img className={classes.USDAIDImage} src={USAID} />
+                        <img className={classes.ILogo} src={ILogo} />
+                        <img className={classes.sealImage} src={USAIDSEAL} />
 
                     </Toolbar>
                 </AppBar>
