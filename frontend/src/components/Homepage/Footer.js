@@ -16,8 +16,13 @@ const useStyles = makeStyles({
         marginBottom: 10
     },
     image: {
-        height: '14%',
-        width: '14%'
+        height: '12%',
+        width: '12%'
+    },
+    USDAIDImage: {
+        height: '15%',
+        width: '15%',
+        marginLeft: 0
     },
     sealImage: {
         height: '7%',
@@ -76,7 +81,7 @@ const Footer = () => {
                 <AppBar position="static">
                     <Toolbar>
                         <img className={classes.image} src={uLogo} />
-                        <img className={classes.sealImage} src={USAIDSEAL} />
+                        <img className={classes.USDAIDImage} src={USAID} />
 
                     </Toolbar>
                 </AppBar>
