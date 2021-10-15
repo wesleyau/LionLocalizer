@@ -113,21 +113,9 @@ const Content = () => {
                 <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            1. Enter information on the lion sample that you will query. This information is will be populated on the output page for your records, but will not be saved by the software.
+                            1. Enter information on the lion sample that you will query.
                         </Typography>
                     </Grid>   
-                    <FormControl className={classes.formControl}>
-                        
-                        <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
-                            <MenuItem value='0'>One short cytB sequence</MenuItem>
-                            <MenuItem value='1'>Three short cytB sequences</MenuItem>
-                        </Select>
-                    </FormControl>
-                    <Grid item xs={12}>
-                        <Typography className={classes.text}>
-                            2. Choose the type of cytB sequence that you will enter.
-                        </Typography>
-                    </Grid>     
                     <TextField 
                         onChange={(e) => setId(e.target.value)}
                         label="Enter Lion Description"
@@ -137,6 +125,18 @@ const Content = () => {
                         fullWidth
                         error={idError}
                     />
+                    <Grid item xs={12}>
+                        <Typography className={classes.text}>
+                            2. Choose the type of cytB sequence that you will enter.
+                        </Typography>
+                    </Grid>     
+                    <FormControl className={classes.formControl}>
+                        
+                        <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
+                            <MenuItem value='0'>One short cytB sequence</MenuItem>
+                            <MenuItem value='1'>Three short cytB sequences</MenuItem>
+                        </Select>
+                    </FormControl>
                     <Grid item xs={12}>
                         <Typography className={classes.text}>
                             3. Enter your lion DNA sequence(s) and then click to submit query

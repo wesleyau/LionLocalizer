@@ -20,15 +20,14 @@ const Input = () => {
     return (
         <Grid container>  
             <Grid item xs={12}>
-                <Typography className={classes.typographyMargin}><p>Where legend will be located</p></Typography>
+                <Typography className={classes.typographyMargin}></Typography>
             </Grid>  
             <Grid item xs={12}>
                 <Typography className={classes.typographyMargin}><p><Time /></p></Typography>
             </Grid>     
             <Grid item xs={12}>
                 <Typography className={classes.typography}>Description and sequence provided:<br/>
-                (Where sequence description with be located)<br/>
-                (Where input sequence will be located) </Typography>
+                 </Typography>
             </Grid>    
             <Grid item xs={12}>
                 <div className={classes.typographyMargin}> <p>Locations may be shown or removed as pins on the map by clicking on the box next to each location name. 

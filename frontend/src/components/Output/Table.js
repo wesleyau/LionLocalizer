@@ -206,7 +206,7 @@ const EnhancedTableToolbar = (props) => {
           id="tableTitle"
           component="div"
         >
-          Alignment Results (Currently Filler Table)
+          Alignment Results
         </Typography>
       )}
 
