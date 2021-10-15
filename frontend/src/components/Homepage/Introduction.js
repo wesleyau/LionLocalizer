@@ -27,6 +27,11 @@ const useStyles = makeStyles({
     textItalicize: {
         fontStyle: 'italic',
     },
+    hyperLink: {
+        fontStyle: 'italic',
+        textDecoration: 'none',
+        color: '#0000EE'
+    }
 })
 
 const Introduction = () => {
@@ -47,10 +52,10 @@ const Introduction = () => {
                 
             </Grid>  
             <Typography className={classes.text}>
-            • The description and sequence will be populated to the output page, but <Typography to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
+            • The description and sequence will be populated to the output page, but <Typography className={classes.hyperLink} to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
             </Typography>
             <Grid item xs={12} style={{background: "#84aeff"}}>
-                <Typography variant="h5" className={classes.textIntro}>Input Sequences</Typography>
+                <Typography variant="h5" className={classes.textIntro}>Input Query Sequences</Typography>
             </Grid>       
         </Grid>
     );
