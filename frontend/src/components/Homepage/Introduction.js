@@ -48,11 +48,11 @@ const Introduction = () => {
                 </Grid>   
             </Grid> 
             <Grid item xs={12} direction="row">
-                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/instruction" component={Link}>here</Typography> </Typography> 
+                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/instructions" component={Link}>here</Typography> </Typography> 
                 
             </Grid>  
             <Typography className={classes.text}>
-            • The description and sequence will be populated to the output page, but <Typography className={classes.hyperLink} to="/faqs" component={Link}>neither are saved</Typography> by the lion localizer software.
+            • The description and sequence will be populated to the output page, but <Typography className={classes.hyperLink} to="/faq" component={Link}>neither are saved</Typography> by the lion localizer software.
             </Typography>
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Input Query Sequences</Typography>

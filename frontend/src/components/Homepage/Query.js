@@ -211,7 +211,7 @@ const Content = () => {
                         Type="Submit Query"
                         color="primary"
                         variant="contained"
-                        to="/out" component={Link}
+                        to="/output" component={Link}
                         >
                         Submit Query
                     </Button>

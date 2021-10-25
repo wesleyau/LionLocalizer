@@ -72,10 +72,10 @@ const Footer = () => {
                     <AppBar color="secondary" position="static">
                         <Toolbar>
                             <Tabs>
-                                <Tab className={classes.tabsContact} value='contact' to="/contactus" component={Link} label="Contact Us" />
-                                <Tab className={classes.tabsCopyright} value='copyright' to="/copy" component={Link} label="copyright" />
-                                <Tab className={classes.tabsPrivacy} value='privacy' to="/priv" component={Link} label="Privacy Policy" />
-                                <Tab className={classes.tabsTerms} value='terms' to="/tos" component={Link} label="Terms & Conditions" />
+                                <Tab className={classes.tabsContact} value='contact' to="/contact" component={Link} label="Contact Us" />
+                                <Tab className={classes.tabsCopyright} value='copyright' to="/copyright" component={Link} label="copyright" />
+                                <Tab className={classes.tabsPrivacy} value='privacy' to="/privacy" component={Link} label="Privacy Policy" />
+                                <Tab className={classes.tabsTerms} value='terms' to="/terms" component={Link} label="Terms & Conditions" />
                             </Tabs>
                         </Toolbar>
                     </AppBar>
