@@ -12,9 +12,14 @@ const useStyles = makeStyles({
     },
     disclaimer: {
         fontWeight: 'bold',
-        marginTop: 0, 
+        marginTop: 5, 
         marginLeft: 5,   
     },
+    abbreviation: {
+        marginTop:5, 
+        marginLeft: 5,
+        fontWeight: 'bold',
+    }
     
 })
 
@@ -37,6 +42,9 @@ const Output = () => {
                     </Grid>
                 </Grid>
             </Grid> 
+            <Grid item xs={12}>
+                <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary</Typography>
+            </Grid>  
             <Grid item xs={12} direction="row">
                     <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers is recommended, the printout may not be formmatted as well by Firefox </Typography>
             </Grid> 

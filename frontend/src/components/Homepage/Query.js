@@ -23,6 +23,14 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         display: 'block'
     },
+    textTopMargin: {
+        marginTop: 13,
+        marginBottom: 5,
+        marginLeft: 5,
+        marginRight: 5,
+        fontWeight: 'bold',
+        display: 'block'
+    },
     button: {
         marginLeft: 0,
         marginTop: 0,
@@ -58,7 +66,8 @@ const useStyles = makeStyles({
     disclaimer: {
         fontWeight: 'bold',
         marginLeft: 5,   
-        marginBottom: 10
+        marginBottom: 10,
+        marginTop: 10,
     },
 })
 
@@ -141,8 +150,8 @@ const Content = () => {
                             error={idError}
                         />
                         <Grid item xs={12}>
-                            <Typography className={classes.text}>
-                                2. Choose the type of cytB sequence that you will enter
+                            <Typography className={classes.textTopMargin}>
+                                2. Choose the type of cytB sequence that you will enter or choose a demo option
                             </Typography>
                         </Grid>     
                         <FormControl className={classes.formControl}>
@@ -245,7 +254,7 @@ const Content = () => {
                             )}
 
                         <Grid item xs={12}>
-                            <Typography className={classes.text}>
+                            <Typography className={classes.textTopMargin}>
                                 3. Enter your lion DNA and then click to submit query. Instructions to generate these sequence(s) can we found <Typography className={classes.hyperLink} to="/instructions" component={Link}>here</Typography>
                             </Typography>
                         </Grid>   

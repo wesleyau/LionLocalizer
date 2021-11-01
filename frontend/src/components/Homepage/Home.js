@@ -163,7 +163,7 @@ const Home = props => {
                                             <Grid item xs={10}>
                                                 <Typography variant="caption" display="block" className={classes.disclaimer}>
                                                     The Lion Localizer was made possible by the support of the American people through United States Agency for International Development (USAID). 
-                                                    The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
+                                                    The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, USAID, or the United States government.
                                                 </Typography>
                                             </Grid>
                                         <Grid item xs={1} />
@@ -186,15 +186,13 @@ const Home = props => {
                                                 { selectedTab === 10 && <Output /> }
                                             </Grid>
                                              
-                                            <Grid item xs={1} />
-                                                <Grid item xs={10}>
+                                                <Grid item xs={12}>
                                                     <Typography variant="caption" display="block" className={classes.disclaimer}>
                                                         The Lion Localizer was made possible by the support of the American people through United States Agency for International Development (USAID). 
-                                                        The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
+                                                        The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, USAID, or the United States government.
                                                     </Typography>
                                                 </Grid>
-                                            <Grid item xs={1} />
-                                
+                                        
                                     </Grid>
                                 )}
                                 

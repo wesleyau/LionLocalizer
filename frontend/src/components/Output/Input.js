@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     },
     typographyMargin: {
         marginLeft: 10,
+        marginTop: 5,
     },
 })
 
@@ -20,18 +21,15 @@ const Input = () => {
     return (
         <Grid container>  
             <Grid item xs={12}>
-                <Typography className={classes.typographyMargin}>Abbreviations: <br/> FR: Forest Reserve <br/> GR: Game Reserve<br/>NP: National Park<br/>WS: Wildlife Sanctuary</Typography>
-            </Grid>  
-            <Grid item xs={12}>
-                <Typography className={classes.typographyMargin}><p><Time /></p></Typography>
+                <Typography className={classes.typographyMargin}><Time /></Typography>
             </Grid>     
             <Grid item xs={12}>
-                <Typography className={classes.typography}>Description and sequence provided:<br/>
+                <Typography className={classes.typography}><p>Description and sequence provided:</p>
                  </Typography>
             </Grid>    
             <Grid item xs={12}>
-                <div className={classes.typographyMargin}> <p>Locations may be shown or removed as pins on the map by clicking on the box next to each location name. 
-                    However, this is enabled only for the closest-matching haplotype at each geographic location. Location and closest-haplotype information may also be shown by clicking on an icon or pin on the map itself.</p>
+                <div className={classes.typographyMargin}> Locations may be shown or removed as pins on the map by clicking on the box next to each location name. 
+                    However, this is enabled only for the closest-matching haplotype at each geographic location. Location and closest-haplotype information may also be shown by clicking on an icon or pin on the map itself.
                     </div>
             </Grid> 
         </Grid>
