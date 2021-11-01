@@ -23,7 +23,7 @@ const Contact = () => {
                 <Typography variant="h5" className={classes.textIntro}>Contact Us</Typography>
             </Grid>   
             <Grid item xs={12}>
-            <Typography className={classes.typography}><p>Please send any questions, suggestions or comments to: <b>roca@illinois.edu</b>. using the email subject “Lion Localizer”.</p></Typography>
+            <Typography className={classes.typography}><p>Please send any questions, suggestions or comments to Alfred Roca: <b>roca@illinois.edu</b>. using the email subject “Lion Localizer”.</p></Typography>
             </Grid>
         </Grid>
         

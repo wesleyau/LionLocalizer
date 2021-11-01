@@ -20,7 +20,7 @@ const Input = () => {
     return (
         <Grid container>  
             <Grid item xs={12}>
-                <Typography className={classes.typographyMargin}></Typography>
+                <Typography className={classes.typographyMargin}>Abbreviations: <br/> FR: Forest Reserve <br/> GR: Game Reserve<br/>NP: National Park<br/>WS: Wildlife Sanctuary</Typography>
             </Grid>  
             <Grid item xs={12}>
                 <Typography className={classes.typographyMargin}><p><Time /></p></Typography>

@@ -8,7 +8,12 @@ import Input from './Input';
 const useStyles = makeStyles({ 
     print: {
         display: 'inline',
-        
+        overflowY: 'scroll',
+    },
+    disclaimer: {
+        fontWeight: 'bold',
+        marginTop: 0, 
+        marginLeft: 5,   
     },
     
 })
@@ -32,7 +37,9 @@ const Output = () => {
                     </Grid>
                 </Grid>
             </Grid> 
-
+            <Grid item xs={12} direction="row">
+                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers is recommended, the printout may not be formmatted as well by Firefox </Typography>
+            </Grid> 
         </Grid>
     );
 };

@@ -44,16 +44,20 @@ const Introduction = () => {
             </Grid>    
             <Grid container xs={12} direction="row">
                 <Grid item >
-                    <Typography className={classes.text}>• Lion Localizer maps the localities from which mitochondrial cytochrome b (cytB) sequences have been reported for lions, <i>Panthera leo</i>, using the dataset described in Bertola et al. 2016, updated with additional sequences.</Typography>
+                    <Typography className={classes.text}>• The Lion Localizer enables users to query an unknown mitochondrial cytochrome b (cytB) against a dataset of known locations reported for lions, <i>Panthera leo</i>, using the dataset described in Bertola et al. 2016.</Typography>
+                </Grid>   
+            </Grid> 
+            <Grid container xs={12} direction="row">
+                <Grid item >
+                    <Typography className={classes.text}>• The outputs include a map showing the localities where the cytB sequences have been reported.</Typography>
                 </Grid>   
             </Grid> 
             <Grid item xs={12} direction="row">
-                <Typography className={classes.text}>• You may enter one short cytB region, or three short cytB regions, as described <Typography to="/instructions" component={Link}>here</Typography> </Typography> 
-                
+                <Typography className={classes.text}>• In the box(es) below you may enter one short cytB region, or three short cytB regions, as described <Typography to="/instructions" component={Link}>here</Typography> </Typography> 
             </Grid>  
-            <Typography className={classes.text}>
-            • The description and sequence will be populated to the output page, but <Typography className={classes.hyperLink} to="/faq" component={Link}>neither are saved</Typography> by the lion localizer software.
-            </Typography>
+            <Grid item xs={12} direction="row">
+            <Typography className={classes.text}> • The description (optional ID) and sequence of the lion sample will be populated to the output page, but <Typography to="/faq" component={Link}>neither are saved</Typography> by the lion localizer software. </Typography>
+            </Grid>  
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Input Query Sequences</Typography>
             </Grid>       

@@ -41,6 +41,32 @@ const useStyles = makeStyles({
         minWidth: 170,
         width: 170,
     },
+    tabsContact: {
+        minWidth: 135,
+        width: 135,
+    },
+    tabsCopyright: {
+        minWidth: 210,
+        width: 210,
+    },
+    tabsPrivacy: {
+        minWidth: 160,
+        width: 160,
+    },
+    tabsTerms: {
+        minWidth: 285,
+        width: 285,
+    },
+    disclaimer: {
+        fontWeight: 'bold',
+        marginTop: 10, 
+        marginLeft: 5,   
+        marginBottom: 10
+    },
+    queryLink: {
+        textDecoration: 'none',
+        color: '#FFFFFF',
+    },
 })
 
 const Home = props => {
@@ -79,90 +105,34 @@ const Home = props => {
       };
     
 
-
     const handleChange = (event, newValue ) => {
         history.push(`/${tabNameToIndex[newValue]}`);
     };
 
     const selectedTab = indexToTabName[page];
 
+
+
     return (
         <ThemeProvider theme={Theme}>
             
-
-            {selectedTab != 10 && ( 
             <Grid container direction="column">
                 <Grid item container>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid xs = {12} lg = {10}>
-                            <AppBar position="static">
-                                <Toolbar>
-                                    <Typography variant="h2">Lion Localizer</Typography> 
-                                </Toolbar>
-                            </AppBar>
-                        </Grid>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                </Grid>
-
-                <Grid item container>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid xs = {12} lg = {10}>
-                            <>
-                                <AppBar color="secondary" position="static">
-                                    <Tabs value={selectedTab} onChange={handleChange}>
-                                        <Tab className={classes.tabsQuery} label="Query" />
-                                        <Tab className={classes.tabsInstruction} label="Instructions" />
-                                        <Tab className={classes.tabsProtocol} label="Laboratory Protocols" />
-                                        <Tab className={classes.tabsFaq} label="FAQ" />
-                                        <Tab className={classes.tabsReference} label="References" />
-                                        <Tab className={classes.tabsAdmin} label="Admin Login" />
-                                    </Tabs>
-                                </AppBar>
-                                { selectedTab === 0 && <Query /> }
-                                { selectedTab === 1 && <Instructions /> }
-                                { selectedTab === 2 && <Extraction /> }
-                                { selectedTab === 3 && <Faq /> }
-                                { selectedTab === 4 && <References /> }
-                                { selectedTab === 5 && <Admin /> }
-                                { selectedTab === 6 && <Contact /> }
-                                { selectedTab === 7 && <Copyright /> }
-                                { selectedTab === 8 && <Privacy /> }
-                                { selectedTab === 9 && <Terms /> }
-                                { selectedTab === 10 && <Output /> }
-                            </>
-                        </Grid>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                </Grid> 
-
-                <Grid item container>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                        <Grid xs = {12} lg = {10}>
-                            <Footer />
-                        </Grid>
-                    <Grid md= {0} lg = {1} style={{background: "#F8FAFC"}}/>
-                </Grid>  
-            </Grid>
-            )}
-            {selectedTab == 10 && ( 
-            <Grid container direction="column">
-                <Grid item container>
-                   
                         <Grid xs = {12} >
                             <AppBar position="static">
                                 <Toolbar>
-                                    <Typography variant="h2">Lion Localizer</Typography> 
+                                    <Typography variant="h2" className={classes.queryLink} to="/query" component={Link} >Lion Localizer</Typography> 
                                 </Toolbar>
                             </AppBar>
                         </Grid>
-                   
                 </Grid>
 
                 <Grid item container>
-                    
+                       
                         <Grid xs = {12}>
                             <>
                                 <AppBar color="secondary" position="static">
-                                    <Tabs value={selectedTab} onChange={handleChange}>
+                                    <Tabs value={selectedTab} onChange={handleChange} indicatorColor="primary">
                                         <Tab className={classes.tabsQuery} label="Query" />
                                         <Tab className={classes.tabsInstruction} label="Instructions" />
                                         <Tab className={classes.tabsProtocol} label="Laboratory Protocols" />
@@ -171,38 +141,87 @@ const Home = props => {
                                         <Tab className={classes.tabsAdmin} label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
-                                { selectedTab === 0 && <Query /> }
-                                { selectedTab === 1 && <Instructions /> }
-                                { selectedTab === 2 && <Extraction /> }
-                                { selectedTab === 3 && <Faq /> }
-                                { selectedTab === 4 && <References /> }
-                                { selectedTab === 5 && <Admin /> }
-                                { selectedTab === 6 && <Contact /> }
-                                { selectedTab === 7 && <Copyright /> }
-                                { selectedTab === 8 && <Privacy /> }
-                                { selectedTab === 9 && <Terms /> }
-                                { selectedTab === 10 && <Output /> }
+                                {selectedTab != 10 && (
+                                    <Grid item container>
+                                        <Grid item xs={1} />
+                                            <Grid xs = {10}>
+                                                { selectedTab === 0 && <Query /> }
+                                                { selectedTab === 1 && <Instructions /> }
+                                                { selectedTab === 2 && <Extraction /> }
+                                                { selectedTab === 3 && <Faq /> }
+                                                { selectedTab === 4 && <References /> }
+                                                { selectedTab === 5 && <Admin /> }
+                                                { selectedTab === 6 && <Contact /> }
+                                                { selectedTab === 7 && <Copyright /> }
+                                                { selectedTab === 8 && <Privacy /> }
+                                                { selectedTab === 9 && <Terms /> }
+                                                { selectedTab === 10 && <Output /> }
+                                            </Grid>
+                                        <Grid item xs={1} />
+                                             
+                                        <Grid item xs={1} />
+                                            <Grid item xs={10}>
+                                                <Typography variant="caption" display="block" className={classes.disclaimer}>
+                                                    The Lion Localizer was made possible by the support of the American people through United States Agency for International Development (USAID). 
+                                                    The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
+                                                </Typography>
+                                            </Grid>
+                                        <Grid item xs={1} />
+                                
+                                    </Grid>
+                                )}
+                                {selectedTab == 10 && (
+                                    <Grid item container>
+                                            <Grid xs = {12}>
+                                                { selectedTab === 0 && <Query /> }
+                                                { selectedTab === 1 && <Instructions /> }
+                                                { selectedTab === 2 && <Extraction /> }
+                                                { selectedTab === 3 && <Faq /> }
+                                                { selectedTab === 4 && <References /> }
+                                                { selectedTab === 5 && <Admin /> }
+                                                { selectedTab === 6 && <Contact /> }
+                                                { selectedTab === 7 && <Copyright /> }
+                                                { selectedTab === 8 && <Privacy /> }
+                                                { selectedTab === 9 && <Terms /> }
+                                                { selectedTab === 10 && <Output /> }
+                                            </Grid>
+                                             
+                                            <Grid item xs={1} />
+                                                <Grid item xs={10}>
+                                                    <Typography variant="caption" display="block" className={classes.disclaimer}>
+                                                        The Lion Localizer was made possible by the support of the American people through United States Agency for International Development (USAID). 
+                                                        The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
+                                                    </Typography>
+                                                </Grid>
+                                            <Grid item xs={1} />
+                                
+                                    </Grid>
+                                )}
+                                
                             </>
                         </Grid>
-                    
                 </Grid> 
 
                 <Grid item container>
-                   
-                        <Grid xs = {12}>
-                            <Footer />
-                        </Grid>
-                    
+                    <Grid item xs={12}>
+                    <>
+                        <AppBar color="secondary" position="static">
+                            <Toolbar>
+                                <Tabs value={selectedTab} onChange={handleChange} indicatorColor="primary">
+                                    <Tab className={classes.tabsContact} value="6" label="Contact Us" />
+                                    <Tab className={classes.tabsCopyright} value="7" label="copyright" />
+                                    <Tab className={classes.tabsPrivacy} value="8" label="Privacy Policy" />
+                                    <Tab className={classes.tabsTerms} value="9" label="Terms & Conditions" />
+                                </Tabs>
+                            </Toolbar>
+                        </AppBar>
+                    </>
+                    </Grid>         
+                    <Grid xs = {12}>
+                        <Footer />
+                    </Grid>
                 </Grid>  
             </Grid>
-                )} 
-                 
-                
-                
-
-
-                
-            
         </ThemeProvider>
     );
 };

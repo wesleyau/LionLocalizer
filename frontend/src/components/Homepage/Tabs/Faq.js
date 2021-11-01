@@ -20,6 +20,13 @@ const useStyles = makeStyles({
     textIntro: {
         marginTop: 10,
         marginBottom: 10,
+        marginLeft: 8,
+        fontWeight: 'bold',
+        display: 'block'
+    },
+    textContent: {
+        marginTop: 10,
+        marginBottom: 8,
         marginLeft: 5,
         fontWeight: 'bold',
         display: 'block'
@@ -31,13 +38,13 @@ const Faq = () => {
     return (
         <Grid container>
             <Grid item xs={12} style={{background: "#84aeff"}}>
-                <Typography variant="h5" className={classes.textIntro}>Lion Localizer (LL): Frequently Asked Questions and Additional Information</Typography>
+                <Typography variant="h5" className={classes.textIntro}>Lion Localizer: Frequently Asked Questions and Additional Information</Typography>
             </Grid>      
             <Grid item xs={12}>
-                <Typography className={classes.typography}><p>Please send additional questions or comments to: <b>roca@illinois.edu</b> using the email subject “Lion Localizer”.</p>
-                <p>Important note: Some haplotypes (sequences) show a limited geographic distribution among lions and will be informative for establishing the provenance of lions or their products. 
+                <Typography className={classes.typography}><p>Please send additional questions or comments to Alfred Roca: <b>roca@illinois.edu</b> using the email subject “Lion Localizer”.</p>
+                <p>Important note: Some haplotypes (sequences) show a limited geographic distribution among lions and will be informative for establishing the provenance of lions or their products.<br/> 
                 However, some haplotypes are less informative due to the widespread distribution of lions carrying them, though these would be useful for establishing or excluding the regions of origin.</p></Typography>
-            </Grid>  
+            </Grid>
             <Grid item xs={12}>
                 <Typography className={classes.typography}>
                     <i>Summary of Frequently Asked Questions (FAQs)</i>
@@ -48,23 +55,22 @@ const Faq = () => {
                     • How are unprovenanced or unpublished sequences handled?<br/>
                     • How to handle heteroplasmy, indels or ambiguous sites in a sequence used as input</p>
                 </Typography>
-            </Grid> 
+            </Grid>
             <Grid item xs={12}>
-                <Typography className={classes.textIntro}><u>Frequently Asked Questions (FAQs)</u></Typography>
-            </Grid> 
+                <Typography className={classes.textContent}><u>Frequently Asked Questions (FAQs)</u></Typography>
+            </Grid>
             <Grid item xs={12}>
                 <Typography className={classes.typographyBold}><br /><i> Are there sequences in GenBank or in published sources that are not listed in the Lion Localizer? </i></Typography>
-            </Grid> 
-
+            </Grid>
             <Grid item xs={12}>
                 <Typography className={classes.typography}>
-                <p>Published sequences may not be present in the LL for the following reasons:<br />
+                <p>Published sequences may not be present in the Lion Localizer for the following reasons:<br />
                 • The sequence may have been excluded if it contained ambiguous sites, i.e., character states other than A, C, G or T <br />
                 • The sequence may not completely overlap the required lengths for queries <br />
-                • The sequence may have been published too recently to be included in the LL</p></Typography>
+                • The sequence may have been published too recently to be included in the Lion Localizer</p></Typography>
             </Grid> 
             <Grid item xs={12}>
-                <Typography className={classes.typography}>However, should missing sequences or any other omissions or errors be discovered, please inform us by sending an email to <b>roca@illinois.edu.</b></Typography>
+                <Typography className={classes.typography}>However, should missing sequences or any other omissions or errors be discovered, please inform us by sending an email to Alfred Roca <b>roca@illinois.edu.</b></Typography>
             </Grid> 
 
             <Grid item xs={12}>
@@ -87,14 +93,14 @@ const Faq = () => {
             </Grid> 
             
             <Grid item xs={12}>
-                <Typography className={classes.typographyBold}><br /><p><i>How are unprovenanced or unpublished sequences handled?</i></p></Typography>
+                <Typography className={classes.typographyBold}><br /><p><i>Are unprovenanced or unpublished sequences included the Lion Localizer database?</i></p></Typography>
             </Grid> 
             <Grid item xs={12}>
-                <Typography className={classes.typography}>Some mtDNA sequences may be generated for lion samples for which there is no information on geographic provenance, or sequences may not yet have an associated
+                <Typography className={classes.typography}>Some mtDNA sequences may be generated on the output page for lion samples for which there is no information on geographic provenance, or sequences may not yet have an associated
                 GenBank accession number, or may not yet be associated with a peer-reviewed journal article. Such sequences are likely to comprise only a small proportion of the haplotypes in the Lion Localizer:
 
                 <p><u>Unprovenanced samples</u> are those from which sequence information is obtained, but for which no information is available on the geographic origins of the samples. 
-                If no previously reported samples share the same sequence, then the novel sequences may be entered in the Lion Localizer as “unprovenanced.” Such sequences may be from
+                If no previously reported samples share the same sequence, then the novel sequences will be in the Lion Localizer database as “unprovenanced.” Such sequences may be from
                 confiscated lion products of unknown origins; or they may derive from an lion (e.g., a zoo lion or museum sample) of unknown geographic origin. If previously unreported,
                 such novel sequences may be included in the Lion Localizer database but listed as “unprovenanced.”</p>
                 
@@ -159,7 +165,8 @@ const Faq = () => {
 
                 • If the sequence contains more than one variable nucleotide, we strongly suggest
                 excluding it, though potentially the variants could be cloned and sequenced
-                separately.</Typography>
+                separately.
+                <br/></Typography>
             </Grid> 
 
         

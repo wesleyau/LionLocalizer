@@ -35,22 +35,7 @@ const useStyles = makeStyles({
         width: '6.4%',
         marginLeft: 20
     },
-    tabsContact: {
-        minWidth: 135,
-        width: 135,
-    },
-    tabsCopyright: {
-        minWidth: 210,
-        width: 210,
-    },
-    tabsPrivacy: {
-        minWidth: 160,
-        width: 160,
-    },
-    tabsTerms: {
-        minWidth: 285,
-        width: 285,
-    },
+    
 })
 
 const Footer = () => {
@@ -59,30 +44,6 @@ const Footer = () => {
     return (
         
         <Grid container>
-            <Grid item xs={12}>
-                <Typography variant="caption" display="block" className={classes.typography}>
-                    The Lion Localizer was made possible by the support of the American people through the United States Agency for International Development (USAID). 
-                    The views represented on this website do not necessarily reflect the views of The University of Illinois at Urbana-Champaign, the USAID, or the United States government.
-                    
-                </Typography>
-            </Grid>
-            
-            <Grid item xs={12}>
-                <>
-                    <AppBar color="secondary" position="static">
-                        <Toolbar>
-                            <Tabs>
-                                <Tab className={classes.tabsContact} value='contact' to="/contact" component={Link} label="Contact Us" />
-                                <Tab className={classes.tabsCopyright} value='copyright' to="/copyright" component={Link} label="copyright" />
-                                <Tab className={classes.tabsPrivacy} value='privacy' to="/privacy" component={Link} label="Privacy Policy" />
-                                <Tab className={classes.tabsTerms} value='terms' to="/terms" component={Link} label="Terms & Conditions" />
-                            </Tabs>
-                        </Toolbar>
-                    </AppBar>
-                </>
-            </Grid>    
-
-
             <Grid item xs={12}>
                 <AppBar position="static">
                     <Toolbar>
