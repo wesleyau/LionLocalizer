@@ -52,7 +52,7 @@ const Faq = () => {
                     • Reasons that published sequences may not be in the Lion Localizer<br/>
                     • How to print the map and output listing from the Lion Localizer<br/>
                     • List of abbreviations used in the Lion Localizer<br/>
-                    • How are unprovenanced or unpublished sequences handled?<br/>
+                    • Are unprovenanced or unpublished sequences included in the Lion Localizer database?<br/>
                     • How to handle heteroplasmy, indels or ambiguous sites in a sequence used as input</p>
                 </Typography>
             </Grid>
@@ -93,16 +93,14 @@ const Faq = () => {
             </Grid> 
             
             <Grid item xs={12}>
-                <Typography className={classes.typographyBold}><br /><p><i>Are unprovenanced or unpublished sequences included the Lion Localizer database?</i></p></Typography>
+                <Typography className={classes.typographyBold}><br /><p><i>Are unprovenanced or unpublished sequences included in the Lion Localizer database?</i></p></Typography>
             </Grid> 
             <Grid item xs={12}>
-                <Typography className={classes.typography}>Some mtDNA sequences may be generated on the output page for lion samples for which there is no information on geographic provenance, or sequences may not yet have an associated
+                <Typography className={classes.typography}>Some mtDNA sequences may be present in the Lion Localizer database for lion samples for which there is no information on geographic provenance, or sequences may not yet have an associated
                 GenBank accession number, or may not yet be associated with a peer-reviewed journal article. Such sequences are likely to comprise only a small proportion of the haplotypes in the Lion Localizer:
 
-                <p><u>Unprovenanced samples</u> are those from which sequence information is obtained, but for which no information is available on the geographic origins of the samples. 
-                If no previously reported samples share the same sequence, then the novel sequences will be in the Lion Localizer database as “unprovenanced.” Such sequences may be from
-                confiscated lion products of unknown origins; or they may derive from an lion (e.g., a zoo lion or museum sample) of unknown geographic origin. If previously unreported,
-                such novel sequences may be included in the Lion Localizer database but listed as “unprovenanced.”</p>
+                <p><u>Unprovenanced samples</u> are those from which sequence information is obtained, but for which no information is available on the geographic origins of the samples. The Lion Localizer database may include sequences that are not georeferenced, 
+                and these will show up on the output page as "unprovenanced."</p>
                 
                 <u>Haplotypes lacking a GenBank accession number</u> are sequences for which an accession does not yet exist in the GenBank database. The GenBank accession number would be left blank for such sequences.
 
