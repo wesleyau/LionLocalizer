@@ -11,14 +11,13 @@ const useStyles = makeStyles({
         overflowY: 'scroll',
     },
     disclaimer: {
-        fontWeight: 'bold',
         marginTop: 5, 
         marginLeft: 5,   
     },
     abbreviation: {
         marginTop:5, 
         marginLeft: 5,
-        fontWeight: 'bold',
+        
     }
     
 })
@@ -46,7 +45,7 @@ const Output = () => {
                 <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary</Typography>
             </Grid>  
             <Grid item xs={12} direction="row">
-                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers is recommended, the printout may not be formmatted as well by Firefox </Typography>
+                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers are recommended, the printout may not be formatted as well by Firefox </Typography>
             </Grid> 
         </Grid>
     );
