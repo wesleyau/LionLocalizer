@@ -158,8 +158,8 @@ const Content = () => {
                             <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
                                 <MenuItem value='0'>Enter one short cytB sequence</MenuItem>
                                 <MenuItem value='1'>Enter three short cytB sequences</MenuItem>
-                                <MenuItem value='2'>Demo: Select one short ctyB lion sequence in the database</MenuItem>
-                                <MenuItem value='3'>Demo: Select three short ctyB lion sequences in the database</MenuItem>
+                                <MenuItem value='2'>Demo: Select one short cytB lion sequence in the database</MenuItem>
+                                <MenuItem value='3'>Demo: Select three short cytB lion sequences in the database</MenuItem>
                             </Select>
                         </FormControl>
                         {select == 2 && (
