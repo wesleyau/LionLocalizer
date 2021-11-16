@@ -368,7 +368,7 @@ def sequenceCsv(request):
     if request.method == "GET":
         return render(request, template, prompt)
 
-    csvFile = request.FILES['file']
+    csvFile = request.FILES['sequenceFile']
     
     if not csvFile.name.endswith('.csv'):
         messages.error(request, 'This is not a csv file')
@@ -397,7 +397,7 @@ def locationCsv(request):
     if request.method == "GET":
         return render(request, template, prompt)
 
-    csvFile = request.FILES['file']
+    csvFile = request.FILES['locationFile']
     
     if not csvFile.name.endswith('.csv'):
         messages.error(request, 'This is not a csv file')
@@ -432,7 +432,7 @@ def publicationCsv(request):
     if request.method == "GET":
         return render(request, template, prompt)
 
-    csvFile = request.FILES['file']
+    csvFile = request.FILES['publicationFile']
     
     if not csvFile.name.endswith('.csv'):
         messages.error(request, 'This is not a csv file')
@@ -462,7 +462,7 @@ def lochappubCsv(request):
     if request.method == "GET":
         return render(request, template, prompt)
 
-    csvFile = request.FILES['file']
+    csvFile = request.FILES['lochappubFile']
     
     if not csvFile.name.endswith('.csv'):
         messages.error(request, 'This is not a csv file')
@@ -493,7 +493,7 @@ def lhpindividualCsv(request):
     if request.method == "GET":
         return render(request, template, prompt)
 
-    csvFile = request.FILES['file']
+    csvFile = request.FILES['lhpFile']
     
     if not csvFile.name.endswith('.csv'):
         messages.error(request, 'This is not a csv file')
