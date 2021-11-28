@@ -7,6 +7,9 @@ import Conclusion from "./Conclusion";
 import Introduction from "./Introduction";
 import axios from "axios";
 
+import { useSelector, useDispatch } from 'react-redux';
+import { getInputAdornmentUtilityClass, inputAdornmentClasses } from '@mui/material';
+
 
 
 const useStyles = makeStyles({ 
@@ -73,9 +76,15 @@ const useStyles = makeStyles({
 const Content = () => {
     const classes = useStyles()
 
-    //states to see if textboxes are filled or not
-    const [id, setId] = useState('')
-    const [sequence, setSequence] = useState('')
+    //Textboxs
+    const addInput = () => {
+        const [id, setId] = useState('')
+        const [sequence, setSequence] = useState('')
+        const [sequence1, setSequence1] = useState('')
+        const [sequence2, setSequence2] = useState('')
+        const [sequence3, setSequence3] = useState('')
+    }
+
     const [idError, setIdError] = useState(false)
     const [sequenceError, setSequenceError] = useState(false)
 
@@ -85,11 +94,15 @@ const Content = () => {
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
+    const dispatch = useDispatch();
 
-    const [textFill, setTextFill] = useState();
+    const addInputHander = (e) => {
+        e.preventDefault();
+        dispatch(addInput({ id, sequence,}));
+    }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         setSequenceError(false)
         setSequenceError(false)
 
@@ -376,7 +389,7 @@ const Content = () => {
                         </Grid>
                         )}
                         <Button
-                            onClick={() => console.log('Query Button Clicked')}
+                            onClick={addInputHander}
                             Type="Submit Query"
                             color="primary"
                             variant="contained"
