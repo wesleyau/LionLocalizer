@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { BrowserRouter as Router, Route, Switch, Redirect, Link, useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/styles';
@@ -15,6 +15,11 @@ import Footer from "./Footer";
 import Terms from "./Tabs/Terms";
 import Theme from "../Theme";
 import Output from '../Output/Output';
+
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
+import { getShortSequenceFetch } from '../../redux/State/shortSequenceState'
+
+
 
 const useStyles = makeStyles({ 
     tabsQuery: {
@@ -111,24 +116,44 @@ const Home = props => {
 
     const selectedTab = indexToTabName[page];
 
+    //sequence fetch
+    const shortSeq = useSelector(state => state.shortSeqs.shortSeqs)
+    const dispatch = useDispatch();
+    
+    useEffect(() => {
+        dispatch(getShortSequenceFetch());
+    }, [dispatch]);
+    console.log(shortSeq)
+    
+    const existing = "LL0010"
+    const filterSeq = shortSeq.filter((item) => {
+        return item.id == existing
+    })
 
+    console.log(filterSeq)
 
     return (
         <ThemeProvider theme={Theme}>
+            <div className="Gallary">
+                {filterSeq.map(cat =>
+                    <div key={cat.id} className="row">
+                        {cat.id}
+                    </div>
+                )}
+            </div>
             
             <Grid container direction="column">
                 <Grid item container>
-                        <Grid xs = {12} >
-                            <AppBar position="static">
-                                <Toolbar>
-                                    <Typography variant="h2" className={classes.queryLink} to="/query" component={Link} >Lion Localizer</Typography> 
-                                </Toolbar>
-                            </AppBar>
-                        </Grid>
+                    <Grid xs = {12} >
+                        <AppBar position="static">
+                            <Toolbar>
+                                <Typography variant="h2" className={classes.queryLink} to="/query" component={Link} >Lion Localizer</Typography> 
+                            </Toolbar>
+                        </AppBar>
+                    </Grid>
                 </Grid>
 
                 <Grid item container>
-                       
                         <Grid xs = {12}>
                             <>
                                 <AppBar color="secondary" position="static">

@@ -6,9 +6,7 @@ import TextField from '@material-ui/core/TextField';
 import Conclusion from "./Conclusion";
 import Introduction from "./Introduction";
 import axios from "axios";
-
-import { useSelector, useDispatch } from 'react-redux';
-import { getInputAdornmentUtilityClass, inputAdornmentClasses } from '@mui/material';
+import shortSequenceSaga from '../../redux/Saga/shortSequenceSaga';
 
 
 
@@ -76,15 +74,9 @@ const useStyles = makeStyles({
 const Content = () => {
     const classes = useStyles()
 
-    //Textboxs
-    const addInput = () => {
-        const [id, setId] = useState('')
-        const [sequence, setSequence] = useState('')
-        const [sequence1, setSequence1] = useState('')
-        const [sequence2, setSequence2] = useState('')
-        const [sequence3, setSequence3] = useState('')
-    }
-
+    //states to see if textboxes are filled or not
+    const [id, setId] = useState('')
+    const [sequence, setSequence] = useState('')
     const [idError, setIdError] = useState(false)
     const [sequenceError, setSequenceError] = useState(false)
 
@@ -94,15 +86,11 @@ const Content = () => {
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
-    const dispatch = useDispatch();
 
-    const addInputHander = (e) => {
-        e.preventDefault();
-        dispatch(addInput({ id, sequence,}));
-    }
+    const [textFill, setTextFill] = useState();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         setSequenceError(false)
         setSequenceError(false)
 
@@ -139,8 +127,8 @@ const Content = () => {
 
     return (
         <Grid container>
-        
                 
+
                 <Grid item xs={12} >
                     <Introduction />
                 </Grid>
@@ -389,7 +377,7 @@ const Content = () => {
                         </Grid>
                         )}
                         <Button
-                            onClick={addInputHander}
+                            onClick={() => console.log('Query Button Clicked')}
                             Type="Submit Query"
                             color="primary"
                             variant="contained"
