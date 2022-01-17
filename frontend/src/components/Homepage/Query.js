@@ -6,9 +6,6 @@ import TextField from '@material-ui/core/TextField';
 import Conclusion from "./Conclusion";
 import Introduction from "./Introduction";
 import axios from "axios";
-import shortSequenceSaga from '../../redux/Saga/shortSequenceSaga';
-
-
 
 const useStyles = makeStyles({ 
     field: {
@@ -71,6 +68,7 @@ const useStyles = makeStyles({
     },
 })
 
+
 const Content = () => {
     const classes = useStyles()
 
@@ -125,10 +123,12 @@ const Content = () => {
         }
     } */}
 
+    //sequence fetch
+    
+    
     return (
         <Grid container>
                 
-
                 <Grid item xs={12} >
                     <Introduction />
                 </Grid>
@@ -319,8 +319,13 @@ const Content = () => {
                         )}
                         {select == 2 && (
                         <TextField 
-                            onChange={(e) => setSequence(e.target.value)}
-                            label="Enter lion DNA sequence"
+                            disable
+                            defaultValue={filterSeq.map(seqs =>
+                                <div key={seqs.id} className="row">
+                                    {seqs.cytB}
+                                </div>
+                            )}
+                            
                             variant="outlined"
                             color="secondary"
                             className={classes.field}

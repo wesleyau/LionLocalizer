@@ -10,14 +10,13 @@ import Contact from './Tabs/Contact';
 import Admin from './Tabs/Admin';
 import Privacy from './Tabs/Privacy';
 import Instructions from './Tabs/Instructions';
-import Query from './Query';
+import Query from '../../Sequences/Sequences';
 import Footer from "./Footer";
 import Terms from "./Tabs/Terms";
 import Theme from "../Theme";
 import Output from '../Output/Output';
 
 import { useSelector, useDispatch, shallowEqual } from 'react-redux';
-import { getShortSequenceFetch } from '../../redux/State/shortSequenceState'
 
 
 
@@ -116,31 +115,9 @@ const Home = props => {
 
     const selectedTab = indexToTabName[page];
 
-    //sequence fetch
-    const shortSeq = useSelector(state => state.shortSeqs.shortSeqs)
-    const dispatch = useDispatch();
-    
-    useEffect(() => {
-        dispatch(getShortSequenceFetch());
-    }, [dispatch]);
-    console.log(shortSeq)
-    
-    const existing = "LL0010"
-    const filterSeq = shortSeq.filter((item) => {
-        return item.id == existing
-    })
-
-    console.log(filterSeq)
-
     return (
         <ThemeProvider theme={Theme}>
-            <div className="Gallary">
-                {filterSeq.map(cat =>
-                    <div key={cat.id} className="row">
-                        {cat.id}
-                    </div>
-                )}
-            </div>
+            
             
             <Grid container direction="column">
                 <Grid item container>

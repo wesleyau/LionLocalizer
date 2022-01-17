@@ -7,17 +7,10 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Provider } from "react-redux";
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
-import shortSequenceReducer from './redux/State/shortSequenceState'
-import shortSequenceSaga from "./redux/Saga/shortSequenceSaga";
+import store from './store';
 
 const saga = createSagaMiddleware();
-const store = configureStore({
-    reducer: {
-        shortSeqs: shortSequenceReducer
-    },
-    middleware: [saga]
-});
-saga.run(shortSequenceSaga);
+
 
 const appElement = document.getElementById("app");
 ReactDOM.render(
