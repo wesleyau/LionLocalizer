@@ -10,7 +10,7 @@ import Contact from './Tabs/Contact';
 import Admin from './Tabs/Admin';
 import Privacy from './Tabs/Privacy';
 import Instructions from './Tabs/Instructions';
-import Query from '../../Sequences/Sequences';
+import Query from './Query';
 import Footer from "./Footer";
 import Terms from "./Tabs/Terms";
 import Theme from "../Theme";

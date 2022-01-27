@@ -7,6 +7,10 @@ import Conclusion from "./Conclusion";
 import Introduction from "./Introduction";
 import axios from "axios";
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getSequences } from '../../Sequences/Sequences.actions';
+import { addSequence } from '../../Sequences/Align.actions';
+
 const useStyles = makeStyles({ 
     field: {
         marginTop: 5,
@@ -72,10 +76,26 @@ const useStyles = makeStyles({
 const Content = () => {
     const classes = useStyles()
 
+    const test = useSelector(state => state.sequences.sequences)
+    const seqList = useSelector(state => state.sequences.sequences)
+    const alignList = useSelector(state => state.align.align.array)
+    const queryInfo = useSelector(state => state.align.align.query)
+
+    //new content
+    const dispatch = useDispatch();
+    const [ID, setID] = useState('');
+    const [Detail, setDetail] = useState('');
+
+    const [seqPlacerID, setSeqPlacerID] = useState('');
+    
+    useEffect(() => {
+        dispatch(getSequences());
+    }, [dispatch]);
+
     //states to see if textboxes are filled or not
-    const [id, setId] = useState('')
-    const [sequence, setSequence] = useState('')
-    const [idError, setIdError] = useState(false)
+    //const [id, setId] = useState('')
+    //const [sequence, setSequence] = useState('')
+    //const [idError, setIdError] = useState(false)
     const [sequenceError, setSequenceError] = useState(false)
 
     //For the dropdown selects
@@ -84,8 +104,6 @@ const Content = () => {
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
-
-    const [textFill, setTextFill] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -106,24 +124,6 @@ const Content = () => {
         }
 
     }
-
-    {/* const handleTextFill = (e) => {
-        if (existing != '') {
-            useEffect(() => {
-                axios
-                  .get(`http://127.0.0.1:8000/mapping/sequence-detail/${existing}`)
-                  .then((res) => {
-                    const seqData = res.data;
-                    setTextFill(seqData);
-                  });
-              }, []);
-            const { id: seqId, seq } = seqData || {};
-            setId = 'seqId';
-            setSequence = 'seq';
-        }
-    } */}
-
-    //sequence fetch
     
     
     return (
@@ -136,131 +136,188 @@ const Content = () => {
                 <Grid item xs={12} >
                     <form noValidate autoComplete="off" onSubmit={handleSubmit}>
                         <Grid item xs={12}>
-                            <Typography className={classes.text}>
-                                1. Enter an ID of the lion sample that you will query (optional), this will show up on the output page
-                            </Typography>
-                        </Grid>   
-                        <TextField 
-                            onChange={(e) => setId(e.target.value)}
-                            label="Enter a description of your lion sample - Ex: LL0001"
-                            variant="outlined"
-                            color="secondary"
-                            className={classes.field}
-                            fullWidth
-                            error={idError}
-                        />
-                        <Grid item xs={12}>
                             <Typography className={classes.textTopMargin}>
-                                2. Choose the type of cytB sequence that you will enter or choose a demo option
+                                1. Choose the type of cytB sequence that you will enter or choose a demo option
                             </Typography>
                         </Grid>     
                         <FormControl className={classes.formControl}>
-                            
-                            <Select value={select} onChange={(e) => setSelect(e.target.value)} error={selectError}>
+                            <Select value={select} onChange={(e) => setSelect(e.target.value)}>
                                 <MenuItem value='0'>Enter one short cytB sequence</MenuItem>
                                 <MenuItem value='1'>Enter three short cytB sequences</MenuItem>
                                 <MenuItem value='2'>Demo: Select one short cytB lion sequence in the database</MenuItem>
                                 <MenuItem value='3'>Demo: Select three short cytB lion sequences in the database</MenuItem>
                             </Select>
                         </FormControl>
+                        
                         {select == 2 && (
                             <FormControl className={classes.formControl1}>
                             <Typography className={classes.typography}>Select an existing sequence in the Lion Localizer (LL) database: </Typography> 
-                                <Select onChange={(e) => setExisting(e.target.value)} error={selectError}>
-                                    <MenuItem value=''>None</MenuItem>
-                                    <MenuItem value='LL0001'>LL0001</MenuItem>
-                                    <MenuItem value='LL0002'>LL0002</MenuItem>
-                                    <MenuItem value='LL0003'>LL0003</MenuItem>
-                                    <MenuItem value='LL0004'>LL0004</MenuItem>
-                                    <MenuItem value='LL0005'>LL0005</MenuItem>
-                                    <MenuItem value='LL0006'>LL0006</MenuItem>
-                                    <MenuItem value='LL0007'>LL0007</MenuItem>
-                                    <MenuItem value='LL0008'>LL0008</MenuItem>
-                                    <MenuItem value='LL0009'>LL0009</MenuItem>
-                                    <MenuItem value='LL0010'>LL0010</MenuItem>
-                                    <MenuItem value='LL0011'>LL0011</MenuItem>
-                                    <MenuItem value='LL0012'>LL0012</MenuItem>
-                                    <MenuItem value='LL0013'>LL0013</MenuItem>
-                                    <MenuItem value='LL0014'>LL0014</MenuItem>
-                                    <MenuItem value='LL0015'>LL0015</MenuItem>
-                                    <MenuItem value='LL0016'>LL0016</MenuItem>
-                                    <MenuItem value='LL0017'>LL0017</MenuItem>
-                                    <MenuItem value='LL0018'>LL0018</MenuItem>
-                                    <MenuItem value='LL0019'>LL0019</MenuItem>
-                                    <MenuItem value='LL0020'>LL0020</MenuItem>
-                                    <MenuItem value='LL0021'>LL0021</MenuItem>
-                                    <MenuItem value='LL0022'>LL0022</MenuItem>
-                                    <MenuItem value='LL0023'>LL0023</MenuItem>
-                                    <MenuItem value='LL0024'>LL0024</MenuItem>
-                                    <MenuItem value='LL0025'>LL0025</MenuItem>
-                                    <MenuItem value='LL0026'>LL0026</MenuItem>
-                                    <MenuItem value='LL0027'>LL0027</MenuItem>
-                                    <MenuItem value='LL0028'>LL0028</MenuItem>
-                                    <MenuItem value='LL0029'>LL0029</MenuItem>
-                                    <MenuItem value='LL1001'>LL1001</MenuItem>
-                                    <MenuItem value='LL1002'>LL1002</MenuItem>
-                                    <MenuItem value='LL1003'>LL1003</MenuItem>
-                                    <MenuItem value='LL1004'>LL1004</MenuItem>
-                                    <MenuItem value='LL1005'>LL1005</MenuItem>
-                                    <MenuItem value='LL1006'>LL1006</MenuItem>
-                                    <MenuItem value='LL2001'>LL2001</MenuItem>
+                                <Select 
+                                
+                                onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
+                                setID(seqList[e.target.value].id);
+                                setDetail(seqList[e.target.value].cytB)}} >
+                                    <MenuItem value='0'>LL0001</MenuItem>
+                                    <MenuItem value='1'>LL0010</MenuItem>
+                                    <MenuItem value='2'>LL0011</MenuItem>
+                                    <MenuItem value='3'>LL0012</MenuItem>
+                                    <MenuItem value='4'>LL0013</MenuItem>
+                                    <MenuItem value='5'>LL0014</MenuItem>
+                                    <MenuItem value='6'>LL0015</MenuItem>
+                                    <MenuItem value='7'>LL0016</MenuItem>
+                                    <MenuItem value='8'>LL0017</MenuItem>
+                                    <MenuItem value='9'>LL0018</MenuItem>
+                                    <MenuItem value='10'>LL0019</MenuItem>
+                                    <MenuItem value='11'>LL0020</MenuItem>
+                                    <MenuItem value='12'>LL0021</MenuItem>
+                                    <MenuItem value='13'>LL0022</MenuItem>
+                                    <MenuItem value='14'>LL0023</MenuItem>
+                                    <MenuItem value='15'>LL0024</MenuItem>
+                                    <MenuItem value='16'>LL0025</MenuItem>
+                                    <MenuItem value='17'>LL0026</MenuItem>
+                                    <MenuItem value='18'>LL0027</MenuItem>
+                                    <MenuItem value='19'>LL0028</MenuItem>
+                                    <MenuItem value='20'>LL0029</MenuItem>
+                                    <MenuItem value='21'>LL0002</MenuItem>
+                                    <MenuItem value='22'>LL0003</MenuItem>
+                                    <MenuItem value='23'>LL0004</MenuItem>
+                                    <MenuItem value='24'>LL0005</MenuItem>
+                                    <MenuItem value='25'>LL0006</MenuItem>
+                                    <MenuItem value='26'>LL0007</MenuItem>
+                                    <MenuItem value='27'>LL0008</MenuItem>
+                                    <MenuItem value='28'>LL0009</MenuItem>
+                                    <MenuItem value='29'>LL1001</MenuItem>
+                                    <MenuItem value='30'>LL1002</MenuItem>
+                                    <MenuItem value='31'>LL1003</MenuItem>
+                                    <MenuItem value='32'>LL1004</MenuItem>
+                                    <MenuItem value='33'>LL1005</MenuItem>
+                                    <MenuItem value='34'>LL1006</MenuItem>
+                                    <MenuItem value='35'>LL2001</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
-
                         {select == 3 && (
                             <FormControl className={classes.formControl1}>
                             <Typography className={classes.typography}>Choose an existing sequence in the Lion Localizer (LL) database: </Typography> 
-                                <Select onChange={(e) => setExisting(e.target.value)} error={selectError}>
-                                    <MenuItem value=''>None</MenuItem>
-                                    <MenuItem value='LL0001'>LL0001</MenuItem>
-                                    <MenuItem value='LL0002'>LL0002</MenuItem>
-                                    <MenuItem value='LL0003'>LL0003</MenuItem>
-                                    <MenuItem value='LL0004'>LL0004</MenuItem>
-                                    <MenuItem value='LL0005'>LL0005</MenuItem>
-                                    <MenuItem value='LL0006'>LL0006</MenuItem>
-                                    <MenuItem value='LL0007'>LL0007</MenuItem>
-                                    <MenuItem value='LL0008'>LL0008</MenuItem>
-                                    <MenuItem value='LL0009'>LL0009</MenuItem>
-                                    <MenuItem value='LL0010'>LL0010</MenuItem>
-                                    <MenuItem value='LL0011'>LL0011</MenuItem>
-                                    <MenuItem value='LL0012'>LL0012</MenuItem>
-                                    <MenuItem value='LL0013'>LL0013</MenuItem>
-                                    <MenuItem value='LL0014'>LL0014</MenuItem>
-                                    <MenuItem value='LL0015'>LL0015</MenuItem>
-                                    <MenuItem value='LL0016'>LL0016</MenuItem>
-                                    <MenuItem value='LL0017'>LL0017</MenuItem>
-                                    <MenuItem value='LL0018'>LL0018</MenuItem>
-                                    <MenuItem value='LL0019'>LL0019</MenuItem>
-                                    <MenuItem value='LL0020'>LL0020</MenuItem>
-                                    <MenuItem value='LL0021'>LL0021</MenuItem>
-                                    <MenuItem value='LL0022'>LL0022</MenuItem>
-                                    <MenuItem value='LL0023'>LL0023</MenuItem>
-                                    <MenuItem value='LL0024'>LL0024</MenuItem>
-                                    <MenuItem value='LL0025'>LL0025</MenuItem>
-                                    <MenuItem value='LL0026'>LL0026</MenuItem>
-                                    <MenuItem value='LL0027'>LL0027</MenuItem>
-                                    <MenuItem value='LL0028'>LL0028</MenuItem>
-                                    <MenuItem value='LL0029'>LL0029</MenuItem>
-                                    <MenuItem value='LL1001'>LL1001</MenuItem>
-                                    <MenuItem value='LL1002'>LL1002</MenuItem>
-                                    <MenuItem value='LL1003'>LL1003</MenuItem>
-                                    <MenuItem value='LL1004'>LL1004</MenuItem>
-                                    <MenuItem value='LL1005'>LL1005</MenuItem>
-                                    <MenuItem value='LL1006'>LL1006</MenuItem>
-                                    <MenuItem value='LL2001'>LL2001</MenuItem>
+                                <Select 
+                                label="Sequence ID"
+                                onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
+                                setID(seqList[e.target.value].id);
+                                setDetail(seqList[e.target.value].cytB)}} >
+                                    <MenuItem value='0'>LL0001</MenuItem>
+                                    <MenuItem value='1'>LL0010</MenuItem>
+                                    <MenuItem value='2'>LL0011</MenuItem>
+                                    <MenuItem value='3'>LL0012</MenuItem>
+                                    <MenuItem value='4'>LL0013</MenuItem>
+                                    <MenuItem value='5'>LL0014</MenuItem>
+                                    <MenuItem value='6'>LL0015</MenuItem>
+                                    <MenuItem value='7'>LL0016</MenuItem>
+                                    <MenuItem value='8'>LL0017</MenuItem>
+                                    <MenuItem value='9'>LL0018</MenuItem>
+                                    <MenuItem value='10'>LL0019</MenuItem>
+                                    <MenuItem value='11'>LL0020</MenuItem>
+                                    <MenuItem value='12'>LL0021</MenuItem>
+                                    <MenuItem value='13'>LL0022</MenuItem>
+                                    <MenuItem value='14'>LL0023</MenuItem>
+                                    <MenuItem value='15'>LL0024</MenuItem>
+                                    <MenuItem value='16'>LL0025</MenuItem>
+                                    <MenuItem value='17'>LL0026</MenuItem>
+                                    <MenuItem value='18'>LL0027</MenuItem>
+                                    <MenuItem value='19'>LL0028</MenuItem>
+                                    <MenuItem value='20'>LL0029</MenuItem>
+                                    <MenuItem value='21'>LL0002</MenuItem>
+                                    <MenuItem value='22'>LL0003</MenuItem>
+                                    <MenuItem value='23'>LL0004</MenuItem>
+                                    <MenuItem value='24'>LL0005</MenuItem>
+                                    <MenuItem value='25'>LL0006</MenuItem>
+                                    <MenuItem value='26'>LL0007</MenuItem>
+                                    <MenuItem value='27'>LL0008</MenuItem>
+                                    <MenuItem value='28'>LL0009</MenuItem>
+                                    <MenuItem value='29'>LL1001</MenuItem>
+                                    <MenuItem value='30'>LL1002</MenuItem>
+                                    <MenuItem value='31'>LL1003</MenuItem>
+                                    <MenuItem value='32'>LL1004</MenuItem>
+                                    <MenuItem value='33'>LL1005</MenuItem>
+                                    <MenuItem value='34'>LL1006</MenuItem>
+                                    <MenuItem value='35'>LL2001</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
+                        
+                        
+                        
+                        
+                        
+                        <Grid item xs={12}>
+                        <Typography className={classes.text}>
+                            2. Enter an ID of the lion sample that you will query (optional), this will show up on the output page
+                        </Typography>
+                        </Grid>   
+                        
+                        {select == 0 && (
+                        <TextField 
+                            value={ID}
+                            onChange={(e) => setID(e.target.value)}
+                            label="Enter a description of your lion sample - Ex: LL0001"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            fullWidth
+                            
+                        />
+                        )}
+                        {select == 1 && (
+                        <TextField 
+                            value={ID}
+                            onChange={(e) => setID(e.target.value)}
+                            label="Enter a description of your lion sample - Ex: LL0001"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            fullWidth
+                            
+                        />
+                        )}
+
+                        {select == 2 && (
+                        <TextField 
+                            disabled
+                            value={seqPlacerID.id}
+                            onChange={(e) => setID(e.target.value)}
+                            placeholder={seqPlacerID.id}
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            fullWidth
+                        />
+                        )}
+
+                        {select == 3 && (
+                        <TextField 
+                            disabled
+                            value={seqPlacerID.id}
+                            onChange={(e) => setID(e.target.value)}
+                            placeholder={seqPlacerID.id}
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.field}
+                            fullWidth
+                            
+                        />
+                        )}
 
                         <Grid item xs={12}>
                             <Typography className={classes.textTopMargin}>
                                 3. Enter your lion DNA and then click to submit query. Instructions to generate these sequence(s) can we found <Typography className={classes.hyperLink} to="/instructions" component={Link}>here</Typography>
                             </Typography>
                         </Grid>   
+
+                        
+
                         {select == 0 && (
                         <TextField 
-                            onChange={(e) => setSequence(e.target.value)}
+                            value={Detail}
+                            onChange={(e) => setDetail(e.target.value)}
                             label="Enter lion DNA sequence"
                             variant="outlined"
                             color="secondary"
@@ -275,7 +332,8 @@ const Content = () => {
                         <Grid container item justifyContent="center" alignItems="center" >
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
+                                value={seqPlacerID.id}
+                                onChange={(e) => setDetail(e.target.value)}
                                 label="Enter lion DNA sequence 1"
                                 variant="outlined"
                                 color="secondary"
@@ -290,7 +348,8 @@ const Content = () => {
 
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
+                                value={Detail}
+                                onChange={(e) => setDetail(e.target.value)}
                                 label="Enter lion DNA sequence 2"
                                 variant="outlined"
                                 color="secondary"
@@ -304,7 +363,8 @@ const Content = () => {
                             <Typography><p></p></Typography>
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
+                                value={Detail}
+                                onChange={(e) => setDetail(e.target.value)}
                                 label="Enter lion DNA sequence 3"
                                 variant="outlined"
                                 color="secondary"
@@ -319,13 +379,10 @@ const Content = () => {
                         )}
                         {select == 2 && (
                         <TextField 
-                            disable
-                            defaultValue={filterSeq.map(seqs =>
-                                <div key={seqs.id} className="row">
-                                    {seqs.cytB}
-                                </div>
-                            )}
-                            
+                            disabled
+                            value={seqPlacerID.cytB}
+                            onRender={(e) => setDetail(e.target.value)}
+                            placeholder={seqPlacerID.cytB}
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
@@ -333,14 +390,17 @@ const Content = () => {
                             rows={5}
                             fullWidth
                             error={sequenceError}
-                        />
-                        )}
+                            />
+                        )
+                        }
                         {select == 3 && (
                         <Grid container item justifyContent="center" alignItems="center" >
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
-                                label="Enter lion DNA sequence 1"
+                                disabled
+                                value={seqPlacerID.cytB}
+                                onChange={(e) => setDetail(e.target.value)}
+                                placeholder={seqPlacerID.cytB}
                                 variant="outlined"
                                 color="secondary"
                                 className={classes.field}
@@ -354,8 +414,10 @@ const Content = () => {
 
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
-                                label="Enter lion DNA sequence 2"
+                                disabled
+                                value={seqPlacerID.cytB}
+                                onChange={(e) => setDetail(e.target.value)}
+                                placeholder={seqPlacerID.cytB}
                                 variant="outlined"
                                 color="secondary"
                                 className={classes.field}
@@ -368,8 +430,10 @@ const Content = () => {
                             <Typography><p></p></Typography>
                             <Grid xs={12}>
                             <TextField 
-                                onChange={(e) => setSequence(e.target.value)}
-                                label="Enter lion DNA sequence 3"
+                                disabled
+                                value={seqPlacerID.cytB}
+                                onChange={(e) => setDetail(e.target.value)}
+                                placeholder={seqPlacerID.cytB}
                                 variant="outlined"
                                 color="secondary"
                                 className={classes.field}
@@ -382,7 +446,9 @@ const Content = () => {
                         </Grid>
                         )}
                         <Button
-                            onClick={() => console.log('Query Button Clicked')}
+                            onClick={() => {
+                                dispatch(addSequence({ ID, Detail }));
+                              }}
                             Type="Submit Query"
                             color="primary"
                             variant="contained"
