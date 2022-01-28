@@ -2,18 +2,23 @@ import React from "react";
 import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
 
+
 const useStyles = makeStyles({ 
-    typography: {
-        fontWeight: 'bold',
+    margin: {
+        marginTop: 15,
         marginLeft: 5,
-        marginBottom: 665,   
+        marginBottom: 15,
+        fontWeight: 'bold',
+        
     },
 })
 
 const Extraction = () => {
     const classes = useStyles()
     return (
-        <Typography className={classes.typography}>We are currently updating DNA Extraction Protocols. Please check back again.</Typography>
+        <Grid className={classes.margin}>
+        <a href='https://drive.google.com/file/d/1Mh27T5iwYIYEUQAx15FZaJ1jAvKxJhac/view?usp=sharing' download="Lion_Localizer_amp_and_seq_protocol.pdf"> Click This To Download The Laboratory Protocols </a>
+        </Grid>
     );
 };
 
