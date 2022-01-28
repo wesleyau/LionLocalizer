@@ -8,8 +8,8 @@ import Introduction from "./Introduction";
 import axios from "axios";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getSequences } from '../../Sequences/Sequencesactions';
-import { addSequence } from '../../Sequences/Alignactions';
+import { getSequences } from '../../Sequences/Sequences.actions';
+import { addSequence } from '../../Sequences/Align.actions';
 
 const useStyles = makeStyles({ 
     field: {
@@ -243,6 +243,10 @@ const Content = () => {
                                 </Select>
                         </FormControl>
                             )}
+                        
+                        
+                        
+                        
                         
                         <Grid item xs={12}>
                         <Typography className={classes.text}>

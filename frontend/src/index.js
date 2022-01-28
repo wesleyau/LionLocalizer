@@ -7,7 +7,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Provider } from "react-redux";
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
-
+import store from './store';
 
 const saga = createSagaMiddleware();
 
@@ -17,8 +17,9 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
         <CssBaseline />
+            <Provider store={store}>
                 <App />
-            
+            </Provider>
         </Router>
     </React.StrictMode>, 
     appElement
