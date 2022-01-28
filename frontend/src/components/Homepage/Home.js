@@ -143,7 +143,7 @@ const Home = props => {
                                         <Tab className={classes.tabsAdmin} label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
-                                {selectedTab != 10 && (
+                                {selectedTab != 10 && (selectedTab != 2) && (
                                     <Grid item container>
                                         <Grid item xs={1} />
                                             <Grid xs = {10}>
@@ -170,6 +170,33 @@ const Home = props => {
                                             </Grid>
                                         <Grid item xs={1} />
                                 
+                                    </Grid>
+                                )}
+                                {selectedTab == 2 && (
+                                    <Grid item container>
+                                        
+                                                
+                                                { selectedTab === 0 && <Query /> }
+                                                { selectedTab === 1 && <Instructions /> }
+                                                { selectedTab === 2 && <Extraction /> }
+                                                { selectedTab === 3 && <Faq /> }
+                                                { selectedTab === 4 && <References /> }
+                                                { selectedTab === 5 && <Admin /> }
+                                                { selectedTab === 6 && <Contact /> }
+                                                { selectedTab === 7 && <Copyright /> }
+                                                { selectedTab === 8 && <Privacy /> }
+                                                { selectedTab === 9 && <Terms /> }
+                                                { selectedTab === 10 && <Output /> }
+                                                
+                                        <Grid item xs={1} />
+                                            <Grid item xs={10}>
+                                                <Typography variant="caption" display="block" className={classes.disclaimer}>
+                                                    The Lion Localizer was made possible by the support of the American people through United States Agency for International Development (USAID). 
+                                                    The views represented on this website do not necessarily reflect the views of the University of Illinois at Urbana-Champaign, USAID, or the United States government.
+                                                </Typography>
+                                            </Grid>
+                                        <Grid item xs={1} />
+                                        
                                     </Grid>
                                 )}
                                 {selectedTab == 10 && (

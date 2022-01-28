@@ -244,10 +244,6 @@ const Content = () => {
                         </FormControl>
                             )}
                         
-                        
-                        
-                        
-                        
                         <Grid item xs={12}>
                         <Typography className={classes.text}>
                             2. Enter an ID of the lion sample that you will query (optional), this will show up on the output page
