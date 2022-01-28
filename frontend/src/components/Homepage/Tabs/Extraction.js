@@ -26,23 +26,23 @@ const useStyles = makeStyles({
 const Extraction = () => {
     const classes = useStyles()
     
-    const componentRef = useRef();
     
     
     return (
 
+        
+
         <Grid item container>
             <Grid  item xs={12}>
                 <Grid  item xs={4}/>
-                <a className={classes.download} href={samplePDF} download="Lion_Localizer_amp_and_seq_protocol.pdf"> Download Here </a>
-
+                <Grid  item xs={4}>
+                    <a  href={samplePDF} download="Lion_Localizer_amp_and_seq_protocol.pdf"> Download Here </a>
+                </Grid>
+                <Grid  item xs={4}/>
             </Grid >
             <Grid  item xs={12}>
             <Grid  item xs={4}/>
-                <div className={classes.pdf}>
-                    
                     <AllPagesPDFViewer pdf={samplePDF} />
-                </div>
             </Grid >
         </Grid>
     );

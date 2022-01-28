@@ -3,7 +3,7 @@ import {
   GET_SEQUENCES,
   getSequencesSuccess,
   getSequencesFailed,
-} from './Sequences.actions';
+} from './Sequencesactions';
 import { getSequences } from '../utils/api';
 
 function* getSequencesSaga() {

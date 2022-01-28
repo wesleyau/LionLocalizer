@@ -3,7 +3,7 @@ import {
   ADD_SEQUENCE,
   addSequenceFailed,
   addSequenceSuccess,
-} from './Align.actions';
+} from './Alignactions';
 import { addSequence } from '../utils/api';
 
 function* addSequenceSaga(action) {

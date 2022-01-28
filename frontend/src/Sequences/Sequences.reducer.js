@@ -2,7 +2,7 @@ import {
   GET_SEQUENCES,
   GET_SEQUENCES_FAILED,
   GET_SEQUENCES_SUCCESS,
-} from './Sequences.actions';
+} from './Sequencesactions';
 
 const initialState = {
   isLoading: false,

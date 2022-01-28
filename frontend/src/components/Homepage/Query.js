@@ -8,8 +8,8 @@ import Introduction from "./Introduction";
 import axios from "axios";
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getSequences } from '../../Sequences/Sequences.actions';
-import { addSequence } from '../../Sequences/Align.actions';
+import { getSequences } from '../../Sequences/Sequencesactions';
+import { addSequence } from '../../Sequences/Alignactions';
 
 const useStyles = makeStyles({ 
     field: {

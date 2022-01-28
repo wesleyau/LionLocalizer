@@ -2,7 +2,7 @@ import {
   ADD_SEQUENCE,
   ADD_SEQUENCE_FAILED,
   ADD_SEQUENCE_SUCCESS,
-} from './Align.actions';
+} from './Alignactions';
 
 const initialState = {
   isLoading: false,
