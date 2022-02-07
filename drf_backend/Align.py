@@ -73,7 +73,10 @@ def Align(request):
     matchCount = 0  # match
     subjects = Sequences.objects.all()
     lionAlignment = []
-    for i in range(len(subjects)):
+    # an array that tell us whether the haplotype ID already was entered into lionAlignment
+
+    for i in range(len(subjects)):  # len of subjects is 36
+        alreadyInt = 0
         haplotypeID = subjects[i].id  # grabbing id of subject
         databaseSeq = subjects[i].cytB  # grabbing sequence of subject
         lions = LocHapPub.objects.filter(
@@ -95,6 +98,7 @@ def Align(request):
         matchCount = 0
         tempSeqDict = {}
 
+        # comparison for loop
         for pos in range(0, len(databaseSeq)):
             # matches have . mismatches have the querySeq character
             if querySeq[pos] != databaseSeq[pos]:
@@ -110,10 +114,25 @@ def Align(request):
 
         # if len(lions) == 0:
         #   continue # TODO: Handle the situation when a haplotype has no elephants
-
+        locationarray = []
+        lhp = []
         for l in lions:
-            lhp = []
-            for indiv in LHPIndividual.objects.filter(LHP=l):
+
+            locationarray.append(
+                {
+                    "locationID": l.location.pk,
+                    "locationName": l.location.locationName,
+                    "lon": l.location.lon,
+                    "lat": l.location.lat,
+                    "locationType": l.location.locationType,
+                    "locality": l.location.locality,
+                    "accuracy": l.location.accuracy,
+                    "lengthOfThisArray": len(lions),
+                }
+            )
+
+            for indiv in LHPIndividual.objects.filter(LHP=l.id):
+
                 if indiv.genBankAccession != "":
                     lhp.append(
                         {
@@ -122,29 +141,23 @@ def Align(request):
                         }
                     )
 
-                lionAlignment.append(
-                    {
-                        "id": l.pk,
-                        "haplotypeId": haplotypeID,
-                        "queryName": seqName,
-                        "alignmentQ": databaseSeq,
-                        "alignmentS": querySeq,
-                        "formattedOutput": formattedSeq,  # "alignmentM":mismatches,
-                        "mismatch": mismatchCount,
-                        "match": matchCount,
-                        "author": l.author.author,
-                        "paperurl": l.author.paperurl,
-                        "locationID": l.location.pk,
-                        "locationName": l.location.locationName,
-                        "lon": l.location.lon,
-                        "lat": l.location.lat,
-                        "locationType": l.location.locationType,
-                        "locality": l.location.locality,
-                        "accuracy": l.location.accuracy,
-                        "matchNotes": l.location.matchNotes,
-                        "lochappub": lhp,
-                    }
-                )
+        lionAlignment.append(
+            {
+                "id": l.pk,
+                "haplotypeId": haplotypeID,
+                "queryName": seqName,
+                "alignmentQ": databaseSeq,
+                "alignmentS": querySeq,
+                "formattedOutput": formattedSeq,  # "alignmentM":mismatches,
+                "mismatch": mismatchCount,
+                "match": matchCount,
+                "author": l.author.author,
+                "paperurl": l.author.paperurl,
+                "matchNotes": l.location.matchNotes,
+                "lochappub": lhp,
+                "locArray": locationarray,
+            }
+        )
 
     res = sorted(lionAlignment, key=lambda x: x["mismatch"])
 

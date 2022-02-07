@@ -4,7 +4,6 @@ from django.db import models
 class Sequences(models.Model):
     id = models.CharField(max_length=10, primary_key=True)
     cytB = models.TextField() #or CharField()
-    #sequence2 = models.TextField()
     dateTimeModified = models.DateTimeField(auto_now=True)
     lastEditedBy = models.CharField(max_length=30,null=True, blank=True)
     lastEditNotes = models.TextField(null=True, blank=True)
