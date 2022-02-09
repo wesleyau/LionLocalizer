@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_backend.apps.DrfBackendConfig",
     "frontend.apps.FrontendConfig",
+    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
@@ -122,6 +125,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+CORS_ALLOW_ALL_ORIGINS = True #Allows everyone to connect to the webserver - might need to change later
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
