@@ -1,12 +1,12 @@
 export const getSequences = () => {
-  return fetch('http://127.0.0.1:8000/mapping/sequence-list/')
+  return fetch('http://lionlocalizer.org/mapping/sequence-list/')
     .then((response) => response.json())
     .then((json) => json)
     .catch((error) => Promise.reject(error));
 };
 
 export const addSequence = (data) => {
-  return fetch('http://127.0.0.1:8000/mapping/align/', {
+  return fetch('http://lionlocalizer.org/mapping/align/', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
