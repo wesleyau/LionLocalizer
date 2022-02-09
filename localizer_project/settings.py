@@ -30,8 +30,15 @@ SECRET_KEY = "django-insecure-8q3=jdwt3d+n*n%1mb^&s%b52c8(%tf%)-tg!*!a#5gs-rs(3w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["www.lionlocalizer.org", "lionlocalizer.org", "127.0.0.1"]
-
+ALLOWED_HOSTS = [
+    "www.lionlocalizer.org",
+    "lionlocalizer.org",
+    "127.0.0.1",
+    "http://lionlocalizer.org/",
+    "http://lionlocalizer.org/mapping/sequence-list/"
+    "http://lionlocalizer.org/mapping/align/",
+]
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -124,7 +131,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-  # allowing everyone to connect to the websever, might need to change later
+CORS_ORIGIN_ALLOW_ALL = (
+    TRUE  # allowing everyone to connect to the websever, might need to change later
+)
 
 
 # Static files (CSS, JavaScript, Images)
