@@ -124,7 +124,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-CORS_ORIGIN_ALLOW_ALL =  TRUE  # allowing everyone to connect to the websever, might need to change later
+  # allowing everyone to connect to the websever, might need to change later
 
 
 # Static files (CSS, JavaScript, Images)
