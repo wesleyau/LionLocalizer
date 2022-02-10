@@ -157,7 +157,7 @@ const Content = () => {
                                 onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
-                                    <MenuItem value='0'>LL0001</MenuItem>
+                                    <MenuItem value='0'>LEO0001</MenuItem>
                                     <MenuItem value='1'>LL0010</MenuItem>
                                     <MenuItem value='2'>LL0011</MenuItem>
                                     <MenuItem value='3'>LL0012</MenuItem>
@@ -204,7 +204,7 @@ const Content = () => {
                                 onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
-                                    <MenuItem value='0'>LL0001</MenuItem>
+                                    <MenuItem value='0'>LEO0001</MenuItem>
                                     <MenuItem value='1'>LL0010</MenuItem>
                                     <MenuItem value='2'>LL0011</MenuItem>
                                     <MenuItem value='3'>LL0012</MenuItem>

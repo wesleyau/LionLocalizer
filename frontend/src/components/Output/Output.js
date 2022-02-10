@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
-import Map from './Map';
+import Map from './Map1';
 import Table from './Table';
 import Input from './Input';
 

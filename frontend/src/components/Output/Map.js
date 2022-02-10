@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { GoogleMap, LoadScript, Marker, InfoWindow, } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, Marker, InfoWindow, useLoadScript } from '@react-google-maps/api';
 
 
 const containerStyle = {
@@ -50,7 +50,6 @@ function Map() {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={3.8}
-        
       >
         <Marker
           onLoad={onLoad}
