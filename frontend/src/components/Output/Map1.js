@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -6,6 +6,8 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getSequences } from '../../Sequences/Sequences.actions';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -17,15 +19,20 @@ const center = {
     lng: 17
 };
 
-export default function Map() {
+
+const Map = (props) => {
+
+    const alignList = useSelector(state => state.align.align.array)
+
+    const [markers, setMarkers] = React.useState([]);
+    const [selected, setSelected] = React.useState(null);
+
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
-  console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
 
-  const [markers, setMarkers] = React.useState([]);
-  const [selected, setSelected] = React.useState(null);
+
 
 
   if (loadError) return "Error";
@@ -33,12 +40,12 @@ export default function Map() {
 
   return (
     <div>
-
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
         zoom={3.65}
         center={center}
+        
       >
         
       </GoogleMap>
@@ -46,5 +53,5 @@ export default function Map() {
   );
 }
 
-
+export default Map;
 

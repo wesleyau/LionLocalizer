@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import Map from './Map1';
 import Table from './Table';
 import Input from './Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSequences } from '../../Sequences/Sequences.actions';
+
+
 
 const useStyles = makeStyles({ 
     print: {
         display: 'inline',
         overflowY: 'scroll',
+        
     },
     disclaimer: {
         marginTop: 5, 
@@ -22,21 +27,43 @@ const useStyles = makeStyles({
     
 })
 
+
 const Output = () => {
     const classes = useStyles()
+
+    const seqList = useSelector(state => state.sequences.sequences)
+    const alignList = useSelector(state => state.align.align.array)
+    const queryInfo = useSelector(state => state.align)
+    
+
+    //state for the checkmarks to what is displayed on the map
+    const [check, setCheck] = useState()
+    const [loading, setLoading] = useState(false)
+
+
+
     return (
         <Grid container>
             <Grid item container >
                 <Grid xs = {6}>
-                    <Map />
+                    <Map check={check}/>
                 </Grid>
                 <Grid item container xs={6}>
                     <Grid item container  xs={12}>
                         <Grid className={classes.print} xs = {12}>
-                            <Input/>
-                        </Grid>
+                            {queryInfo.isLoading == true && (
+
+                                <div>Loading...</div>
+                            )}
+                         </Grid>
+                         <Grid className={classes.print} xs = {12}>
+                            {queryInfo.isLoading == false && (
+
+                                <Input />
+                            )}
+                         </Grid>
                         <Grid className={classes.print} xs = {12}>
-                            <Table />
+                            <Table setCheck={setCheck} />
                         </Grid>
                     </Grid>
                 </Grid>

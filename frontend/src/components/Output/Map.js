@@ -44,7 +44,7 @@ function Map() {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyCysiv9M6i6-XZaCjuJFFQR0EWtJqMC0k0"
+      googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
