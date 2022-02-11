@@ -40,7 +40,7 @@ const Input = () => {
     console.log(detailBreakUp)
 
     return (
-        <Grid container className={classes.contain}>  
+        <Grid container >  
             <Grid item xs={12}>
                 <Typography className={classes.typographyMargin}><Time /></Typography>
             </Grid>     

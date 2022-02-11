@@ -28,7 +28,7 @@ const Table2 = (props) => {
     console.log(alignList[1].locArray)
 
     return (
-       <TableContainer className={classes.contain} component={Paper}>
+       <TableContainer  component={Paper}>
       <Table sx={{ minWidth: 600 }} checkboxSelection aria-label="simple table">
         <TableHead>
           <TableRow>

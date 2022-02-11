@@ -24,7 +24,11 @@ const useStyles = makeStyles({
         marginTop:5, 
         marginLeft: 5,
         
-    }
+    },
+    contain: {
+        height: '1168px',
+        overflowY: 'scroll',
+    },
     
 })
 
@@ -59,9 +63,10 @@ const Output = () => {
                         <Map check={check}/>
                     )}
                 </Grid>
-                <Grid item container xs={6}>
-                    <Grid item container  xs={12}>
-                        <Grid className={classes.print} xs = {12}>
+                <Grid item container className={classes.contain} xs={6}>
+                    <Grid item container xs={12}>
+                    
+                        <Grid  xs = {12}>
                             {queryInfo.isLoading == true && (
 
                                 <div>Loading...</div>
@@ -71,7 +76,7 @@ const Output = () => {
                                 <Input />
                             )}
                          </Grid>
-                        <Grid className={classes.print} xs = {12}>
+                        <Grid xs = {12}>
                             {queryInfo.isLoading == true && (
                                 <div>Loading...</div>
                             )}
@@ -79,6 +84,7 @@ const Output = () => {
                                 <Table2 setCheck={setCheck} />
                             )}
                         </Grid>
+                    
                     </Grid>
                 </Grid>
             </Grid> 
