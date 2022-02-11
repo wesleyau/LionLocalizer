@@ -271,7 +271,7 @@ const Content = () => {
                         <TextField 
                             value={ID}
                             onChange={(e) => setID(e.target.value)}
-                            label="Enter a description of your lion sample - Ex: LL0001"
+                            label="Enter a description of your lion sample - Ex: LEO0001"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
@@ -283,7 +283,7 @@ const Content = () => {
                         <TextField 
                             value={ID}
                             onChange={(e) => setID(e.target.value)}
-                            label="Enter a description of your lion sample - Ex: LL0001"
+                            label="Enter a description of your lion sample - Ex: LEO0001"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}

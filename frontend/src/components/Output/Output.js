@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
+import { Route, Redirect } from 'react-router'
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import Map from './Map1';
-import Table from './Table';
+import Table2 from './Table2';
 import Input from './Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
@@ -30,7 +31,9 @@ const useStyles = makeStyles({
 
 const Output = () => {
     const classes = useStyles()
+    const dispatch = useDispatch();
 
+    const test = useSelector(state => state)
     const seqList = useSelector(state => state.sequences.sequences)
     const alignList = useSelector(state => state.align.align.array)
     const queryInfo = useSelector(state => state.align)
@@ -40,13 +43,21 @@ const Output = () => {
     const [check, setCheck] = useState()
     const [loading, setLoading] = useState(false)
 
+    //if(!queryInfo) {
+    //return <Redirect to="/"/>
+   //}
 
 
     return (
         <Grid container>
             <Grid item container >
                 <Grid xs = {6}>
-                    <Map check={check}/>
+                    {queryInfo.isLoading == true && (
+                        <div>Loading...</div>
+                    )}
+                    {queryInfo.isLoading == false && (
+                        <Map check={check}/>
+                    )}
                 </Grid>
                 <Grid item container xs={6}>
                     <Grid item container  xs={12}>
@@ -55,15 +66,18 @@ const Output = () => {
 
                                 <div>Loading...</div>
                             )}
-                         </Grid>
-                         <Grid className={classes.print} xs = {12}>
                             {queryInfo.isLoading == false && (
 
                                 <Input />
                             )}
                          </Grid>
                         <Grid className={classes.print} xs = {12}>
-                            <Table setCheck={setCheck} />
+                            {queryInfo.isLoading == true && (
+                                <div>Loading...</div>
+                            )}
+                            {queryInfo.isLoading == false && (
+                                <Table2 setCheck={setCheck} />
+                            )}
                         </Grid>
                     </Grid>
                 </Grid>

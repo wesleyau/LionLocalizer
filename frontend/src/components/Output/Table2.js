@@ -6,36 +6,43 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 import { Tab } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 
-const Table = (props) => {
+
+
+const Table2 = (props) => {
+
+    const alignList = useSelector(state => state.align.align.array)
+    console.log(alignList)
+    console.log(alignList[1].locArray)
 
     return (
        <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table sx={{ minWidth: 600 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Haplotype</TableCell>
+            <TableCell>Mismatches</TableCell>
+            <TableCell >Matches</TableCell>
+            <TableCell >locations</TableCell>
+            <TableCell >Papers</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {alignList.map((row) => (
             <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              key={row.id}
             >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell >{row.haplotypeId}</TableCell>
+              <TableCell >{row.mismatch}</TableCell>
+              <TableCell >{row.match}</TableCell>
+              <TableCell >{row.locArray.map((sub) => (
+                 <li>
+                   {sub.locationName}
+                 </li>
+              ))}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -44,4 +51,4 @@ const Table = (props) => {
     );
   }
   
-  export default Table;
+  export default Table2;

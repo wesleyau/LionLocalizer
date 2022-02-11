@@ -36,7 +36,7 @@ const Input = () => {
     const [ID, setID] = useState(queryInfo.ID);
     const [Detail, setDetail] = useState(queryInfo.Detail);
 
-    const detailBreakUp = Detail.match(/[\s\S]{1,100}/g) || ['/n']
+    const detailBreakUp = Detail.match(/[\s\S]{1,114}/g) || ['/n']
     console.log(detailBreakUp)
 
     return (
