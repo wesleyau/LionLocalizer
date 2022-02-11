@@ -10,9 +10,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Tab } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 
-
+const useStyles = makeStyles({
+  tableCell: {
+    padding: "0px 8px"
+  }
+});
 
 const Table2 = (props) => {
+    const classes = useStyles()
 
     const alignList = useSelector(state => state.align.align.array)
     console.log(alignList)
@@ -23,11 +28,11 @@ const Table2 = (props) => {
       <Table sx={{ minWidth: 600 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Haplotype</TableCell>
-            <TableCell>Mismatches</TableCell>
-            <TableCell >Matches</TableCell>
-            <TableCell >locations</TableCell>
-            <TableCell >Papers</TableCell>
+            <TableCell  style={{ width: "10%" }}>Haplotype</TableCell>
+            <TableCell  style={{ width: "10%" }}>Mismatches</TableCell>
+            <TableCell  style={{ width: "10%" }}>Matches</TableCell>
+            <TableCell style={{ width: "10%" }}>locations</TableCell>
+            <TableCell  style={{ width: "10%" }}>Papers</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

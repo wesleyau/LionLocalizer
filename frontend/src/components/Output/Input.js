@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         fontFamily: 'courier',
     },
     contain: {
-        height: '300px',
+        height: '450px',
     },
     typographyMargin: {
         marginLeft: 10,
@@ -36,7 +36,7 @@ const Input = () => {
     const [ID, setID] = useState(queryInfo.ID);
     const [Detail, setDetail] = useState(queryInfo.Detail);
 
-    const detailBreakUp = Detail.match(/[\s\S]{1,114}/g) || ['/n']
+    const detailBreakUp = Detail.match(/[\s\S]{1,72}/g) || ['/n']
     console.log(detailBreakUp)
 
     return (
@@ -60,8 +60,10 @@ const Input = () => {
             </Grid>   
             
             <Grid item xs={12}>
-                <div className={classes.typographyMargin}> Locations may be shown or removed as pins on the map by clicking on the box next to each location name. 
-                    However, this is enabled only for the closest-matching haplotype at each geographic location. Location and closest-haplotype information may also be shown by clicking on an icon or pin on the map itself.
+                <div className={classes.typographyMargin}> 
+                    Locations may be shown or removed as pins on the map by clicking on the box next to each location name. However,<br/>
+                    this is enabled only for the closest-matching haplotype at each geographic location. Location and closest haplotype <br/>
+                    information may also be shown by clicking on an icon or pin on the map itself.
                     </div>
             </Grid> 
         </Grid>

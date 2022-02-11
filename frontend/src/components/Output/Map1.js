@@ -11,8 +11,8 @@ import { getSequences } from '../../Sequences/Sequences.actions';
 
 const libraries = ["places"];
 const mapContainerStyle = {
-  height: "63vh",
-  width: "49.93vw",
+  height: "85vh",
+  width: "49.5vw",
 };
 const center = {
     lat: 1,
