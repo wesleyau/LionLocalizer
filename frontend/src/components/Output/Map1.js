@@ -43,7 +43,7 @@ const Map = (props) => {
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={3.65}
+        zoom={3.95}
         center={center}
         
       >
