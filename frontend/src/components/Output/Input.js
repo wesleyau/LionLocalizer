@@ -16,7 +16,7 @@ const useStyles = makeStyles({
         fontFamily: 'courier',
     },
     contain: {
-        height: '375px',
+        height: '350px',
     },
     typographyMargin: {
         marginLeft: 10,
