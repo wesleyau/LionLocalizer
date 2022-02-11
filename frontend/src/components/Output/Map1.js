@@ -11,7 +11,7 @@ import { getSequences } from '../../Sequences/Sequences.actions';
 
 const libraries = ["places"];
 const mapContainerStyle = {
-  height: "750px",
+  height: "775px",
   width: "49.5vw",
 };
 const center = {
@@ -43,7 +43,7 @@ const Map = (props) => {
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={3.95}
+        zoom={3.8}
         center={center}
         
       >
