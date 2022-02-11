@@ -26,7 +26,7 @@ const useStyles = makeStyles({
         
     },
     contain: {
-        height: '950px',
+        height: '850px',
         overflowY: 'scroll',
     },
     
