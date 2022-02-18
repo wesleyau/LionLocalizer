@@ -125,7 +125,7 @@ const Content = () => {
 
     }
     
-    console.log(queryInfo)
+    //console.log(queryInfo)
     
     return (
         <Grid container>

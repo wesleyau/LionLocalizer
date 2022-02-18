@@ -20,18 +20,15 @@ const center = {
 };
 
 
-const Map = (props) => {
+const Map = ({checked}) => {
 
-    const alignList = useSelector(state => state.align.align.array)
-
-    const [markers, setMarkers] = React.useState([]);
-    const [selected, setSelected] = React.useState(null);
+  console.log(checked)
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
-
+  
 
 
 

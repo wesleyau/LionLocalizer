@@ -44,8 +44,12 @@ const Output = () => {
     
 
     //state for the checkmarks to what is displayed on the map
-    const [check, setCheck] = useState()
+    
     const [loading, setLoading] = useState(false)
+   const [checked, setChecked] = useState([])
+    //console.log(checked)
+
+
 
     //if(!queryInfo) {
     //return <Redirect to="/"/>
@@ -60,7 +64,7 @@ const Output = () => {
                         <div>Loading...</div>
                     )}
                     {queryInfo.isLoading == false && (
-                        <Map check={check}/>
+                        <Map checked={checked}/>
                     )}
                 </Grid>
                 <Grid item container className={classes.contain} xs={6}>
@@ -81,7 +85,7 @@ const Output = () => {
                                 <div>Loading...</div>
                             )}
                             {queryInfo.isLoading == false && (
-                                <Table setCheck={setCheck} />
+                                <Table  setChecked={setChecked}/>
                             )}
                         </Grid>
                     

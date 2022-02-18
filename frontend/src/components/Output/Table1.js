@@ -20,18 +20,15 @@ import Typography from '@mui/material/Typography';
 //accordian the rows right here
 
 
-const Table = (props) => {
+const Table = ({setChecked}) => {
 
   const alignList = useSelector(state => state.align.align.array)
   
- 
+  //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
   const [selectionModel, setSelectionModel] = React.useState([])
-  const [check, setCheck] = useState([])
- 
-  const res = selectionModel.filter(f => alignList.some(item => item.id === f));
-  let filtered = alignList.filter(itemX => selectionModel.includes(itemX.id));
   
-  console.log(filtered);
+  //console.log(selectionModel)
+  
   
   const columns = [
     { field: 'Haplotype', headerName: 'Halpotype', sortable: false, width: 130 },
@@ -54,8 +51,6 @@ const Table = (props) => {
       )),
   }));
 
-
- 
   
   return (
     <div style={{ height: 520, width: '100%' }}>
@@ -70,6 +65,7 @@ const Table = (props) => {
 
         onSelectionModelChange={(newSelectionModel) => {
           setSelectionModel(newSelectionModel);
+          setChecked(alignList.filter(item => newSelectionModel.includes(item.id)))
         }}
         selectionModel={selectionModel}
       />
