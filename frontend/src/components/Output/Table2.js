@@ -11,6 +11,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Tab } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Typography from '@mui/material/Typography';
+
 const useStyles = makeStyles({
   tableCell: {
     padding: "0px 8px"
@@ -24,10 +30,12 @@ const Table2 = (props) => {
     const classes = useStyles()
 
     const alignList = useSelector(state => state.align.align.array)
-    console.log(alignList)
-    console.log(alignList[1].locArray)
+    
 
     return (
+        
+      
+
        <TableContainer  component={Paper}>
       <Table sx={{ minWidth: 600 }} checkboxSelection aria-label="simple table">
         <TableHead>
@@ -40,11 +48,16 @@ const Table2 = (props) => {
             <TableCell  style={{ width: "12%" }}>GenBank Accession</TableCell>
           </TableRow>
         </TableHead>
+  
+
         <TableBody>
+        
           {alignList.map((row) => (
+
             <TableRow
               key={row.id}
             >
+              
               <TableCell >{row.haplotypeId}</TableCell>
               <TableCell >{row.mismatch}</TableCell>
               <TableCell >{row.match}</TableCell>
@@ -65,6 +78,7 @@ const Table2 = (props) => {
             </TableRow>
           ))}
         </TableBody>
+
       </Table>
     </TableContainer>
     );

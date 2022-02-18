@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router'
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
 import Map from './Map1';
-import Table2 from './Table2';
+import Table from './Table1';
 import Input from './Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
@@ -81,7 +81,7 @@ const Output = () => {
                                 <div>Loading...</div>
                             )}
                             {queryInfo.isLoading == false && (
-                                <Table2 setCheck={setCheck} />
+                                <Table setCheck={setCheck} />
                             )}
                         </Grid>
                     

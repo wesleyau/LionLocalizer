@@ -1,13 +1,36 @@
 import React, { useMemo } from 'react'
 import { useTable, useRowSelect } from 'react-table'
-import MOCK_DATA from './MOCK_DATA.json'
-import { COLUMNS } from './columns'
-import './table.css'
 import { Checkbox } from './Checkbox'
+import { useDispatch, useSelector} from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const RowSelection = () => {
-  const columns = useMemo(() => COLUMNS, [])
-  const data = useMemo(() => MOCK_DATA, [])
+  
+  const alignList = useSelector(state => state.align.align.array)
+
+  const columns = [
+    { field: 'Haplotype', headerName: 'Halpotype', sortable: false, width: 130 },
+    { field: 'Mismatches', headerName: 'Mismatches', sortable: false, width: 130 },
+    { field: 'Matches', headerName: 'Matches', sortable: false, width: 130 },
+    { field: 'Locations', headerName: 'Locations', sortable: false, width: 500 },
+    { field: 'GenBankAccession', headerName: 'GenBank Accession', sortable: false, width: 300 },
+  ];
+
+  const data = alignList.map((row) => ({
+    id: row.id,  
+    Haplotype: row.haplotypeId,
+    Mismatches: row.mismatch,
+    Matches: row.match,
+    Locations: row.locArray.map((sub) => (
+      <li>
+      {sub.locationName}
+      </li>
+      )),
+      GenBankAccession: row.lochappub.map((sub) => (     
+      sub.genBankAccession
+      )),
+  }));
+
 
   const {
     getTableProps,
