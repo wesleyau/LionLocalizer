@@ -59,7 +59,23 @@ const Map = ({checked}) => {
           ))}
 
           //if selected state has a value, if not do a null
-          
+          {selected ? (
+          <InfoWindow 
+          position={{ lat: selected.lat, lng: selected.lon }} 
+          onCloseClick = {() => {
+            setSelected(null);
+          }}
+          > 
+            <div>
+            <div><b>Location Name:</b> {selected.locationName}</div>
+            <div><b>Country:</b> {selected.locality}</div>
+            <p></p>
+            <div><b>Haplotype:</b> {selected.haplotypeId}</div>
+            <div><b>Matches:</b> {selected.match}</div>
+            <div><b>Mismatches:</b> {selected.mismatch}</div>
+            <div><b>Author:</b> {selected.author}</div>
+            </div>
+          </InfoWindow>) : null}
       </GoogleMap>
     </div>
   );

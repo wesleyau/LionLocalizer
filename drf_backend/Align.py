@@ -132,6 +132,7 @@ def Align(request):
                     "mismatch": mismatchCount,
                     "match": matchCount,
                     "paperurl": l.author.paperurl,
+                    "author": l.author.author,
                 }
             )
 
