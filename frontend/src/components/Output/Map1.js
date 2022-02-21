@@ -43,7 +43,7 @@ const Map = ({checked}) => {
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={3.65}
+        zoom={3.60}
         center={center}
         
       >
