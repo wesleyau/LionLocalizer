@@ -4,6 +4,7 @@ import {
   useLoadScript,
   Marker,
   InfoWindow,
+  MarkerClusterer,
 } from "@react-google-maps/api";
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +23,9 @@ const center = {
 
 const Map = ({checked}) => {
 
+ 
   console.log(checked)
+    
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -44,7 +47,13 @@ const Map = ({checked}) => {
         center={center}
         
       >
-        
+        {checked.map(marker => 
+          marker.locArray.map(row => 
+          <Marker
+          key={row.locationID}
+          position={{lat: row.lat, lng: row.lon}}
+          />
+          ))}
       </GoogleMap>
     </div>
   );
