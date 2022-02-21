@@ -128,6 +128,10 @@ def Align(request):
                     "locality": l.location.locality,
                     "accuracy": l.location.accuracy,
                     "lengthOfThisArray": len(lions),
+                    "haplotypeId": haplotypeID,
+                    "mismatch": mismatchCount,
+                    "match": matchCount,
+                    "paperurl": l.author.paperurl,
                 }
             )
 

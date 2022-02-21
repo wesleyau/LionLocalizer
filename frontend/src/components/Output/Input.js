@@ -12,10 +12,13 @@ const useStyles = makeStyles({
     linedUp: {
         marginLeft: 10,
         fontFamily: 'courier',
-        fontSize: 13.70,
+        fontSize: 14,
+        marginRight: 1000
     },
     contain: {
         height: '350px',
+
+        
     },
     typographyMargin: {
         marginLeft: 10,
@@ -34,7 +37,7 @@ const Input = () => {
     const [ID, setID] = useState(queryInfo.ID);
     const [Detail, setDetail] = useState(queryInfo.Detail);
 
-    const detailBreakUp = Detail.match(/[\s\S]{1,88}/g) || ['/n']
+    const detailBreakUp = Detail.match(/[\s\S]{1,94}/g) || ['/n']
     console.log(detailBreakUp)
 
     return (

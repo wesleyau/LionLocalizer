@@ -31,11 +31,11 @@ const Table = ({setChecked}) => {
   
   
   const columns = [
-    { field: 'Haplotype', headerName: 'Halpotype', sortable: false, width: 130 },
-    { field: 'Mismatches', headerName: 'Mismatches', sortable: false, width: 130 },
-    { field: 'Matches', headerName: 'Matches', sortable: false, width: 130 },
-    { field: 'Locations', headerName: 'Locations', sortable: false, width: 500 },
-    { field: 'GenBankAccession', headerName: 'GenBank Accession', sortable: false, width: 300 },
+    { field: 'Haplotype', headerName: 'Halpotype', sortable: false, width: 120 },
+    { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
+    { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
+    { field: 'Locations', headerName: 'Locations', sortable: false, width: 250 },
+    { field: 'GenBankAccession', headerName: 'GenBank Accession', sortable: false, minWidth: 300 },
   ];
 
   const rows = alignList.map((row) => ({

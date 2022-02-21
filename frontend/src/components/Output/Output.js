@@ -59,7 +59,7 @@ const Output = () => {
     return (
         <Grid container>
             <Grid item container >
-                <Grid xs = {6}>
+                <Grid xs = {5}>
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
                     )}
@@ -67,7 +67,7 @@ const Output = () => {
                         <Map checked={checked}/>
                     )}
                 </Grid>
-                <Grid item container className={classes.contain} xs={6}>
+                <Grid item container className={classes.contain} xs={7}>
                     <Grid item container xs={12}>
                     
                         <Grid  xs = {12}>

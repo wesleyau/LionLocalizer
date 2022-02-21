@@ -13,7 +13,7 @@ import { getSequences } from '../../Sequences/Sequences.actions';
 const libraries = ["places"];
 const mapContainerStyle = {
   height: "775px",
-  width: "49.5vw",
+  width: "41.5vw",
 };
 const center = {
     lat: 1,
@@ -25,15 +25,15 @@ const Map = ({checked}) => {
 
  
   console.log(checked)
-    
+  
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries,
   });
   
-
-
+  const [ selected, setSelected ] = React.useState(null);
+  console.log(selected)
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
@@ -52,8 +52,14 @@ const Map = ({checked}) => {
           <Marker
           key={row.locationID}
           position={{lat: row.lat, lng: row.lon}}
+          onClick={() => {
+            setSelected(row)
+          }}
           />
           ))}
+
+          //if selected state has a value, if not do a null
+          
       </GoogleMap>
     </div>
   );
