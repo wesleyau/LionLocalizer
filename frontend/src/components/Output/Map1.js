@@ -10,6 +10,9 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
 
+import unfilledPin from '../../../static/images/unfilledPin.png';
+import filledPin from '../../../static/images/blackFilledPin.png';
+
 const libraries = ["places"];
 const mapContainerStyle = {
   height: "775px",
@@ -21,10 +24,11 @@ const center = {
 };
 
 
-const Map = ({checked}) => {
 
- 
-  console.log(checked)
+const Map = ({checked}) => {
+  const alignList = useSelector(state => state.align.align.array)
+  const countryList = [182, 183, 184, 185, 187, 190, 191, 192, 238]
+
   
 
   const { isLoaded, loadError } = useLoadScript({
@@ -32,9 +36,18 @@ const Map = ({checked}) => {
     libraries,
   });
   
+  //whether the pinpoint is selected or not
   const [ selected, setSelected ] = React.useState(null);
-  console.log(selected)
 
+  //comparing which points are not checked so that the placer marker appears
+  let result = alignList.filter(item => checked.indexOf(item) == -1);
+
+  //array for no country info
+  let countryResult = result.map((row) => row.locArray.filter(item => countryList.includes(item.locationID)));
+ 
+  //array for both country and locality info
+  let localityResult = result.map((row) => row.locArray.filter(item => !countryList.includes(item.locationID)));
+  
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 
@@ -47,6 +60,36 @@ const Map = ({checked}) => {
         center={center}
         
       >
+        //filledpins for both country and locality info
+        {countryResult.map(marker => 
+          marker.map(row => 
+          <Marker
+          key={row.locationID}
+          position={{lat: row.lat, lng: row.lon}}
+          icon={{
+            url: filledPin,
+            scaledSize: new window.google.maps.Size(25,25),}}
+          onClick={() => {
+            setSelected(row)
+          }}
+          />
+          ))}
+
+        //unfilledpin for no country info
+        {localityResult.map(marker => 
+          marker.map(row => 
+          <Marker
+          key={row.locationID}
+          position={{lat: row.lat, lng: row.lon}}
+          icon={{
+            url: unfilledPin,
+            scaledSize: new window.google.maps.Size(25,25),}}
+          onClick={() => {
+            setSelected(row)
+          }}
+          />
+          ))}
+
         {checked.map(marker => 
           marker.locArray.map(row => 
           <Marker
@@ -67,6 +110,7 @@ const Map = ({checked}) => {
           }}
           > 
             <div>
+            <div><b>Location ID:</b> {selected.locationID}</div>
             <div><b>Location Name:</b> {selected.locationName}</div>
             <div><b>Country:</b> {selected.locality}</div>
             <p></p>
@@ -76,6 +120,8 @@ const Map = ({checked}) => {
             <div><b>Author:</b> {selected.author}</div>
             </div>
           </InfoWindow>) : null}
+
+          
       </GoogleMap>
     </div>
   );

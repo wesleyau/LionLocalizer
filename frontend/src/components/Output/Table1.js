@@ -24,6 +24,11 @@ const Table = ({setChecked}) => {
 
   const alignList = useSelector(state => state.align.align.array)
   
+  
+  //const zero = [0]
+  //let zeroMismatches = alignList.mismatch.filter(val => zero.includes(val))
+  //console.log(zeroMismatches)
+
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
   const [selectionModel, setSelectionModel] = React.useState([])
   
@@ -44,7 +49,9 @@ const Table = ({setChecked}) => {
     Mismatches: row.mismatch,
     Matches: row.match,
     Locations: row.locArray.map((sub) => (
-      sub.locationName
+        <li>
+        {JSON.stringify(sub.locationName)}
+        </li>
       )),
       GenBankAccession: row.lochappub.map((sub) => (     
       sub.genBankAccession
@@ -53,9 +60,13 @@ const Table = ({setChecked}) => {
 
   
   return (
-    <div style={{ height: 520, width: '100%' }}>
+    <div style={{ height: 520, width: '100%',}}>
 
       <DataGrid 
+        sx={{ 
+        m:2,
+        borderColor: 'secondary'
+        }}
         rows={rows}
         columns={columns}
         checkboxSelection

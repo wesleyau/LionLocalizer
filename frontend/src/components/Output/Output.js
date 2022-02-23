@@ -50,12 +50,6 @@ const Output = () => {
     //console.log(checked)
 
 
-
-    //if(!queryInfo) {
-    //return <Redirect to="/"/>
-   //}
-
-
     return (
         <Grid container>
             <Grid item container >
