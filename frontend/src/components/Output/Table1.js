@@ -40,23 +40,26 @@ const Table = ({setChecked}) => {
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
     { field: 'Locations', headerName: 'Locations', sortable: false, width: 250 },
-    { field: 'GenBankAccession', headerName: 'GenBank Accession', sortable: false, minWidth: 300 },
+    { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
   ];
 
+  //by haplotype version
   const rows = alignList.map((row) => ({
     id: row.id,  
     Haplotype: row.haplotypeId,
     Mismatches: row.mismatch,
     Matches: row.match,
     Locations: row.locArray.map((sub) => (
-        <li>
-        {JSON.stringify(sub.locationName)}
-        </li>
+        sub.locationName
       )),
       GenBankAccession: row.lochappub.map((sub) => (     
       sub.genBankAccession
       )),
+    Publications: row.locArray.map((sub) => (
+      sub.author
+    )),
   }));
+
 
   
   return (
