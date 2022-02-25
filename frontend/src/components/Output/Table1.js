@@ -36,7 +36,7 @@ const Table = ({setChecked}) => {
   
   
   const columns = [
-    { field: 'Haplotype', headerName: 'Halpotype', sortable: false, width: 120 },
+    { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
     { field: 'Locations', headerName: 'Locations', sortable: false, width: 250 },
