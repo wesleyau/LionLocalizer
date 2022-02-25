@@ -10,8 +10,8 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
 
-import unfilledPin from '../../../static/images/unfilledPin.png';
-import filledPin from '../../../static/images/blackFilledPin.png';
+import unfilledPin from '../../../static/images/redpin.png';
+import filledPin from '../../../static/images/blackpin.png';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -68,7 +68,7 @@ const Map = ({checked}) => {
           position={{lat: row.lat, lng: row.lon}}
           icon={{
             url: filledPin,
-            scaledSize: new window.google.maps.Size(25,25),}}
+            scaledSize: new window.google.maps.Size(20,20),}}
           onClick={() => {
             setSelected(row)
           }}
@@ -83,7 +83,7 @@ const Map = ({checked}) => {
           position={{lat: row.lat, lng: row.lon}}
           icon={{
             url: unfilledPin,
-            scaledSize: new window.google.maps.Size(25,25),}}
+            scaledSize: new window.google.maps.Size(20,20),}}
           onClick={() => {
             setSelected(row)
           }}
