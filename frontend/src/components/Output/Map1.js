@@ -27,7 +27,7 @@ const center = {
 
 const Map = ({checked}) => {
   const alignList = useSelector(state => state.align.align.array)
-  const countryList = [182, 183, 184, 185, 187, 190, 191, 192, 238]
+  const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
 
   
 
