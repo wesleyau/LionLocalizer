@@ -42,10 +42,10 @@ const Table = ({setChecked}) => {
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
     { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, 
       renderCell: (params) => (
-        <div>{params.value.map((sub) => (
+        <Typography>{params.value.map((sub) => (
           <li>{sub.locationName}</li>
           
-        ))}</div>
+        ))}</Typography>
       )
     },
     { field: 'Country', headerName: 'Country', sortable: false, width: 105 },
@@ -80,13 +80,7 @@ const Table = ({setChecked}) => {
         rows={rows}
         columns={columns}
         checkboxSelection
-        getRowHeight={({ Locality, densityFactor }) => {
-          if (Locality.length() > 3) {
-            return 100 * densityFactor;
-          }
-      
-          return null;
-        }}
+        rowHeight={200}
         disableColumnFilter={true}
         hideFooterPagination={true}
         onSelectionModelChange={(newSelectionModel) => {
