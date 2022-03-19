@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
 
 import unfilledPin from '../../../static/images/redpin.png';
-import filledPin from '../../../static/images/blackpin.png';
+import filledPin from '../../../static/images/clearpin.png';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -111,7 +111,8 @@ const Map = ({checked}) => {
           > 
             <div>
             <div><b>Location ID:</b> {selected.locationID}</div>
-            <div><b>Location Name:</b> {selected.locationName}</div>
+            <div><b>Locality Type:</b> {selected.locationType}</div>
+            <div><b>Locality:</b> {selected.locationName}</div>
             <div><b>Country:</b> {selected.locality}</div>
             <p></p>
             <div><b>Haplotype:</b> {selected.haplotypeId}</div>

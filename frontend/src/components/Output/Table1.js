@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DataGrid, GridColDef,} from '@mui/x-data-grid';
 import { useState, useEffect } from 'react'
+import { Link } from '@material-ui/core'
 
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
@@ -39,7 +40,15 @@ const Table = ({setChecked}) => {
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
-    { field: 'Locations', headerName: 'Locations', sortable: false, width: 250 },
+    { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, 
+      renderCell: (params) => (
+        <div>{params.value.map((sub) => (
+          <li>{sub.locationName}</li>
+          
+        ))}</div>
+      )
+    },
+    { field: 'Country', headerName: 'Country', sortable: false, width: 105 },
     { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
   ];
 
@@ -49,14 +58,12 @@ const Table = ({setChecked}) => {
     Haplotype: row.haplotypeId,
     Mismatches: row.mismatch,
     Matches: row.match,
-    Locations: row.locArray.map((sub) => (
-        sub.locationName
-      )),
-      GenBankAccession: row.lochappub.map((sub) => (     
-      sub.genBankAccession
+    Locality: row.locArray,
+      Country: row.locArray.map((sub) => (
+        sub.locality
       )),
     Publications: row.locArray.map((sub) => (
-      sub.author
+        sub.author
     )),
   }));
 
@@ -73,10 +80,15 @@ const Table = ({setChecked}) => {
         rows={rows}
         columns={columns}
         checkboxSelection
-        rowHeight={60}
+        getRowHeight={({ Locality, densityFactor }) => {
+          if (Locality.length() > 3) {
+            return 100 * densityFactor;
+          }
+      
+          return null;
+        }}
         disableColumnFilter={true}
         hideFooterPagination={true}
-
         onSelectionModelChange={(newSelectionModel) => {
           setSelectionModel(newSelectionModel);
           setChecked(alignList.filter(item => newSelectionModel.includes(item.id)))
