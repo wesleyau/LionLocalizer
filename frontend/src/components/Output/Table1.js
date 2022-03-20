@@ -25,13 +25,18 @@ const Table = ({setChecked}) => {
 
   const alignList = useSelector(state => state.align.align.array)
   
+  //finding the ids of the arrays that have 0 mismatches 
+  //true false array - now compare this array
+  //let zeroMismatch = alignList.map(row => row.mismatch==0);
   
-  //const zero = [0]
-  //let zeroMismatches = alignList.mismatch.filter(val => zero.includes(val))
-  //console.log(zeroMismatches)
+  //filters based on mismatch == 0 in alignList
+  let zeroMismatch = alignList.filter(row => row.mismatch==0);
+  let zeroArray = zeroMismatch.map(row => row.id)
+  //console.log(zeroMismatch.map(row => row.id))
+  //console.log(zeroArray)
 
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
-  const [selectionModel, setSelectionModel] = React.useState([])
+  const [selectionModel, setSelectionModel] = React.useState([zeroArray])
   
   //console.log(selectionModel)
   
@@ -48,7 +53,13 @@ const Table = ({setChecked}) => {
         ))}</Typography>
       )
     },
-    { field: 'Country', headerName: 'Country', sortable: false, width: 105 },
+    { field: 'Country', headerName: 'Country', sortable: false, width: 200, 
+    renderCell: (params) => (
+        <Typography>{params.value}</Typography>
+        
+      
+    )
+    },
     { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
   ];
 
@@ -60,7 +71,7 @@ const Table = ({setChecked}) => {
     Matches: row.match,
     Locality: row.locArray,
       Country: row.locArray.map((sub) => (
-        sub.locality
+        <li>{sub.locality}</li>
       )),
     Publications: row.locArray.map((sub) => (
         sub.author
@@ -80,14 +91,16 @@ const Table = ({setChecked}) => {
         rows={rows}
         columns={columns}
         checkboxSelection
-        rowHeight={200}
+        rowHeight={400}
         disableColumnFilter={true}
         hideFooterPagination={true}
-        onSelectionModelChange={(newSelectionModel) => {
-          setSelectionModel(newSelectionModel);
-          setChecked(alignList.filter(item => newSelectionModel.includes(item.id)))
-        }}
         selectionModel={selectionModel}
+        onSelectionModelChange={selectionModel => {
+          setSelectionModel(selectionModel);
+          setChecked(alignList.filter(item => selectionModel.includes(item.id)))
+          console.log(selectionModel)
+        }}
+        
       />
       
     </div>

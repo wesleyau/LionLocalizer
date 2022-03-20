@@ -28,7 +28,7 @@ const center = {
 const Map = ({checked}) => {
   const alignList = useSelector(state => state.align.align.array)
   const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
-
+  console.log(checked)
   
 
   const { isLoaded, loadError } = useLoadScript({
@@ -41,13 +41,16 @@ const Map = ({checked}) => {
 
   //comparing which points are not checked so that the placer marker appears
   let result = alignList.filter(item => checked.indexOf(item) == -1);
+  //console.log(result)
 
   //array for no country info
   let countryResult = result.map((row) => row.locArray.filter(item => countryList.includes(item.locationID)));
- 
+  //console.log(countryResult)
+
   //array for both country and locality info
   let localityResult = result.map((row) => row.locArray.filter(item => !countryList.includes(item.locationID)));
-  
+  //console.log(localityResult)
+
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 

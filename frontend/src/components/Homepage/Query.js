@@ -159,46 +159,27 @@ const Content = () => {
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
                                     <MenuItem value='0'>LEO0001</MenuItem>
-                                    <MenuItem value='1'>LEO0004</MenuItem>
-                                    <MenuItem value='2'>LEO0005</MenuItem>
-                                    <MenuItem value='3'>LEO0006</MenuItem>
-                                    <MenuItem value='4'>LEO0007</MenuItem>
-                                    <MenuItem value='5'>LEO0008</MenuItem>
-                                    <MenuItem value='6'>LEO0009</MenuItem>
-                                    <MenuItem value='7'>LEO0010</MenuItem>
-                                    <MenuItem value='8'>LEO0011</MenuItem>
-                                    <MenuItem value='9'>LEO0012</MenuItem>
-                                    <MenuItem value='10'>LEO0013</MenuItem>
-                                    <MenuItem value='11'>LEO0014</MenuItem>
-                                    <MenuItem value='12'>LEO0015</MenuItem>
-                                    <MenuItem value='13'>LEO0016</MenuItem>
-                                    <MenuItem value='14'>LEO0017</MenuItem>
-                                    <MenuItem value='15'>LEO0018</MenuItem>
-                                    <MenuItem value='16'>LEO0019</MenuItem>
-                                    <MenuItem value='17'>LEO0020</MenuItem>
-                                    <MenuItem value='18'>LEO0021</MenuItem>
-                                    <MenuItem value='19'>LEO0022</MenuItem>
-                                    <MenuItem value='20'>LEO0023</MenuItem>
-                                    <MenuItem value='21'>LEO0026</MenuItem>
-                                    <MenuItem value='22'>LEO0027</MenuItem>
-                                    <MenuItem value='23'>LEO0029</MenuItem>
-                                    <MenuItem value='24'>LEO1001</MenuItem>
-                                    <MenuItem value='25'>LEO1002</MenuItem>
-                                    <MenuItem value='26'>LEO1003</MenuItem>
-                                    <MenuItem value='27'>LEO1004</MenuItem>
-                                    <MenuItem value='28'>LEO1005</MenuItem>
-                                    <MenuItem value='29'>LEO1006</MenuItem>
-                                    <MenuItem value='30'>LEO2001</MenuItem>
-                                    <MenuItem value='31'>LEO2002</MenuItem>
-                                    <MenuItem value='32'>LEO2003</MenuItem>
-                                    <MenuItem value='33'>LEO2004</MenuItem>
-                                    <MenuItem value='34'>LEO2005</MenuItem>
-                                    <MenuItem value='35'>LEO2006</MenuItem>
-                                    <MenuItem value='36'>LEO2007</MenuItem>
-                                    <MenuItem value='37'>LEO2008</MenuItem>
-                                    <MenuItem value='38'>LEO2009</MenuItem>
-                                    <MenuItem value='39'>LEO2010</MenuItem>
-                                    <MenuItem value='40'>LEO2011</MenuItem>
+                                    <MenuItem value='1'>LEO0002</MenuItem>
+                                    <MenuItem value='2'>LEO0003</MenuItem>
+                                    <MenuItem value='3'>LEO0004</MenuItem>
+                                    <MenuItem value='4'>LEO0005</MenuItem>
+                                    <MenuItem value='5'>LEO0006</MenuItem>
+                                    <MenuItem value='6'>LEO0007</MenuItem>
+                                    <MenuItem value='7'>LEO0008</MenuItem>
+                                    <MenuItem value='8'>LEO0009</MenuItem>
+                                    <MenuItem value='9'>LEO0010</MenuItem>
+                                    <MenuItem value='10'>LEO0011</MenuItem>
+                                    <MenuItem value='11'>LEO0012</MenuItem>
+                                    <MenuItem value='12'>LEO0013</MenuItem>
+                                    <MenuItem value='13'>LEO0014</MenuItem>
+                                    <MenuItem value='14'>LEO0015</MenuItem>
+                                    <MenuItem value='15'>LEO0016</MenuItem>
+                                    <MenuItem value='16'>LEO0017</MenuItem>
+                                    <MenuItem value='17'>LEO0018</MenuItem>
+                                    <MenuItem value='18'>LEO0019</MenuItem>
+                                    <MenuItem value='19'>LEO0020</MenuItem>
+                                    <MenuItem value='20'>LEO0021</MenuItem>
+                                    <MenuItem value='21'>LEO0022</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
@@ -211,53 +192,30 @@ const Content = () => {
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
                                     <MenuItem value='0'>LEO0001</MenuItem>
-                                    <MenuItem value='1'>LEO0004</MenuItem>
-                                    <MenuItem value='2'>LEO0005</MenuItem>
-                                    <MenuItem value='3'>LEO0006</MenuItem>
-                                    <MenuItem value='4'>LEO0007</MenuItem>
-                                    <MenuItem value='5'>LEO0008</MenuItem>
-                                    <MenuItem value='6'>LEO0009</MenuItem>
-                                    <MenuItem value='7'>LEO0010</MenuItem>
-                                    <MenuItem value='8'>LEO0011</MenuItem>
-                                    <MenuItem value='9'>LEO0012</MenuItem>
-                                    <MenuItem value='10'>LEO0013</MenuItem>
-                                    <MenuItem value='11'>LEO0014</MenuItem>
-                                    <MenuItem value='12'>LEO0015</MenuItem>
-                                    <MenuItem value='13'>LEO0016</MenuItem>
-                                    <MenuItem value='14'>LEO0017</MenuItem>
-                                    <MenuItem value='15'>LEO0018</MenuItem>
-                                    <MenuItem value='16'>LEO0019</MenuItem>
-                                    <MenuItem value='17'>LEO0020</MenuItem>
-                                    <MenuItem value='18'>LEO0021</MenuItem>
-                                    <MenuItem value='19'>LEO0022</MenuItem>
-                                    <MenuItem value='20'>LEO0023</MenuItem>
-                                    <MenuItem value='21'>LEO0026</MenuItem>
-                                    <MenuItem value='22'>LEO0027</MenuItem>
-                                    <MenuItem value='23'>LEO0029</MenuItem>
-                                    <MenuItem value='24'>LEO1001</MenuItem>
-                                    <MenuItem value='25'>LEO1002</MenuItem>
-                                    <MenuItem value='26'>LEO1003</MenuItem>
-                                    <MenuItem value='27'>LEO1004</MenuItem>
-                                    <MenuItem value='28'>LEO1005</MenuItem>
-                                    <MenuItem value='29'>LEO1006</MenuItem>
-                                    <MenuItem value='30'>LEO2001</MenuItem>
-                                    <MenuItem value='31'>LEO2002</MenuItem>
-                                    <MenuItem value='32'>LEO2003</MenuItem>
-                                    <MenuItem value='33'>LEO2004</MenuItem>
-                                    <MenuItem value='34'>LEO2005</MenuItem>
-                                    <MenuItem value='35'>LEO2006</MenuItem>
-                                    <MenuItem value='36'>LEO2007</MenuItem>
-                                    <MenuItem value='37'>LEO2008</MenuItem>
-                                    <MenuItem value='38'>LEO2009</MenuItem>
-                                    <MenuItem value='39'>LEO2010</MenuItem>
-                                    <MenuItem value='40'>LEO2011</MenuItem>
+                                    <MenuItem value='1'>LEO0002</MenuItem>
+                                    <MenuItem value='2'>LEO0003</MenuItem>
+                                    <MenuItem value='3'>LEO0004</MenuItem>
+                                    <MenuItem value='4'>LEO0005</MenuItem>
+                                    <MenuItem value='5'>LEO0006</MenuItem>
+                                    <MenuItem value='6'>LEO0007</MenuItem>
+                                    <MenuItem value='7'>LEO0008</MenuItem>
+                                    <MenuItem value='8'>LEO0009</MenuItem>
+                                    <MenuItem value='9'>LEO0010</MenuItem>
+                                    <MenuItem value='10'>LEO0011</MenuItem>
+                                    <MenuItem value='11'>LEO0012</MenuItem>
+                                    <MenuItem value='12'>LEO0013</MenuItem>
+                                    <MenuItem value='13'>LEO0014</MenuItem>
+                                    <MenuItem value='14'>LEO0015</MenuItem>
+                                    <MenuItem value='15'>LEO0016</MenuItem>
+                                    <MenuItem value='16'>LEO0017</MenuItem>
+                                    <MenuItem value='17'>LEO0018</MenuItem>
+                                    <MenuItem value='18'>LEO0019</MenuItem>
+                                    <MenuItem value='19'>LEO0020</MenuItem>
+                                    <MenuItem value='20'>LEO0021</MenuItem>
+                                    <MenuItem value='21'>LEO0022</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
-                        
-                        
-                        
-                        
                         
                         <Grid item xs={12}>
                         <Typography className={classes.text}>
