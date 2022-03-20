@@ -39,8 +39,7 @@ const Table = ({setChecked}) => {
   const [selectionModel, setSelectionModel] = React.useState([zeroArray])
   
   //console.log(selectionModel)
-  
-  
+
   const columns = [
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
@@ -94,13 +93,12 @@ const Table = ({setChecked}) => {
         rowHeight={400}
         disableColumnFilter={true}
         hideFooterPagination={true}
-        selectionModel={selectionModel}
-        onSelectionModelChange={selectionModel => {
-          setSelectionModel(selectionModel);
-          setChecked(alignList.filter(item => selectionModel.includes(item.id)))
-          console.log(selectionModel)
-        }}
         
+        onSelectionModelChange={newSelectionModel => {
+          setSelectionModel(newSelectionModel);
+          setChecked(alignList.filter(item => newSelectionModel.includes(item.id)))
+        }}
+        selectionModel={selectionModel}
       />
       
     </div>

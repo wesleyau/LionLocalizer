@@ -43,12 +43,17 @@ const Output = () => {
     const queryInfo = useSelector(state => state.align)
     
 
+
+    
+
     //state for the checkmarks to what is displayed on the map
     
     const [loading, setLoading] = useState(false)
+
+    
    const [checked, setChecked] = useState([])
     //console.log(checked)
-
+    
 
     return (
         <Grid container>
@@ -79,7 +84,7 @@ const Output = () => {
                                 <div>Loading...</div>
                             )}
                             {queryInfo.isLoading == false && (
-                                <Table  setChecked={setChecked}/>
+                                <Table setChecked={setChecked}/>
                             )}
                         </Grid>
                     
