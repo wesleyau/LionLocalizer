@@ -43,7 +43,6 @@ const Output = () => {
     const queryInfo = useSelector(state => state.align)
     
 
-
     
 
     //state for the checkmarks to what is displayed on the map
@@ -53,7 +52,10 @@ const Output = () => {
     
    const [checked, setChecked] = useState([])
     //console.log(checked)
-    
+        if(queryInfo.isLoading == false){
+        var zeroMis = alignList.filter(row => row.mismatch==0);
+        var zeroArr = zeroMis.map(row => row.id)
+        }
 
     return (
         <Grid container>
@@ -83,7 +85,10 @@ const Output = () => {
                             {queryInfo.isLoading == true && (
                                 <div>Loading...</div>
                             )}
-                            {queryInfo.isLoading == false && (
+                            {queryInfo.isLoading == false && zeroArr.length>0 && (
+                                <Table setChecked={setChecked}/>   
+                            )}
+                            {queryInfo.isLoading == false && zeroArr.length==0 && (
                                 <Table setChecked={setChecked}/>
                             )}
                         </Grid>

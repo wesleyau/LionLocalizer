@@ -22,7 +22,7 @@ import Typography from '@mui/material/Typography';
 
 
 const Table = ({setChecked}) => {
-
+  const dispatch = useDispatch();
   const alignList = useSelector(state => state.align.align.array)
   
   //finding the ids of the arrays that have 0 mismatches 
@@ -39,6 +39,10 @@ const Table = ({setChecked}) => {
   const [selectionModel, setSelectionModel] = React.useState([zeroArray])
   
   //console.log(selectionModel)
+  
+   
+
+
 
   const columns = [
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
@@ -60,6 +64,7 @@ const Table = ({setChecked}) => {
     )
     },
     { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
+    { field: 'Genbank', headerName: 'Genbank', sortable: false, minWidth: 200 },
   ];
 
   //by haplotype version
@@ -75,6 +80,9 @@ const Table = ({setChecked}) => {
     Publications: row.locArray.map((sub) => (
         sub.author
     )),
+    Genbank: row.lochappub.map((sub) => (
+      sub.genBankAccession
+  ))
   }));
 
 
@@ -90,7 +98,7 @@ const Table = ({setChecked}) => {
         rows={rows}
         columns={columns}
         checkboxSelection
-        rowHeight={400}
+        rowHeight={50}
         disableColumnFilter={true}
         hideFooterPagination={true}
         

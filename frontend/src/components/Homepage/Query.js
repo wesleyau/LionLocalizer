@@ -178,8 +178,6 @@ const Content = () => {
                                     <MenuItem value='17'>LEO0018</MenuItem>
                                     <MenuItem value='18'>LEO0019</MenuItem>
                                     <MenuItem value='19'>LEO0020</MenuItem>
-                                    <MenuItem value='20'>LEO0021</MenuItem>
-                                    <MenuItem value='21'>LEO0022</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
@@ -211,8 +209,6 @@ const Content = () => {
                                     <MenuItem value='17'>LEO0018</MenuItem>
                                     <MenuItem value='18'>LEO0019</MenuItem>
                                     <MenuItem value='19'>LEO0020</MenuItem>
-                                    <MenuItem value='20'>LEO0021</MenuItem>
-                                    <MenuItem value='21'>LEO0022</MenuItem>
                                 </Select>
                         </FormControl>
                             )}
