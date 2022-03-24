@@ -41,15 +41,15 @@ const Map = ({checked}) => {
 
   //comparing which points are not checked so that the placer marker appears
   let result = alignList.filter(item => checked.indexOf(item) == -1);
-  //console.log(result)
+  console.log(result)
 
   //array for no country info
-  let countryResult = result.map((row) => row.locArray.filter(item => countryList.includes(item.locationID)));
-  //console.log(countryResult)
+  let countryResult = result.filter(item => countryList.includes(item.locationID));
+  console.log(countryResult)
 
   //array for both country and locality info
-  let localityResult = result.map((row) => row.locArray.filter(item => !countryList.includes(item.locationID)));
-  //console.log(localityResult)
+  let localityResult = result.filter(item => !countryList.includes(item.locationID));
+  console.log(localityResult)
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
@@ -64,8 +64,7 @@ const Map = ({checked}) => {
         
       >
         //filledpins for both country and locality info
-        {countryResult.map(marker => 
-          marker.map(row => 
+        {countryResult.map(row => 
           <Marker
           key={row.locationID}
           position={{lat: row.lat, lng: row.lon}}
@@ -76,11 +75,10 @@ const Map = ({checked}) => {
             setSelected(row)
           }}
           />
-          ))}
+          )}
 
         //unfilledpin for no country info
-        {localityResult.map(marker => 
-          marker.map(row => 
+        {localityResult.map(row => 
           <Marker
           key={row.locationID}
           position={{lat: row.lat, lng: row.lon}}
@@ -91,10 +89,9 @@ const Map = ({checked}) => {
             setSelected(row)
           }}
           />
-          ))}
+          )}
 
-        {checked.map(marker => 
-          marker.locArray.map(row => 
+        {checked.map(row => 
           <Marker
           key={row.locationID}
           position={{lat: row.lat, lng: row.lon}}
@@ -102,7 +99,7 @@ const Map = ({checked}) => {
             setSelected(row)
           }}
           />
-          ))}
+          )}
 
           //if selected state has a value, if not do a null
           {selected ? (

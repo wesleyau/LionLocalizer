@@ -60,10 +60,10 @@ const Table = ({setChecked}) => {
     Haplotype: row.haplotypeId,
     Mismatches: row.mismatch,
     Matches: row.match,
-    Locality: row.locArray,
+    Locality: row.locationName,
     Country: row.locality,
-    Publications: author,
-    Genbank: genBankAccession
+    Publications: row.author,
+    Genbank: row.genBankAccession
   }));
 
 
