@@ -48,21 +48,8 @@ const Table = ({setChecked}) => {
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
-    { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, 
-      renderCell: (params) => (
-        <Typography>{params.value.map((sub) => (
-          <li>{sub.locationName}</li>
-          
-        ))}</Typography>
-      )
-    },
-    { field: 'Country', headerName: 'Country', sortable: false, width: 200, 
-    renderCell: (params) => (
-        <Typography>{params.value}</Typography>
-        
-      
-    )
-    },
+    { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, },
+    { field: 'Country', headerName: 'Country', sortable: false, width: 200, },
     { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
     { field: 'Genbank', headerName: 'Genbank', sortable: false, minWidth: 200 },
   ];
@@ -74,15 +61,9 @@ const Table = ({setChecked}) => {
     Mismatches: row.mismatch,
     Matches: row.match,
     Locality: row.locArray,
-      Country: row.locArray.map((sub) => (
-        <li>{sub.locality}</li>
-      )),
-    Publications: row.locArray.map((sub) => (
-        sub.author
-    )),
-    Genbank: row.lochappub.map((sub) => (
-      sub.genBankAccession
-  ))
+    Country: row.locality,
+    Publications: author,
+    Genbank: genBankAccession
   }));
 
 
