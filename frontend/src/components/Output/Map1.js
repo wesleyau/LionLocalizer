@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
 
 import unfilledPin from '../../../static/images/redpin.png';
-import filledPin from '../../../static/images/clearpin.png';
+import filledPin from '../../../static/images/blackpin.png';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -41,15 +41,15 @@ const Map = ({checked}) => {
 
   //comparing which points are not checked so that the placer marker appears
   let result = alignList.filter(item => checked.indexOf(item) == -1);
-  console.log(result)
+  //console.log(result)
 
   //array for no country info
   let countryResult = result.filter(item => countryList.includes(item.locationID));
-  console.log(countryResult)
+  //console.log(countryResult)
 
   //array for both country and locality info
   let localityResult = result.filter(item => !countryList.includes(item.locationID));
-  console.log(localityResult)
+  //console.log(localityResult)
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";

@@ -86,12 +86,11 @@ const Home = props => {
         2: "protocol",
         3: "faq",
         4: "references",
-        5: "admin",
-        6: "contact",
-        7: "copyright",
-        8: "privacy",
-        9: "terms",
-        10: "output",
+        5: "contact",
+        6: "copyright",
+        7: "privacy",
+        8: "terms",
+        9: "output",
       };
 
       const indexToTabName = {
@@ -100,12 +99,11 @@ const Home = props => {
         protocol: 2,
         faq: 3,
         references: 4,
-        admin: 5,
-        contact: 6,
-        copyright: 7,
-        privacy: 8,
-        terms: 9,
-        output: 10,
+        contact: 5,
+        copyright: 6,
+        privacy: 7,
+        terms: 8,
+        output: 9,
       };
     
 
@@ -140,10 +138,9 @@ const Home = props => {
                                         <Tab className={classes.tabsProtocol} label="Laboratory Protocols" />
                                         <Tab className={classes.tabsFaq} label="FAQ" />
                                         <Tab className={classes.tabsReference} label="References" />
-                                        <Tab className={classes.tabsAdmin} label="Admin Login" />
                                     </Tabs>
                                 </AppBar>
-                                {selectedTab != 10 && (
+                                {selectedTab != 9 && (
                                     <Grid item container>
                                         <Grid item xs={1} />
                                             <Grid xs = {10}>
@@ -152,12 +149,11 @@ const Home = props => {
                                                 { selectedTab === 2 && <Extraction /> }
                                                 { selectedTab === 3 && <Faq /> }
                                                 { selectedTab === 4 && <References /> }
-                                                { selectedTab === 5 && <Admin /> }
-                                                { selectedTab === 6 && <Contact /> }
-                                                { selectedTab === 7 && <Copyright /> }
-                                                { selectedTab === 8 && <Privacy /> }
-                                                { selectedTab === 9 && <Terms /> }
-                                                { selectedTab === 10 && <Output /> }
+                                                { selectedTab === 5 && <Contact /> }
+                                                { selectedTab === 6 && <Copyright /> }
+                                                { selectedTab === 7 && <Privacy /> }
+                                                { selectedTab === 8 && <Terms /> }
+                                                { selectedTab === 9 && <Output /> }
                                             </Grid>
                                         <Grid item xs={1} />
                                              
@@ -172,7 +168,7 @@ const Home = props => {
                                 
                                     </Grid>
                                 )}
-                                {selectedTab == 10 && (
+                                {selectedTab == 9 && (
                                     <Grid item container>
                                             <Grid xs = {12}>
                                                 { selectedTab === 0 && <Query /> }
@@ -180,12 +176,11 @@ const Home = props => {
                                                 { selectedTab === 2 && <Extraction /> }
                                                 { selectedTab === 3 && <Faq /> }
                                                 { selectedTab === 4 && <References /> }
-                                                { selectedTab === 5 && <Admin /> }
-                                                { selectedTab === 6 && <Contact /> }
-                                                { selectedTab === 7 && <Copyright /> }
-                                                { selectedTab === 8 && <Privacy /> }
-                                                { selectedTab === 9 && <Terms /> }
-                                                { selectedTab === 10 && <Output /> }
+                                                { selectedTab === 5 && <Contact /> }
+                                                { selectedTab === 6 && <Copyright /> }
+                                                { selectedTab === 7 && <Privacy /> }
+                                                { selectedTab === 8 && <Terms /> }
+                                                { selectedTab === 9 && <Output /> }
                                             </Grid>
                                              
                                                 <Grid item xs={12}>
@@ -208,10 +203,10 @@ const Home = props => {
                         <AppBar color="secondary" position="static">
                             <Toolbar>
                                 <Tabs value={selectedTab} onChange={handleChange} indicatorColor="primary">
-                                    <Tab className={classes.tabsContact} value="6" label="Contact Us" />
-                                    <Tab className={classes.tabsCopyright} value="7" label="copyright" />
-                                    <Tab className={classes.tabsPrivacy} value="8" label="Privacy Policy" />
-                                    <Tab className={classes.tabsTerms} value="9" label="Terms & Conditions" />
+                                    <Tab className={classes.tabsContact} value="5" label="Contact Us" />
+                                    <Tab className={classes.tabsCopyright} value="6" label="copyright" />
+                                    <Tab className={classes.tabsPrivacy} value="7" label="Privacy Policy" />
+                                    <Tab className={classes.tabsTerms} value="8" label="Terms & Conditions" />
                                 </Tabs>
                             </Toolbar>
                         </AppBar>

@@ -10,7 +10,6 @@ urlpatterns = [
     path("contact", index),
     path("copyright", index),
     path("privacy", index),
-    path("admin", index),
     path("terms", index),
     path("instructions", index),
     path("output", index),

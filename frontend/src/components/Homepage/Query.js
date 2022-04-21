@@ -273,7 +273,7 @@ const Content = () => {
 
                         <Grid item xs={12}>
                             <Typography className={classes.textTopMargin}>
-                                3. Enter your lion DNA and then click to submit query. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/instructions" component={Link}>here</Typography>
+                                3. Enter your lion DNA and then click to submit query. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/protocol" component={Link}>here</Typography>
                             </Typography>
                         </Grid>   
 

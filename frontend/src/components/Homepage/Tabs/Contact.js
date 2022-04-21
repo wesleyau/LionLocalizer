@@ -1,9 +1,14 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
+import emailjs from "emailjs-com"
 
 const useStyles = makeStyles({ 
-    typography: {
+    margin: {
+        marginTop: 2.5,
+    },
+    marginMore: {
+        marginTop: 5,
         marginLeft: 5,
     },
     textIntro: {
@@ -15,19 +20,58 @@ const useStyles = makeStyles({
     },
 })
 
-const Contact = () => {
-    const classes = useStyles()
-    return (
-        <Grid container>
-            <Grid item xs={12} style={{background: "#84aeff"}}>
-                <Typography variant="h5" className={classes.textIntro}>Contact Us</Typography>
-            </Grid>   
-            <Grid item xs={12}>
-            <Typography className={classes.typography}><p>Please send any questions, suggestions or comments to Alfred Roca: <b>roca@illinois.edu</b>. using the email subject “Lion Localizer”.</p></Typography>
-            </Grid>
-        </Grid>
-        
-    );
-};
+export default function Contact() {
 
-export default Contact;
+    function sendEmail(e) {
+        e.preventDefault();
+
+    emailjs.sendForm('gmail', 'youtube_template', e.target, 'wlPElXk3uoEsBx3jR')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        e.target.reset()
+    }
+    const classes = useStyles()
+
+    return(
+        <Grid container>
+        <Grid item xs={12} style={{background: "#84aeff"}}>
+                <Typography variant="h5" className={classes.textIntro}>Contact Us</Typography>
+        </Grid>    
+        
+        <Grid item xs={12}>
+            <Typography className={classes.marginMore}>Please use this email form to send any questions, suggestions or comments to Alfred Roca: <b>roca@illinois.edu</b>. using “Lion Localizer” at the beginning of the email subject.</Typography>
+            </Grid>
+        <div>
+            <div className="container">
+            <form onSubmit={sendEmail}>
+                    <div className="row pt-5 mx-auto">
+                    
+                        <div className={classes.textIntro}>
+                            <input type="text" className="form-control" placeholder="Name" name="name"/>
+                        </div>
+                        
+                        <div className={classes.textIntro}>
+                            <input type="email" className="form-control" placeholder="Email Address" name="email"/>
+                        </div>
+                    
+                        <div className={classes.textIntro}>
+                            <input type="text" className="form-control" placeholder="Subject" name="subject"/>
+                        </div>
+                     
+                        <div className={classes.textIntro}>
+                            <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
+                        </div>
+                        
+                        <div className={classes.textIntro} >
+                            <input type="submit" className="btn btn-info" value="Send Message"></input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </Grid>
+    )
+}

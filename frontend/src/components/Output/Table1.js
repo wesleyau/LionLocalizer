@@ -30,28 +30,34 @@ const Table = ({setChecked}) => {
   //let zeroMismatch = alignList.map(row => row.mismatch==0);
   
   //filters based on mismatch == 0 in alignList
-  let zeroMismatch = alignList.filter(row => row.mismatch==0);
-  let zeroArray = zeroMismatch.map(row => row.id)
-  //console.log(zeroMismatch.map(row => row.id))
-  //console.log(zeroArray)
+  var zeroMismatch = alignList.filter(row => row.mismatch==0);
+  var zeroArray = zeroMismatch.map(row => row.id)
+  var zList = []
+  console.log(zeroMismatch.map(row => row.id))
+  console.log(zeroArray)
+
+  for (let i = 0; i < zeroArray.length; i++) {
+    zList[i] = zeroArray[i]
+  }
+  console.log(zList)
 
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
-  const [selectionModel, setSelectionModel] = React.useState([zeroArray])
+  const [selectionModel, setSelectionModel] = React.useState([zList])
   
-  //console.log(selectionModel)
+  console.log(selectionModel)
   
    
 
 
 
   const columns = [
-    { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 120 },
+    { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 135 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
-    { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 110},
+    { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 135},
     { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, },
     { field: 'Country', headerName: 'Country', sortable: false, width: 200, },
-    { field: 'Publications', headerName: 'Publications', sortable: false, minWidth: 200 },
-    { field: 'Genbank', headerName: 'Genbank', sortable: false, minWidth: 200 },
+    { field: 'Publications', headerName: <a href='http://lionlocalizer.org/references' target="_blank"> Publications </a>, sortable: false, minWidth: 200 },
+    { field: 'Genbank', headerName: <a href='https://www.ncbi.nlm.nih.gov/genbank/' target="_blank"> GenBank </a>, sortable: false, minWidth: 225 },
   ];
 
   //by haplotype version

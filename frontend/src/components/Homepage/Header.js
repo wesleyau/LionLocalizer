@@ -20,7 +20,7 @@ const Header = () => {
     return (
         <Grid container>
             <Grid item xs={12}>
-                <AppBar position="static">
+                <AppBar position="static" elevation={0}>
                     <Toolbar>
                         <Typography variant="h3">Lion Localizer</Typography> 
                     </Toolbar>
@@ -28,20 +28,18 @@ const Header = () => {
             </Grid>    
             <Grid item xs={12}>
                 <>
-                    <AppBar color="secondary" position="static">
+                    <AppBar color="secondary" position="static" elevation={0}>
                         <Tabs  value={selectedTab} onChange={handleChange}>
                             <Tab label="DNA Extraction Protocals" />
                             <Tab label="Publications" />
                             <Tab label="FAQ" />
                             <Tab label="Contact Us" />
-                            <Tab label="Admin Login" />
                         </Tabs>
                     </AppBar>
                     {selectedTab === 0 &&  <Extraction />}
                     {selectedTab === 1 &&  <Publications />}
                     {selectedTab === 2 &&  <Faq />}
                     {selectedTab === 3 &&  <Contact />}
-                    {selectedTab === 4 &&  <Admin />}
                 </>
             </Grid>    
         </Grid>

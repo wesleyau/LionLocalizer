@@ -12,8 +12,8 @@ const useStyles = makeStyles({
     linedUp: {
         marginLeft: 10,
         fontFamily: 'courier',
-        fontSize: 14,
-        marginRight: 1000
+        fontSize: 16,
+        marginRight: 500,
     },
     contain: {
         height: '350px',
@@ -46,13 +46,14 @@ const Input = () => {
                 <Typography className={classes.typographyMargin}><Time /></Typography>
             </Grid>     
             <Grid item xs={12}>
-                <Typography className={classes.typography}>ID and Sequence Provided:
+                <Typography className={classes.typography}>ID: {ID} 
                  </Typography>
             </Grid>    
+            
             <Grid item xs={12}>
-                <Typography className={classes.typography}> {ID} 
+                <Typography className={classes.typography}>Sequence:
                  </Typography>
-            </Grid>    
+            </Grid> 
             <Grid item xs={12}>
                  <Typography className={classes.linedUp}> {detailBreakUp.map((index) => (
                      <span>{index} {"\n"}</span>
