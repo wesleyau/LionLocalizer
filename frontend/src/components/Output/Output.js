@@ -63,36 +63,42 @@ const Output = () => {
                 <Grid xs = {5}>
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
-                    )}
-                    {queryInfo.isLoading == false && (
+                    )} 
+                    {queryInfo.isLoading == false &&(
                         <Map checked={checked}/>
                     )}
-                </Grid>
-                <Grid item container className={classes.contain} xs={7}>
-                    <Grid item container xs={12}>
                     
+                </Grid>
+
+                <Grid item container className={classes.contain} xs={7}>
+                    
+                    <Grid item container xs={12}>
+                        
                         <Grid  xs = {12}>
                             {queryInfo.isLoading == true && (
 
                                 <div>Loading...</div>
                             )}
-                            {queryInfo.isLoading == false && (
+                            {queryInfo.isLoading == false &&(
 
                                 <Input />
                             )}
+                            
                          </Grid>
+
                         <Grid xs = {12}>
                             {queryInfo.isLoading == true && (
                                 <div>Loading...</div>
                             )}
-                            {queryInfo.isLoading == false && zeroArr.length>0 && (
+
+                            {queryInfo.isLoading == false && queryInfo.error != null &&
+                                <div>Error...</div>
+                            }
+                            {queryInfo.error == null && queryInfo.isLoading == false && 
                                 <Table setChecked={setChecked}/>   
-                            )}
-                            {queryInfo.isLoading == false && zeroArr.length==0 && (
-                                <Table setChecked={setChecked}/>
-                            )}
+                            }
+                            
                         </Grid>
-                    
                     </Grid>
                 </Grid>
             </Grid> 

@@ -9,6 +9,7 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
+import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
 
 import unfilledPin from '../../../static/images/redpin.png';
 import filledPin from '../../../static/images/blackpin.png';
@@ -22,6 +23,13 @@ const center = {
     lat: 1,
     lng: 17
 };
+
+const useStyles = makeStyles({ 
+  windowFont: {
+     fontSize: 10,
+  },
+
+})
 
 
 
@@ -54,13 +62,15 @@ const Map = ({checked}) => {
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
 
+ 
   return (
     <div>
       <GoogleMap
         id="map"
         mapContainerStyle={mapContainerStyle}
-        zoom={3.60}
+        zoom={3.75}
         center={center}
+        
         
       >
         //filledpins for both country and locality info
@@ -104,21 +114,23 @@ const Map = ({checked}) => {
           //if selected state has a value, if not do a null
           {selected ? (
           <InfoWindow 
+          fontSize
           position={{ lat: selected.lat, lng: selected.lon }} 
           onCloseClick = {() => {
             setSelected(null);
           }}
           > 
             <div>
-            <div><b>Location ID:</b> {selected.locationID}</div>
-            <div><b>Locality Type:</b> {selected.locationType}</div>
-            <div><b>Locality:</b> {selected.locationName}</div>
-            <div><b>Country:</b> {selected.locality}</div>
-            <p></p>
-            <div><b>Haplotype:</b> {selected.haplotypeId}</div>
-            <div><b>Matches:</b> {selected.match}</div>
-            <div><b>Mismatches:</b> {selected.mismatch}</div>
-            <div><b>Author:</b> {selected.author}</div>
+            <font size="3"><b>Location ID:</b> {selected.locationID}</font><br></br>
+            <font size="3"><b>Locality Type:</b> {selected.locationType}</font><br></br>
+            <font size="3"><b>Locality:</b> {selected.locationName}</font><br></br>
+            <font size="3"><b>Country:</b> {selected.locality}</font>
+            <br></br>
+            <br></br>
+            <font size="3"><b>Haplotype:</b> {selected.haplotypeId}</font><br></br>
+            <font size="3"><b>Matches:</b> {selected.match}</font><br></br>
+            <font size="3"><b>Mismatches:</b> {selected.mismatch}</font><br></br>
+            <font size="3"><b>Author:</b> {selected.author}</font>
             </div>
           </InfoWindow>) : null}
 

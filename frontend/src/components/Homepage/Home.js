@@ -58,8 +58,8 @@ const useStyles = makeStyles({
         width: 160,
     },
     tabsTerms: {
-        minWidth: 285,
-        width: 285,
+        minWidth: 210,
+        width: 210,
     },
     disclaimer: {
         fontWeight: 'bold',
@@ -88,9 +88,8 @@ const Home = props => {
         4: "references",
         5: "contact",
         6: "copyright",
-        7: "privacy",
-        8: "terms",
-        9: "output",
+        7: "terms",
+        8: "output",
       };
 
       const indexToTabName = {
@@ -101,9 +100,8 @@ const Home = props => {
         references: 4,
         contact: 5,
         copyright: 6,
-        privacy: 7,
-        terms: 8,
-        output: 9,
+        terms: 7,
+        output: 8,
       };
     
 
@@ -140,7 +138,7 @@ const Home = props => {
                                         <Tab className={classes.tabsReference} label="References" />
                                     </Tabs>
                                 </AppBar>
-                                {selectedTab != 9 && (
+                                {selectedTab != 8 && (
                                     <Grid item container>
                                         <Grid item xs={1} />
                                             <Grid xs = {10}>
@@ -151,9 +149,8 @@ const Home = props => {
                                                 { selectedTab === 4 && <References /> }
                                                 { selectedTab === 5 && <Contact /> }
                                                 { selectedTab === 6 && <Copyright /> }
-                                                { selectedTab === 7 && <Privacy /> }
-                                                { selectedTab === 8 && <Terms /> }
-                                                { selectedTab === 9 && <Output /> }
+                                                { selectedTab === 7 && <Terms /> }
+                                                { selectedTab === 8 && <Output /> }
                                             </Grid>
                                         <Grid item xs={1} />
                                              
@@ -168,7 +165,7 @@ const Home = props => {
                                 
                                     </Grid>
                                 )}
-                                {selectedTab == 9 && (
+                                {selectedTab == 8 && (
                                     <Grid item container>
                                             <Grid xs = {12}>
                                                 { selectedTab === 0 && <Query /> }
@@ -178,9 +175,8 @@ const Home = props => {
                                                 { selectedTab === 4 && <References /> }
                                                 { selectedTab === 5 && <Contact /> }
                                                 { selectedTab === 6 && <Copyright /> }
-                                                { selectedTab === 7 && <Privacy /> }
-                                                { selectedTab === 8 && <Terms /> }
-                                                { selectedTab === 9 && <Output /> }
+                                                { selectedTab === 7 && <Terms /> }
+                                                { selectedTab === 8 && <Output /> }
                                             </Grid>
                                              
                                                 <Grid item xs={12}>
@@ -205,8 +201,7 @@ const Home = props => {
                                 <Tabs value={selectedTab} onChange={handleChange} indicatorColor="primary">
                                     <Tab className={classes.tabsContact} value="5" label="Contact Us" />
                                     <Tab className={classes.tabsCopyright} value="6" label="copyright" />
-                                    <Tab className={classes.tabsPrivacy} value="7" label="Privacy Policy" />
-                                    <Tab className={classes.tabsTerms} value="8" label="Terms & Conditions" />
+                                    <Tab className={classes.tabsTerms} value="7" label="Terms & Conditions" />
                                 </Tabs>
                             </Toolbar>
                         </AppBar>

@@ -7,7 +7,7 @@ import {
 const initialState = {
   isLoading: false,
   align: [],
-  error: null,
+  error: false,
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -17,7 +17,7 @@ export default (state = initialState, { type, payload }) => {
     case ADD_SEQUENCE_FAILED:
       return {
         ...state,
-        error: payload,
+        error: true,
         isLoading: false,
       };
     case ADD_SEQUENCE_SUCCESS:

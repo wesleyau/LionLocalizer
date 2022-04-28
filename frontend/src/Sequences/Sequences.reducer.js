@@ -7,7 +7,7 @@ import {
 const initialState = {
   isLoading: false,
   sequences: [],
-  error: null,
+  error: false,
 };
 
 export default (state = initialState, { type, payload }) => {
