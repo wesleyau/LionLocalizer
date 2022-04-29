@@ -215,7 +215,7 @@ const Content = () => {
                         
                         <Grid item xs={12}>
                         <Typography className={classes.text}>
-                            2. Enter an ID of the lion sample that you will query (optional), this will show up on the output page
+                            2. Enter an ID and/or information on the lion sample that you are querying (optional), this will show up on the output page
                         </Typography>
                         </Grid>   
                         
@@ -410,6 +410,7 @@ const Content = () => {
                             </Grid>
                         </Grid>
                         )}
+
                         <Button
                             onClick={() => {
                                 dispatch(addSequence({ ID, Detail }));

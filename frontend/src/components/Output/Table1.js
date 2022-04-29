@@ -24,7 +24,8 @@ import Typography from '@mui/material/Typography';
 const Table = ({setChecked}) => {
   const dispatch = useDispatch();
   const alignList = useSelector(state => state.align.align.array)
-  
+  const queryInfo = useSelector(state => state.align)
+
   //finding the ids of the arrays that have 0 mismatches 
   //true false array - now compare this array
   //let zeroMismatch = alignList.map(row => row.mismatch==0);
@@ -33,18 +34,18 @@ const Table = ({setChecked}) => {
   var zeroMismatch = alignList.filter(row => row.mismatch==0);
   var zeroArray = zeroMismatch.map(row => row.id)
   var zList = []
-  console.log(zeroMismatch.map(row => row.id))
-  console.log(zeroArray)
+  //console.log(zeroMismatch.map(row => row.id))
+  //console.log(zeroArray)
 
   for (let i = 0; i < zeroArray.length; i++) {
     zList[i] = zeroArray[i]
   }
-  console.log(zList)
+  //console.log(zList)
 
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
   const [selectionModel, setSelectionModel] = React.useState([zList])
   
-  console.log(selectionModel)
+  //console.log(selectionModel)
   
    
 
@@ -77,7 +78,8 @@ const Table = ({setChecked}) => {
   return (
     <div style={{ height: 520, width: '100%',}}>
 
-      <DataGrid 
+      {queryInfo.isLoading == false && queryInfo.error == null &&(
+        <DataGrid 
         sx={{ 
         m:2,
         borderColor: 'secondary'
@@ -95,6 +97,8 @@ const Table = ({setChecked}) => {
         }}
         selectionModel={selectionModel}
       />
+                    )}
+      
       
     </div>
   );

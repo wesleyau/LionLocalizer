@@ -42,7 +42,7 @@ export default function Contact() {
         </Grid>    
         
         <Grid item xs={12}>
-            <Typography className={classes.marginMore}>Please use this email form to send any questions, suggestions or comments to Alfred Roca: <b>roca@illinois.edu</b>. using “Lion Localizer” at the beginning of the email subject.</Typography>
+            <Typography className={classes.marginMore}>Please use this email form to send any questions, suggestions or comments using “Lion Localizer” at the beginning of the email subject.</Typography>
             </Grid>
         <div>
             <div className="container">

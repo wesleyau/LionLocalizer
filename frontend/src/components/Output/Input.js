@@ -38,7 +38,7 @@ const Input = () => {
     const [Detail, setDetail] = useState(queryInfo.Detail);
 
     const detailBreakUp = Detail.match(/[\s\S]{1,94}/g) || ['/n']
-    console.log(detailBreakUp)
+    //console.log(detailBreakUp)
 
     return (
         <Grid container >  
@@ -46,12 +46,12 @@ const Input = () => {
                 <Typography className={classes.typographyMargin}><Time /></Typography>
             </Grid>     
             <Grid item xs={12}>
-                <Typography className={classes.typography}>ID: {ID} 
+                <Typography className={classes.typography}>ID Entered: {ID} 
                  </Typography>
             </Grid>    
             
             <Grid item xs={12}>
-                <Typography className={classes.typography}>Sequence:
+                <Typography className={classes.typography}>Sequence Queried:
                  </Typography>
             </Grid> 
             <Grid item xs={12}>

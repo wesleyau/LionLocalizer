@@ -91,19 +91,17 @@ const Output = () => {
                                 <div>Loading...</div>
                             )}
 
-                            {queryInfo.isLoading == false && queryInfo.error != null &&
-                                <div>Error...</div>
-                            }
-                            {queryInfo.error == null && queryInfo.isLoading == false && 
+                            {queryInfo.isLoading == false && queryInfo.error == null && 
                                 <Table setChecked={setChecked}/>   
                             }
+
                             
                         </Grid>
                     </Grid>
                 </Grid>
             </Grid> 
             <Grid item xs={12}>
-                <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary</Typography>
+                <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary, CAR: Central African Republic, DRC: Democratic Republic of the Congo, RSA: Republic of South Africa, SA: South </Typography>
             </Grid>  
             <Grid item xs={12} direction="row">
                     <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers are recommended, the printout may not be formatted as well by Firefox </Typography>
