@@ -8,6 +8,7 @@ import uLogoOrange from '../../../static/images/uLogoOrange.png';
 import ILogo from '../../../static/images/1.png';
 import USAID from '../../../static/images/Horizontal_RGB_294.png';
 import USAIDSEAL from '../../../static/images/Seal_RGB_294.png';
+import TRACE from '../../../static/images/TraceLogo.png';
 
 const useStyles = makeStyles({ 
     typography: {
@@ -25,6 +26,11 @@ const useStyles = makeStyles({
         width: '2.75%',
         marginLeft: 20
     },
+    TraceLogo: {
+        height: '11.5%',
+        width: '11.5%',
+        marginLeft: 31.5
+    },
     USDAIDImage: {
         height: '15%',
         width: '15%',
@@ -33,7 +39,7 @@ const useStyles = makeStyles({
     sealImage: {
         height: '6.4%',
         width: '6.4%',
-        marginLeft: 20
+        marginLeft: 0
     },
     
 })
@@ -48,6 +54,7 @@ const Footer = () => {
                 <AppBar position="static">
                     <Toolbar>
                         <img className={classes.ILogo} src={ILogo} />
+                        <img className={classes.TraceLogo} src={TRACE} />
                         <img className={classes.sealImage} src={USAIDSEAL} />
 
                     </Toolbar>
