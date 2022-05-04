@@ -170,9 +170,9 @@ const Content = () => {
                             setErrorWarning(false)
                             }}>
                                 <MenuItem value='0'>Enter one long 1140bp cytB sequence</MenuItem>
-                                <MenuItem value='1'>Enter one short 350bp cytB sequences</MenuItem>
+                                <MenuItem value='1'>Enter one short 350bp cytB sequence</MenuItem>
                                 <MenuItem value='2'>Demo: Select one long 1140bp cytB lion sequence in the database</MenuItem>
-                                <MenuItem value='3'>Demo: Select one short 350bp cytB lion sequences in the database</MenuItem>
+                                <MenuItem value='3'>Demo: Select one short 350bp cytB lion sequence in the database</MenuItem>
                             </Select>
                         </FormControl>
                         
