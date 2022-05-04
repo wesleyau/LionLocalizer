@@ -169,10 +169,10 @@ const Content = () => {
                             setShortSeq2('');
                             setErrorWarning(false)
                             }}>
-                                <MenuItem value='0'>Enter one long cytB sequence</MenuItem>
-                                <MenuItem value='1'>Enter three short cytB sequences</MenuItem>
-                                <MenuItem value='2'>Demo: Select one long cytB lion sequence in the database</MenuItem>
-                                <MenuItem value='3'>Demo: Select three short cytB lion sequences in the database</MenuItem>
+                                <MenuItem value='0'>Enter one long 1140bp cytB sequence</MenuItem>
+                                <MenuItem value='1'>Enter one short 350bp cytB sequences</MenuItem>
+                                <MenuItem value='2'>Demo: Select one long 1140bp cytB lion sequence in the database</MenuItem>
+                                <MenuItem value='3'>Demo: Select one short 350bp cytB lion sequences in the database</MenuItem>
                             </Select>
                         </FormControl>
                         
@@ -387,9 +387,10 @@ const Content = () => {
                         <Grid item xs={12}>
                             <Typography className={classes.textError}>
                                 Error: please check for the following errors in your query sequence<br></br>
-                                1. sequence can only contain these characters: AGCT <br></br>
-                                2. Long sequence must be 1140bps<br></br>
-                                3. Short sequence must be 350bps
+                                1. Sequence can only contain these characters: AGCT <br></br>
+                                2. Sequence must be in uppercase <br></br>
+                                3. Long sequence must be 1140bps<br></br>
+                                4. Short sequence must be 350bps
                             </Typography>
                         </Grid>   
                         )}
