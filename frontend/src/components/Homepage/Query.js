@@ -33,6 +33,14 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         display: 'block'
     },
+    textError: {
+        marginTop: 13,
+        marginBottom: 5,
+        marginLeft: 5,
+        marginRight: 5,
+        fontWeight: 'bold',
+        color: '#E51414'
+    },
     button: {
         marginLeft: 0,
         marginTop: 0,
@@ -84,10 +92,19 @@ const Content = () => {
     //new content
     const dispatch = useDispatch();
     const [ID, setID] = useState('');
+    console.log(ID)
     const [Detail, setDetail] = useState('');
-
+    console.log(Detail)
     const [seqPlacerID, setSeqPlacerID] = useState('');
+    const [shortSeq1, setShortSeq1] = useState('');
+    const [shortSeq2, setShortSeq2] = useState('');
+    const [shortSeq3, setShortSeq3] = useState('');
+    const [error, setError] = useState(false);
+    const [errorWarning, setErrorWarning] = useState(false);
+
     
+
+
     useEffect(() => {
         dispatch(getSequences());
     }, [dispatch]);
@@ -104,6 +121,9 @@ const Content = () => {
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
 
+    
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -142,7 +162,13 @@ const Content = () => {
                             </Typography>
                         </Grid>     
                         <FormControl className={classes.formControl}>
-                            <Select value={select} onChange={(e) => setSelect(e.target.value)}>
+                            <Select value={select} onChange={(e) => {setSelect(e.target.value);
+                            setID('');
+                            setDetail('');
+                            setSeqPlacerID('');
+                            setShortSeq2('');
+                            setErrorWarning(false)
+                            }}>
                                 <MenuItem value='0'>Enter one long cytB sequence</MenuItem>
                                 <MenuItem value='1'>Enter three short cytB sequences</MenuItem>
                                 <MenuItem value='2'>Demo: Select one long cytB lion sequence in the database</MenuItem>
@@ -154,7 +180,6 @@ const Content = () => {
                             <FormControl className={classes.formControl1}>
                             <Typography className={classes.typography}>Select an existing sequence in the Lion Localizer (LL) database: </Typography> 
                                 <Select 
-                                
                                 onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
@@ -187,8 +212,12 @@ const Content = () => {
                                 <Select 
                                 label="Sequence ID"
                                 onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
+                                setShortSeq1(seqList[e.target.value].cytB.substring(0,429));
+                                setShortSeq2(seqList[e.target.value].cytB.substring(430,780));
+                                setShortSeq3(seqList[e.target.value].cytB.substring(780,1140));
+                                console.log(shortSeq1)
                                 setID(seqList[e.target.value].id);
-                                setDetail(seqList[e.target.value].cytB)}} >
+                                setDetail(seqList[e.target.value].cytB.substring(430,780))}} >
                                     <MenuItem value='0'>LEO0001</MenuItem>
                                     <MenuItem value='1'>LEO0002</MenuItem>
                                     <MenuItem value='2'>LEO0003</MenuItem>
@@ -247,7 +276,7 @@ const Content = () => {
                         {select == 2 && (
                         <TextField 
                             disabled
-                            value={seqPlacerID.id}
+                            value={"Demo: "+seqPlacerID.id}
                             onChange={(e) => setID(e.target.value)}
                             placeholder={seqPlacerID.id}
                             variant="outlined"
@@ -260,7 +289,7 @@ const Content = () => {
                         {select == 3 && (
                         <TextField 
                             disabled
-                            value={seqPlacerID.id}
+                            value={"Demo: "+seqPlacerID.id}
                             onChange={(e) => setID(e.target.value)}
                             placeholder={seqPlacerID.id}
                             variant="outlined"
@@ -270,10 +299,10 @@ const Content = () => {
                             
                         />
                         )}
-
+                        
                         <Grid item xs={12}>
                             <Typography className={classes.textTopMargin}>
-                                3. Enter your lion DNA and then click to submit query. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/protocol" component={Link}>here</Typography>
+                                3. Enter your lion DNA and then click to submit query, this will show up on the output page. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/protocol" component={Link}>here</Typography>
                             </Typography>
                         </Grid>   
 
@@ -282,8 +311,9 @@ const Content = () => {
                         {select == 0 && (
                         <TextField 
                             value={Detail}
-                            onChange={(e) => setDetail(e.target.value)}
-                            label="Enter lion DNA sequence"
+                            onChange={(e) => {setDetail(e.target.value);
+                            setErrorWarning(false)}}
+                            label="Enter lion long DNA sequence"
                             variant="outlined"
                             color="secondary"
                             className={classes.field}
@@ -293,29 +323,16 @@ const Content = () => {
                             error={sequenceError}
                         />
                         )}
+
                         {select == 1 && (
                         <Grid container item justifyContent="center" alignItems="center" >
-                            <Grid xs={12}>
-                            <TextField 
-                                value={seqPlacerID.id}
-                                onChange={(e) => setDetail(e.target.value)}
-                                label="Enter lion DNA sequence 1"
-                                variant="outlined"
-                                color="secondary"
-                                className={classes.field}
-                                multiline
-                                rows={3}
-                                fullWidth
-                                error={sequenceError}
-                            />
-                            </Grid>
-                            <Typography><p></p></Typography>
-
+                        
                             <Grid xs={12}>
                             <TextField 
                                 value={Detail}
-                                onChange={(e) => setDetail(e.target.value)}
-                                label="Enter lion DNA sequence 2"
+                                onChange={(e) => {setDetail(e.target.value);
+                                setErrorWarning(false)}}
+                                label="Enter lion short DNA sequence"
                                 variant="outlined"
                                 color="secondary"
                                 className={classes.field}
@@ -325,21 +342,7 @@ const Content = () => {
                                 error={sequenceError}
                             />
                             </Grid>
-                            <Typography><p></p></Typography>
-                            <Grid xs={12}>
-                            <TextField 
-                                value={Detail}
-                                onChange={(e) => setDetail(e.target.value)}
-                                label="Enter lion DNA sequence 3"
-                                variant="outlined"
-                                color="secondary"
-                                className={classes.field}
-                                multiline
-                                rows={3}
-                                fullWidth
-                                error={sequenceError}
-                            />
-                            </Grid>
+                            
                         </Grid>
                         )}
                         {select == 2 && (
@@ -360,12 +363,13 @@ const Content = () => {
                         }
                         {select == 3 && (
                         <Grid container item justifyContent="center" alignItems="center" >
+                            
                             <Grid xs={12}>
                             <TextField 
                                 disabled
-                                value={seqPlacerID.cytB}
-                                onChange={(e) => setDetail(e.target.value)}
-                                placeholder={seqPlacerID.cytB}
+                                value={shortSeq2}
+                                onChange={(e) => setDetail(shortSeq2)}
+                                placeholder={shortSeq2}
                                 variant="outlined"
                                 color="secondary"
                                 className={classes.field}
@@ -374,54 +378,78 @@ const Content = () => {
                                 fullWidth
                                 error={sequenceError}
                             />
-                            </Grid>
-                            <Typography><p></p></Typography>
-
-                            <Grid xs={12}>
-                            <TextField 
-                                disabled
-                                value={seqPlacerID.cytB}
-                                onChange={(e) => setDetail(e.target.value)}
-                                placeholder={seqPlacerID.cytB}
-                                variant="outlined"
-                                color="secondary"
-                                className={classes.field}
-                                multiline
-                                rows={3}
-                                fullWidth
-                                error={sequenceError}
-                            />
-                            </Grid>
-                            <Typography><p></p></Typography>
-                            <Grid xs={12}>
-                            <TextField 
-                                disabled
-                                value={seqPlacerID.cytB}
-                                onChange={(e) => setDetail(e.target.value)}
-                                placeholder={seqPlacerID.cytB}
-                                variant="outlined"
-                                color="secondary"
-                                className={classes.field}
-                                multiline
-                                rows={3}
-                                fullWidth
-                                error={sequenceError}
-                            />
+                            
                             </Grid>
                         </Grid>
                         )}
-
-                        <Button
+                        
+                        {(errorWarning == true) && (
+                        <Grid item xs={12}>
+                            <Typography className={classes.textError}>
+                                Error: please check for the following errors in your query sequence<br></br>
+                                1. sequence can only contain these characters: AGCT <br></br>
+                                2. Long sequence must be 1140bps<br></br>
+                                3. Short sequence must be 350bps
+                            </Typography>
+                        </Grid>   
+                        )}
+                        
+                        {(select == 0 || select == 2) && (Detail.length != 1140 || /^[AGCT]+$/.test(Detail)==false) && (
+                            <Button
                             onClick={() => {
-                                dispatch(addSequence({ ID, Detail }));
+                                setErrorWarning(true)
                               }}
                             Type="Submit Query"
-                            color="primary"
+                            color="red"
                             variant="contained"
-                            to="/output" component={Link}
                             >
                             Submit Query
-                        </Button>
+                            </Button>            
+                        )}
+
+                        {(select == 1 || select == 3) && (Detail.length != 350 || /^[AGCT]+$/.test(Detail)==false) && (
+                            <Button
+                            onClick={() => {
+                                setErrorWarning(true)
+                              }}
+                            Type="Submit Query"
+                            color="red"
+                            variant="contained"
+                            >
+                            Submit Query
+                            </Button> 
+                        )}
+                        
+                        {(select == 0 || select == 2) && (Detail.length == 1140) && (/^[AGCT]+$/.test(Detail)==true) && (
+                           <Button
+                           onClick={() => {
+                               dispatch(addSequence({ ID, Detail }));
+                             }}
+                           Type="Submit Query"
+                           color="primary"
+                           variant="contained"
+                           to="/output" component={Link}
+                           >
+                           Submit Query
+                            </Button>
+                        )}
+
+                        {(select == 1 || select == 3) &&  (Detail.length == 350) && (/^[AGCT]+$/.test(Detail)==true) && (
+                           <Button
+                           onClick={() => {
+                               dispatch(addSequence({ ID, Detail }));
+                             }}
+                           Type="Submit Query"
+                           color="primary"
+                           variant="contained"
+                           to="/output" component={Link}
+                           >
+                           Submit Query
+                            </Button>
+                        )}
+
+                        
+
                     </form>
                 <Grid item xs={12} direction="row">
                     <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers are recommended, the printout may not be formatted as well by Firefox </Typography>
