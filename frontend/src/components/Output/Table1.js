@@ -55,8 +55,8 @@ const Table = ({setChecked}) => {
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 135 },
     { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 135},
-    { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, },
     { field: 'Country', headerName: 'Country', sortable: false, width: 200, },
+    { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, },
     { field: 'Publications', headerName: <a href='http://lionlocalizer.org/references' target="_blank"> Publications </a>, sortable: false, minWidth: 200 },
     { field: 'Genbank', headerName: <a href='https://www.ncbi.nlm.nih.gov/genbank/' target="_blank"> GenBank </a>, sortable: false, minWidth: 225 },
   ];
@@ -67,8 +67,8 @@ const Table = ({setChecked}) => {
     Haplotype: row.haplotypeId,
     Mismatches: row.mismatch,
     Matches: row.match,
-    Locality: row.locationName,
     Country: row.locality,
+    Locality: row.locationName,
     Publications: row.author,
     Genbank: row.genBankAccession
   }));
