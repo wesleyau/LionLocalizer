@@ -9,6 +9,10 @@ const useStyles = makeStyles({
     typography: {
         marginLeft: 10,
     },
+    typographyBold: {
+        marginLeft: 10,
+        fontWeight: "bold"
+    },
     linedUp: {
         marginLeft: 10,
         fontFamily: 'courier',
@@ -62,11 +66,16 @@ const Input = () => {
             
             <Grid item xs={12}>
                 <div className={classes.typographyMargin}> 
-                    Locations may be shown or removed as pins on the map by clicking on the box next to each location name. However,<br/>
-                    this is enabled only for the closest-matching haplotype at each geographic location. Location and closest haplotype <br/>
-                    information may also be shown by clicking on an icon or pin on the map itself.
+                    Locations may be shown or removed as pins on the map by clicking on the box next to each location name. However, this is enabled only for the closest <br/>
+                    matching haplotype at each geographic location. Location and closest haplotype information may also be shown by clicking on an icon or pin on the map itself.
                     </div>
             </Grid> 
+            {Detail.length == 350 && (
+                <Grid item xs={12}>
+                    <div className={classes.typographyBold}> Using the short cytB sequence may result in multiple haplotypes having 0 mismatches, please check the table results.</div>
+                </Grid>   
+            )}
+            
         </Grid>
     );
 };

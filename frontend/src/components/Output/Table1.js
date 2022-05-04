@@ -53,8 +53,8 @@ const Table = ({setChecked}) => {
 
   const columns = [
     { field: 'Haplotype', headerName: 'Haplotype', sortable: false, width: 135 },
-    { field: 'Mismatches', headerName: 'Mismatches', sortable: false, minWidth: 135 },
-    { field: 'Matches', headerName: 'Matches', sortable: false, minWidth: 135},
+    { field: 'Mismatches', headerName: 'Mismatches', headerAlign: "center", align: "center", sortable: false, minWidth: 135 },
+    { field: 'Matches', headerName: 'Matches', headerAlign: "center", align: "center", sortable: false, minWidth: 135},
     { field: 'Country', headerName: 'Country', sortable: false, width: 200, },
     { field: 'Locality', headerName: 'Locality', sortable: false, width: 250, },
     { field: 'Publications', headerName: <a href='http://lionlocalizer.org/references' target="_blank"> Publications </a>, sortable: false, minWidth: 200 },
@@ -97,7 +97,7 @@ const Table = ({setChecked}) => {
         }}
         selectionModel={selectionModel}
       />
-                    )}
+      )}
       
       
     </div>
