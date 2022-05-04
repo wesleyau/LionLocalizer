@@ -99,6 +99,7 @@ const Content = () => {
     const [shortSeq1, setShortSeq1] = useState('');
     const [shortSeq2, setShortSeq2] = useState('');
     const [shortSeq3, setShortSeq3] = useState('');
+
     const [error, setError] = useState(false);
     const [errorWarning, setErrorWarning] = useState(false);
 
@@ -117,6 +118,7 @@ const Content = () => {
 
     //For the dropdown selects
     const [select, setSelect] = useState('0')
+
     const [existing, setExisting] = useState('')
     const [explore, setExplore] = useState('')
     const [selectError, setSelectError] = useState(false)
@@ -179,8 +181,7 @@ const Content = () => {
                         {select == 2 && (
                             <FormControl className={classes.formControl1}>
                             <Typography className={classes.typography}>Select an existing sequence in the Lion Localizer (LL) database: </Typography> 
-                                <Select 
-                                onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
+                                <Select onChange={(e) => {setSeqPlacerID(seqList[e.target.value]);
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB)}} >
                                     <MenuItem value='0'>LEO0001</MenuItem>
@@ -211,11 +212,10 @@ const Content = () => {
                             <Typography className={classes.typography}>Choose an existing sequence in the Lion Localizer (LL) database: </Typography> 
                                 <Select 
                                 label="Sequence ID"
-                                onClick={(e) => {setSeqPlacerID(seqList[e.target.value]);
+                                onChange={(e) => {setSeqPlacerID(seqList[e.target.value]);
                                 setShortSeq1(seqList[e.target.value].cytB.substring(0,429));
                                 setShortSeq2(seqList[e.target.value].cytB.substring(430,780));
                                 setShortSeq3(seqList[e.target.value].cytB.substring(780,1140));
-                                console.log(shortSeq1)
                                 setID(seqList[e.target.value].id);
                                 setDetail(seqList[e.target.value].cytB.substring(430,780))}} >
                                     <MenuItem value='0'>LEO0001</MenuItem>
