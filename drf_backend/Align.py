@@ -50,20 +50,8 @@ def Align(request):
         seq = inputSeq  # setting seq to the sequence
     # check for characters
     # check for length
-    errors = []
-    legitChars = "ATCG"
-    for i in seq:
-        if i not in legitChars:
-            errors.append(
-                "Your FASTA sequence has characters other than ACGT, ambiguous bases are not supported."
-            )
-            break
 
-    # if len(seq) != 756:
-    #    errors.append('Your sequence does not contain the correct number of base pairs, the cytB region input should contain 756 bp.')
-    if len(errors) > 0:
-        errors.append(seq)
-        return errors
+    legitChars = "ATCG"
 
     # implied else
     sequenceList = []
@@ -74,9 +62,9 @@ def Align(request):
     subjects = Sequences.objects.all()
     lionAlignment = []
     # an array that tell us whether the haplotype ID already was entered into lionAlignment
-
     for i in range(len(subjects)):  # len of subjects is 22
         alreadyInt = 0
+        shortIndex = 0
         haplotypeID = subjects[i].id  # grabbing id of subject
         databaseSeq = subjects[i].cytB  # grabbing sequence of subject
         lions = LocHapPub.objects.filter(
@@ -98,47 +86,91 @@ def Align(request):
         matchCount = 0
         tempSeqDict = {}
 
-        # comparison for loop
-        for pos in range(0, len(databaseSeq)):
-            # matches have . mismatches have the querySeq character
-            if querySeq[pos] != databaseSeq[pos]:
-                mismatches.append(databaseSeq[pos])
-                mismatchCount += 1
-            else:
-                mismatches.append(".")
-                matchCount += 1
-        query = "Query:   " + querySeq  # adding query string for formatted output
-        # output is every 80 characters, you can change in def formattedOutput
+        if len(querySeq) == 1140:
+            # comparison for loop for 1140 bp
+            for pos in range(0, len(databaseSeq)):
+                # matches have . mismatches have the querySeq character
+                if querySeq[pos] != databaseSeq[pos]:
+                    mismatches.append(databaseSeq[pos])
+                    mismatchCount += 1
+                else:
+                    mismatches.append(".")
+                    matchCount += 1
+            query = "Query:   " + querySeq  # adding query string for formatted output
+            # output is every 80 characters, you can change in def formattedOutput
 
-        formattedSeq = formattedOutput(query, mismatches)
+            formattedSeq = formattedOutput(query, mismatches)
 
-        # if len(lions) == 0:
-        #   continue # TODO: Handle the situation when a haplotype has no elephants
-        locationarray = []
-        lhp = []
-        for l in lions:
-            for indiv in LHPIndividual.objects.filter(LHP=l.location.pk):
+            # if len(lions) == 0:
+            #   continue # TODO: Handle the situation when a haplotype has no elephants
+            locationarray = []
+            lhp = []
+            for l in lions:
+                for indiv in LHPIndividual.objects.filter(LHP=l.location.pk):
 
-                lionAlignment.append(
-                    {
-                        "id": l.pk,
-                        "haplotypeId": haplotypeID,
-                        "locationID": l.location.pk,
-                        "locationName": l.location.locationName,
-                        "lon": l.location.lon,
-                        "lat": l.location.lat,
-                        "locationType": l.location.locationType,
-                        "locality": l.location.locality,
-                        "accuracy": l.location.accuracy,
-                        "lengthOfThisArray": len(lions),
-                        "mismatch": mismatchCount,
-                        "match": matchCount,
-                        "paperurl": l.author.paperurl,
-                        "author": l.author.author,
-                        "genBankAccession": indiv.genBankAccession,
-                        "numLions": indiv.numLions,
-                    }
-                )
+                    lionAlignment.append(
+                        {
+                            "id": l.pk,
+                            "haplotypeId": haplotypeID,
+                            "locationID": l.location.pk,
+                            "locationName": l.location.locationName,
+                            "lon": l.location.lon,
+                            "lat": l.location.lat,
+                            "locationType": l.location.locationType,
+                            "locality": l.location.locality,
+                            "accuracy": l.location.accuracy,
+                            "lengthOfThisArray": len(lions),
+                            "mismatch": mismatchCount,
+                            "match": matchCount,
+                            "paperurl": l.author.paperurl,
+                            "author": l.author.author,
+                            "genBankAccession": indiv.genBankAccession,
+                            "numLions": indiv.numLions,
+                        }
+                    )
+        if len(querySeq) == 350:
+            # comparison for loop for 350 bp
+            for pos in range(430, 780):
+                # matches have . mismatches have the querySeq character
+                if querySeq[shortIndex] != databaseSeq[pos]:
+                    mismatches.append(databaseSeq[shortIndex])
+                    mismatchCount += 1
+                else:
+                    mismatches.append(".")
+                    matchCount += 1
+                shortIndex += 1
+            query = "Query:   " + querySeq  # adding query string for formatted output
+            # output is every 80 characters, you can change in def formattedOutput
+
+            formattedSeq = formattedOutput(query, mismatches)
+
+            # if len(lions) == 0:
+            #   continue # TODO: Handle the situation when a haplotype has no elephants
+            locationarray = []
+            lhp = []
+            for l in lions:
+                for indiv in LHPIndividual.objects.filter(LHP=l.location.pk):
+
+                    lionAlignment.append(
+                        {
+                            "id": l.pk,
+                            "haplotypeId": haplotypeID,
+                            "locationID": l.location.pk,
+                            "locationName": l.location.locationName,
+                            "lon": l.location.lon,
+                            "lat": l.location.lat,
+                            "locationType": l.location.locationType,
+                            "locality": l.location.locality,
+                            "accuracy": l.location.accuracy,
+                            "lengthOfThisArray": len(lions),
+                            "mismatch": mismatchCount,
+                            "match": matchCount,
+                            "paperurl": l.author.paperurl,
+                            "author": l.author.author,
+                            "genBankAccession": indiv.genBankAccession,
+                            "numLions": indiv.numLions,
+                        }
+                    )
 
     res = sorted(lionAlignment, key=lambda x: x["mismatch"])
 
