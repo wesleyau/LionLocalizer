@@ -75,9 +75,9 @@ const Output = () => {
         
         <Grid container>
            
-            <Grid  item container >
+            <Grid item container >
                 
-                <Grid className={printClasses.mapContain} xs = {12} md = {5} >
+                <Grid className={printClasses.mapContain} xs = {12} md = {5}>
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
                     )} 

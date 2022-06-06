@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import {
   GoogleMap,
   useLoadScript,
@@ -26,12 +28,20 @@ const styles = makeStyles((theme) => ({
       width: "41.5vw",
       [theme.breakpoints.down('md')]: {
           height: "775px",
-          width: "100vw",
+          width: "798px",
         },
   },
 }))
 
+const normalStyle = {
+  height: "775px",
+  width: "41.5vw",
+};
 
+const printStyle = {
+  height: "775px",
+  width: "100vw",
+};
 
 const center = {
     lat: 1,
@@ -40,6 +50,9 @@ const center = {
 
 const Map = ({checked}) => {
   const printClasses = styles()
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+
   const alignList = useSelector(state => state.align.align.array)
   const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
   //console.log(checked)
@@ -73,7 +86,7 @@ const Map = ({checked}) => {
     <div>
       <GoogleMap
         id="map"
-        mapContainerStyle={mapContainerStyle}
+        mapContainerStyle={matches ? normalStyle : printStyle}
         zoom={3.75}
         center={center}
         
