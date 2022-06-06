@@ -15,7 +15,11 @@ module.exports = {
       {
         test: /\.node$/,
         use: ["node-loader"],
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 

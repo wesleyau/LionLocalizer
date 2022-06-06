@@ -1,4 +1,5 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
+import { useReactToPrint } from 'react-to-print';
 import { Route, Redirect } from 'react-router'
 import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
 import { makeStyles } from '@material-ui/styles';
@@ -7,15 +8,10 @@ import Table from './Table1';
 import Input from './Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
-
+import '../../../static/CSS/style.css'
 
 
 const useStyles = makeStyles({ 
-    print: {
-        display: 'inline',
-        overflowY: 'scroll',
-        
-    },
     disclaimer: {
         marginTop: 5, 
         marginLeft: 5,   
@@ -28,13 +24,31 @@ const useStyles = makeStyles({
     contain: {
         height: '775px',
         overflowY: 'scroll',
+        
     },
     
 })
 
+const styles = makeStyles((theme) => ({ 
+    print: {
+        height: '775px',
+        overflowY: 'scroll',
+        [theme.breakpoints.down('md')]: {
+            height: "1500px"
+          },
+    },
+    mapContain: {
+        width: "100vw",
+      [theme.breakpoints.down('md')]: {
+          width: "100vw",
+        },
+    },
+    
+}))
 
 const Output = () => {
     const classes = useStyles()
+    const printClasses = styles()
     const dispatch = useDispatch();
 
     const test = useSelector(state => state)
@@ -58,9 +72,12 @@ const Output = () => {
         }
 
     return (
+        
         <Grid container>
-            <Grid item container >
-                <Grid xs = {5}>
+           
+            <Grid  item container >
+                
+                <Grid className={printClasses.mapContain} xs = {12} md = {5} >
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
                     )} 
@@ -69,12 +86,14 @@ const Output = () => {
                     )}
                     
                 </Grid>
-
-                <Grid item container className={classes.contain} xs={7}>
+                
+                
+                
+                <Grid item container className={printClasses.print} xs={12} md = {7}>
                     
                     <Grid item container xs={12}>
                         
-                        <Grid  xs = {12}>
+                        <Grid xs = {12}>
                             {queryInfo.isLoading == true && (
 
                                 <div>Loading...</div>
@@ -83,8 +102,9 @@ const Output = () => {
 
                                 <Input />
                             )}
-                            
                          </Grid>
+
+                        
 
                         <Grid xs = {12}>
                             {queryInfo.isLoading == true && (
@@ -100,6 +120,7 @@ const Output = () => {
                     </Grid>
                 </Grid>
             </Grid> 
+            
             <Grid item xs={12}>
                 <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary, CAR: Central African Republic, DRC: Democratic Republic of the Congo, RSA: Republic of South Africa, SA: South </Typography>
             </Grid>  

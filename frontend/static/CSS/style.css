@@ -1,0 +1,8 @@
+@media print {
+    @page {
+        size: A3;
+    }
+    .container {
+        width: 1170px;
+      }
+}

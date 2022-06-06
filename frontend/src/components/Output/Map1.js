@@ -17,23 +17,29 @@ import filledPin from '../../../static/images/blackpin.png';
 const libraries = ["places"];
 const mapContainerStyle = {
   height: "775px",
-  width: "41.5vw",
+  width: "798px",
 };
+
+const styles = makeStyles((theme) => ({ 
+  print: {
+      height: "775px",
+      width: "41.5vw",
+      [theme.breakpoints.down('md')]: {
+          height: "775px",
+          width: "100vw",
+        },
+  },
+}))
+
+
+
 const center = {
     lat: 1,
     lng: 17
 };
 
-const useStyles = makeStyles({ 
-  windowFont: {
-     fontSize: 10,
-  },
-
-})
-
-
-
 const Map = ({checked}) => {
+  const printClasses = styles()
   const alignList = useSelector(state => state.align.align.array)
   const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
   //console.log(checked)
