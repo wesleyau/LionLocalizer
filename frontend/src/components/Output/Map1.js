@@ -38,6 +38,7 @@ const normalStyle = {
   width: "41.5vw",
 };
 
+//reduce the width to make the print width of the map less, if complaint, would suggest 90vw
 const printStyle = {
   height: "775px",
   width: "100vw",
@@ -45,7 +46,7 @@ const printStyle = {
 
 const center = {
     lat: 1,
-    lng: 17
+    lng: 27.5,
 };
 
 const Map = ({checked}) => {
@@ -87,7 +88,7 @@ const Map = ({checked}) => {
       <GoogleMap
         id="map"
         mapContainerStyle={matches ? normalStyle : printStyle}
-        zoom={3.75}
+        zoom={3.66}
         center={center}
         
         
