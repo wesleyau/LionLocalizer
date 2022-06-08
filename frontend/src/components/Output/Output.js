@@ -66,6 +66,7 @@ const Output = () => {
     
    const [checked, setChecked] = useState([])
     //console.log(checked)
+        //not used here
         if(queryInfo.isLoading == false){
         var zeroMis = alignList.filter(row => row.mismatch==0);
         var zeroArr = zeroMis.map(row => row.id)

@@ -137,7 +137,7 @@ const Content = () => {
             setSequenceError(true)
         }
         if (id && sequence) {
-            console.log(id, sequence)
+            //console.log(id, sequence)
         }
         if (select == '') {
             setSelectError(true)

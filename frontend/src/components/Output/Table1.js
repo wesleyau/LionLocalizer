@@ -40,12 +40,14 @@ const Table = ({setChecked}) => {
   for (let i = 0; i < zeroArray.length; i++) {
     zList[i] = zeroArray[i]
   }
+  //list of all the 0 mismatches
   //console.log(zList)
 
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
-  const [selectionModel, setSelectionModel] = React.useState([zList])
+  const [selectionModel, setSelectionModel] = React.useState(zList)
   
-  //console.log(selectionModel)
+ console.log(selectionModel)
+ 
   
    
 
@@ -90,12 +92,13 @@ const Table = ({setChecked}) => {
         rowHeight={50}
         disableColumnFilter={true}
         hideFooterPagination={true}
-        
+
+        selectionModel={selectionModel}
         onSelectionModelChange={newSelectionModel => {
           setSelectionModel(newSelectionModel);
           setChecked(alignList.filter(item => newSelectionModel.includes(item.id)))
         }}
-        selectionModel={selectionModel}
+        
       />
       )}
       
