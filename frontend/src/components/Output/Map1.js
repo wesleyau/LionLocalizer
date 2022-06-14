@@ -35,7 +35,7 @@ const styles = makeStyles((theme) => ({
 
 const normalStyle = {
   height: "775px",
-  width: "41.5vw",
+  width: "41.25vw",
 };
 
 //reduce the width to make the print width of the map less, if complaint, would suggest 90vw
