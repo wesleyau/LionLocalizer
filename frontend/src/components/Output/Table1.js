@@ -31,24 +31,15 @@ const Table = ({setChecked}) => {
   //let zeroMismatch = alignList.map(row => row.mismatch==0);
   
   //filters based on mismatch == 0 in alignList
-  var zeroMismatch = alignList.filter(row => row.mismatch==0);
-  var zeroArray = zeroMismatch.map(row => row.id)
-  var zList = []
-  //console.log(zeroMismatch.map(row => row.id))
-  //console.log(zeroArray)
+  const zeroMismatch = alignList.filter(row => row.mismatch==0);
+  const zeroArray = zeroMismatch.map(row => row.id)
 
-  for (let i = 0; i < zeroArray.length; i++) {
-    zList[i] = zeroArray[i]
-  }
-  //list of all the 0 mismatches
-  //console.log(zList)
 
   //got to find the ids of the mismatches that are 0 automatically and pre put them in selectionModel - maybe with a map function
-  const [selectionModel, setSelectionModel] = React.useState(zList)
+  const [selectionModel, setSelectionModel] = React.useState(zeroArray)
   
- console.log(selectionModel)
  
-  
+
    
 
 
@@ -79,7 +70,7 @@ const Table = ({setChecked}) => {
   
   return (
     <div style={{ height: 520, width: '100%',}}>
-
+      
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 
         sx={{ 
@@ -92,7 +83,7 @@ const Table = ({setChecked}) => {
         rowHeight={50}
         disableColumnFilter={true}
         hideFooterPagination={true}
-
+        
         selectionModel={selectionModel}
         onSelectionModelChange={newSelectionModel => {
           setSelectionModel(newSelectionModel);

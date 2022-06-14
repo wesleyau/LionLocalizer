@@ -51,26 +51,23 @@ const Output = () => {
     const printClasses = styles()
     const dispatch = useDispatch();
 
-    const test = useSelector(state => state)
-    const seqList = useSelector(state => state.sequences.sequences)
     const alignList = useSelector(state => state.align.align.array)
     const queryInfo = useSelector(state => state.align)
-    
-
-    
-
-    //state for the checkmarks to what is displayed on the map
-    
     const [loading, setLoading] = useState(false)
-
     
-   const [checked, setChecked] = useState([])
-    //console.log(checked)
-        //not used here
-        if(queryInfo.isLoading == false){
-        var zeroMis = alignList.filter(row => row.mismatch==0);
-        var zeroArr = zeroMis.map(row => row.id)
+    var zero = []
+    const [checked, setChecked] = useState([])
+
+        //useEffect is used when you need to run something based on a change of a variable, in this case it's queryInfo.isLoading
+        useEffect(() => {
+            if(queryInfo.isLoading == false){
+            var mismatch = alignList.filter(row => row.mismatch==0);
+            var zeroList = mismatch.map(row => row.id);
+            zero = alignList.filter(item => zeroList.includes(item.id))
+            setChecked(zero)
         }
+        }, [queryInfo.isLoading])
+        //console.log(checked, zero)
 
     return (
         
