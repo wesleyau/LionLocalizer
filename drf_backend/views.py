@@ -5,7 +5,7 @@ from django.contrib import messages
 
 import json, time, datetime, csv, numbers, io
 from .Align import Align
-from rest_framework import status
+from rest_framework import status, permissions
 from rest_framework.decorators import api_view, parser_classes
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
@@ -44,8 +44,6 @@ def sequencesView(request):
 
     return Response(sequences_urls)
 
-
-@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def sequencesList(request):
     sequences = Sequences.objects.all()
@@ -395,7 +393,6 @@ def test(request):
 
 
 # alignment
-@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 @parser_classes([JSONParser])
 def alignment(request, format=None):
