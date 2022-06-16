@@ -15,6 +15,7 @@ import { createGenerateClassName, makeStyles, Classes } from '@material-ui/style
 
 import unfilledPin from '../../../static/images/redpin.png';
 import filledPin from '../../../static/images/blackpin.png';
+import lionPin from '../../../static/images/lion5.png';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -49,15 +50,53 @@ const center = {
     lng: 27.5,
 };
 
+var zero = []
+var nonZero = []
+var zeroResult = []
+var nonZeroResult = []
+
 const Map = ({checked}) => {
   const printClasses = styles()
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
 
   const alignList = useSelector(state => state.align.align.array)
+  const queryInfo = useSelector(state => state.align)
   const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
   //console.log(checked)
   
+  // this is to get an array of both the 0 matches and more than 0 mismatches in order to build a comparison array later
+  //useEffect is used when you need to run something based on a change of a variable, in this case it's queryInfo.isLoading
+  useEffect(() => {
+    if(queryInfo.isLoading == false){
+      var mismatch = alignList.filter(row => row.mismatch==0);
+      var zeroList = mismatch.map(row => row.id);
+      //array of 0 mismatches
+      zero = alignList.filter(item => zeroList.includes(item.id))
+        
+      var nonMismatch = alignList.filter(row => row.mismatch!=0);
+      var nonZeroList = nonMismatch.map(row => row.id);
+      //array of more than 0 mismatches
+      nonZero = alignList.filter(item => nonZeroList.includes(item.id))
+  }
+  }, [queryInfo.isLoading])
+
+  //comparison arrays for 0 mismatches every time checked state changes
+  var zeroResult = zero.filter(function(o1){
+    // filter out (!) items in result2
+    return checked.some(function(o2){
+        return o1.id === o2.id;          // assumes unique id
+    });
+  })
+  
+  //comparison array for more than 0 mismatches that changes every time checked state changes
+  var nonZeroResult = nonZero.filter(function(o1){
+    // filter out (!) items in result2
+    return checked.some(function(o2){
+        return o1.id === o2.id;          // assumes unique id
+    });
+  })
+  //console.log("Align results", zeroResult, nonZeroResult)
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -69,7 +108,7 @@ const Map = ({checked}) => {
 
   //comparing which points are not checked so that the placer marker appears
   let result = alignList.filter(item => checked.indexOf(item) == -1);
-  //console.log(result)
+  //console.log("result", result)
 
   //array for no country info
   let countryResult = result.filter(item => countryList.includes(item.locationID));
@@ -90,7 +129,6 @@ const Map = ({checked}) => {
         mapContainerStyle={matches ? normalStyle : printStyle}
         zoom={3.66}
         center={center}
-        
         
       >
         //filledpins for both country and locality info
@@ -121,12 +159,25 @@ const Map = ({checked}) => {
           />
           )}
 
-        {checked.map(row => 
+        {zeroResult.map(row => 
+          <Marker
+          key={row.locationID}
+          position={{lat: row.lat, lng: row.lon}}
+          icon={{
+            url: lionPin,
+            scaledSize: new window.google.maps.Size(32,44),}}
+          onClick={() => {
+            setSelected(row);
+          }}
+          />
+          )}
+
+        {nonZeroResult.map(row => 
           <Marker
           key={row.locationID}
           position={{lat: row.lat, lng: row.lon}}
           onClick={() => {
-            setSelected(row)
+            setSelected(row);
           }}
           />
           )}
