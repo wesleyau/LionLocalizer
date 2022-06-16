@@ -30,6 +30,7 @@ from .serializers import (
 # Create your views here.
 
 # Sequences
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def sequencesView(request):
     sequences_urls = {
@@ -44,20 +45,21 @@ def sequencesView(request):
     return Response(sequences_urls)
 
 
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def sequencesList(request):
     sequences = Sequences.objects.all()
     serializer = SequencesSerializer(sequences, many=True)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def sequencesDetail(request, pk):
     sequences = Sequences.objects.get(id=pk)
     serializer = SequencesSerializer(sequences, many=False)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def sequencesCreate(request):
     serializer = SequencesSerializer(data=request.data)
@@ -69,7 +71,7 @@ def sequencesCreate(request):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def sequencesUpdate(request, pk):
     sequences = Sequences.objects.get(id=pk)
@@ -82,7 +84,7 @@ def sequencesUpdate(request, pk):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def sequencesDelete(request, pk):
     sequences = Sequences.objects.get(id=pk)
@@ -90,7 +92,7 @@ def sequencesDelete(request, pk):
 
     return Response("Sequence successfully deleted")
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def sequencesDeleteAll(request):
     sequences = Sequences.objects.all()
@@ -100,6 +102,7 @@ def sequencesDeleteAll(request):
 
 
 # Locations
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def locationsView(request):
     locations_urls = {
@@ -113,21 +116,21 @@ def locationsView(request):
 
     return Response(locations_urls)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def locationsList(request):
     locations = Locations.objects.all()
     serializer = LocationsSerializer(locations, many=True)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def locationsDetail(request, pk):
     locations = Locations.objects.get(id=pk)
     serializer = LocationsSerializer(locations, many=False)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def locationsCreate(request):
     serializer = LocationsSerializer(data=request.data)
@@ -139,7 +142,7 @@ def locationsCreate(request):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def locationsUpdate(request, pk):
     locations = Locations.objects.get(id=pk)
@@ -152,7 +155,7 @@ def locationsUpdate(request, pk):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def locationsDelete(request, pk):
     locations = Locations.objects.get(id=pk)
@@ -160,7 +163,7 @@ def locationsDelete(request, pk):
 
     return Response("Location successfully deleted")
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def locationsDeleteAll(request):
     locations = Locations.objects.all()
@@ -170,6 +173,7 @@ def locationsDeleteAll(request):
 
 
 # Publications
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def publicationsView(request):
     publications_urls = {
@@ -183,21 +187,21 @@ def publicationsView(request):
 
     return Response(publications_urls)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def publicationsList(request):
     publications = Publications.objects.all()
     serializer = PublicationsSerializer(publications, many=True)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def publicationsDetail(request, pk):
     publications = Publications.objects.get(id=pk)
     serializer = PublicationsSerializer(publications, many=False)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def publicationsCreate(request):
     serializer = PublicationsSerializer(data=request.data)
@@ -209,7 +213,7 @@ def publicationsCreate(request):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def publicationsUpdate(request, pk):
     publications = Publications.objects.get(id=pk)
@@ -222,7 +226,7 @@ def publicationsUpdate(request, pk):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def publicationsDelete(request, pk):
     publications = Publications.objects.get(id=pk)
@@ -230,7 +234,7 @@ def publicationsDelete(request, pk):
 
     return Response("Publication successfully deleted")
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def publicationsDeleteAll(request):
     publications = Publications.objects.all()
@@ -240,6 +244,7 @@ def publicationsDeleteAll(request):
 
 
 # LocHapPub
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lochappubView(request):
     lochappub_urls = {
@@ -253,21 +258,21 @@ def lochappubView(request):
 
     return Response(lochappub_urls)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lochappubList(request):
     lochappub = LocHapPub.objects.all()
     serializer = LocHapPubSerializer(lochappub, many=True)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lochappubDetail(request, pk):
     lochappub = LocHapPub.objects.get(id=pk)
     serializer = LocHapPubSerializer(lochappub, many=False)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def lochappubCreate(request):
     serializer = LocHapPubSerializer(data=request.data)
@@ -279,7 +284,7 @@ def lochappubCreate(request):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def lochappubUpdate(request, pk):
     lochappub = LocHapPub.objects.get(id=pk)
@@ -292,7 +297,7 @@ def lochappubUpdate(request, pk):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def lochappubDelete(request, pk):
     lochappub = LocHapPub.objects.get(id=pk)
@@ -300,7 +305,7 @@ def lochappubDelete(request, pk):
 
     return Response("LopHapPub successfully deleted")
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def lochappubDeleteAll(request):
     lochappub = LocHapPub.objects.all()
@@ -310,6 +315,7 @@ def lochappubDeleteAll(request):
 
 
 # LHPIndividual
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lhpindividualView(request):
     lhpindividual_urls = {
@@ -323,21 +329,21 @@ def lhpindividualView(request):
 
     return Response(lhpindividual_urls)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lhpindividualList(request):
     lhpindividual = LHPIndividual.objects.all()
     serializer = LHPIndividualSerializer(lhpindividual, many=True)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def lhpindividualDetail(request, pk):
     lhpindividual = LHPIndividual.objects.get(id=pk)
     serializer = LHPIndividualSerializer(lhpindividual, many=False)
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def lhpindividualCreate(request):
     serializer = LHPIndividualSerializer(data=request.data)
@@ -349,7 +355,7 @@ def lhpindividualCreate(request):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 def lhpindividualUpdate(request, pk):
     lhpindividual = LHPIndividual.objects.get(id=pk)
@@ -362,7 +368,7 @@ def lhpindividualUpdate(request, pk):
 
     return Response(serializer.data)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def lhpindividualDelete(request, pk):
     lhpindividual = LHPIndividual.objects.get(id=pk)
@@ -370,7 +376,7 @@ def lhpindividualDelete(request, pk):
 
     return Response("LHPIndividual successfully deleted")
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["DELETE"])
 def lhpindividualDeleteAll(request):
     lhpindividual = LHPIndividual.objects.all()
@@ -381,6 +387,7 @@ def lhpindividualDeleteAll(request):
 
 # test - make a list of dictionary in Align.py with the output alignment in one of the values
 # along with the other values as well, then send out the whole dictionary to the alginment results page
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def test(request):
     dict = [{"id": "1", "key": "value"}, {"id": "2", "key": "value2"}]
@@ -388,6 +395,7 @@ def test(request):
 
 
 # alignment
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["POST"])
 @parser_classes([JSONParser])
 def alignment(request, format=None):
@@ -403,7 +411,7 @@ def alignment(request, format=None):
 
 
 # CSV Uploads to database - one for each model
-# @permission_required('admin.can_add_log_entry')
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET", "POST"])
 def sequenceCsv(request):
     template = "sequenceUpload.html"
@@ -434,7 +442,7 @@ def sequenceCsv(request):
     context = {}
     return render(request, template, context)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET", "POST"])
 def locationCsv(request):
     template = "locationUpload.html"
@@ -471,7 +479,7 @@ def locationCsv(request):
     context = {}
     return render(request, template, context)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET", "POST"])
 def publicationCsv(request):
     template = "publicationUpload.html"
@@ -503,7 +511,7 @@ def publicationCsv(request):
     context = {}
     return render(request, template, context)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET", "POST"])
 def lochappubCsv(request):
     template = "lochappubUpload.html"
@@ -536,7 +544,7 @@ def lochappubCsv(request):
     context = {}
     return render(request, template, context)
 
-
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET", "POST"])
 def lhpindividualCsv(request):
     template = "lhpindividualUpload.html"
@@ -571,6 +579,7 @@ def lhpindividualCsv(request):
 
 
 # NOT TESTED
+@permission_required('admin.can_add_log_entry',login_url="../../admin")
 @api_view(["GET"])
 def getCsv(request):
     response = HttpResponse(content_type="text/csv")
