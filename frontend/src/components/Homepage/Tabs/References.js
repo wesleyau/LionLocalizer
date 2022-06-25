@@ -64,7 +64,7 @@ const References = () => {
 
                 <Typography className={classes.typography}>
                 <br></br>
-                <p><b>Other Relevant References Not Used in this Application</b></p>
+                <p><b>Relevant References Not Used in this Application</b></p>
 
                 Bagatharia, S. B., M. N. Joshi, R. V. Pandya, A. S. Pandit, R. P. Patel, S. M. Desai, A. Sharma, O. Panchal, F. P. Jasmani, & A. K. Saxena, 2013 Complete mitogenome of Asiatic lion resolves phylogenetic status within <i>Panthera</i>. BMC Genomics 14:572.
 

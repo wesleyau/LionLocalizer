@@ -39,7 +39,7 @@ class LocHapPub(models.Model):
 class LHPIndividual(models.Model):
     LHP = models.ForeignKey(LocHapPub, on_delete=models.CASCADE, null=True)
     genBankAccession = models.CharField(max_length=30,null=True)
-    numLions = models.IntegerField(null=True, blank=True)
+    numLions = models.CharField(max_length=200,null=True)
     dateTimeModified = models.DateTimeField(auto_now=True)
     lastEditedBy = models.CharField(max_length=30,null=True, blank=True)
     lastEditNotes = models.TextField(null=True, blank=True)
