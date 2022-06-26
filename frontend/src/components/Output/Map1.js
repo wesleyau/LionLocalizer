@@ -202,6 +202,7 @@ const Map = ({checked}) => {
             <font size="3"><b>Matches:</b> {selected.match}</font><br></br>
             <font size="3"><b>Mismatches:</b> {selected.mismatch}</font><br></br>
             <font size="3"><b>Author:</b> {selected.author}</font>
+            <font size="3"><b>GenBank:</b> {selected.genBankAccession}</font>
             </div>
           </InfoWindow>) : null}
 

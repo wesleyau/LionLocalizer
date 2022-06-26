@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     "lionlocalizer.org",
     "127.0.0.1",
     "http://lionlocalizer.org/",
+    "https://lionlocalizer.org/",
     "http://lionlocalizer.org/mapping/sequence-list/"
     "http://lionlocalizer.org/mapping/align/",
 ]
@@ -65,7 +66,48 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.security.SecurityMiddleware",
+    "django_permissions_policy.PermissionsPolicyMiddleware",
+    #'csp.middleware.CSPMiddleware',
 ]
+
+PERMISSIONS_POLICY = {
+    "accelerometer": [],
+    "ambient-light-sensor": [],
+    "autoplay": [],
+    "camera": [],
+    "document-domain": [],
+    "encrypted-media": [],
+    "geolocation": [],
+    "gyroscope": [],
+    "interest-cohort": [],
+    "magnetometer": [],
+    "microphone": [],
+    "midi": [],
+    "payment": [],
+    "usb": [],
+}
+
+#CSP_DEFAULT_SRC = ["'none'"]
+
+#CSP_SCRIPT_SRC = [
+#    "www.lionlocalizer.org",
+#    "lionlocalizer.org",
+#    "127.0.0.1",
+#    "http://lionlocalizer.org/",
+#    "https://lionlocalizer.org/",
+#    "http://lionlocalizer.org/mapping/sequence-list/"
+#    "http://lionlocalizer.org/mapping/align/",
+#    "http://127.0.0.1:8000/static/frontend/main.js",
+#    "lionlocalizer.org/static/frontend/main.js",
+#    'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+#    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+#]
+
+#CSP_STYLE_SRC = [
+#    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+#    'http://127.0.0.1:8000/static/css/index.css',
+#]
 
 ROOT_URLCONF = "localizer_project.urls"
 
