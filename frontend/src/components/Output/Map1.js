@@ -194,14 +194,14 @@ const Map = ({checked}) => {
             <div>
             <font size="3"><b>Location ID:</b> {selected.locationID}</font><br></br>
             <font size="3"><b>Locality Type:</b> {selected.locationType}</font><br></br>
-            <font size="3"><b>Locality:</b> {selected.locationName}</font><br></br>
+            <font size="3"><b>Locality:</b> {selected.location} {selected.locationName} </font><br></br>
             <font size="3"><b>Country:</b> {selected.locality}</font>
             <br></br>
             <br></br>
             <font size="3"><b>Haplotype:</b> {selected.haplotypeId}</font><br></br>
             <font size="3"><b>Matches:</b> {selected.match}</font><br></br>
             <font size="3"><b>Mismatches:</b> {selected.mismatch}</font><br></br>
-            <font size="3"><b>Author:</b> {selected.author}</font>
+            <font size="3"><b>Author:</b> {selected.author}</font><br></br>
             <font size="3"><b>GenBank:</b> {selected.genBankAccession}</font>
             </div>
           </InfoWindow>) : null}
