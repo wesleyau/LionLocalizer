@@ -46,9 +46,10 @@ const printStyle = {
 };
 
 const center = {
-    lat: 1,
-    lng: 27.5,
+    lat: 5,
+    lng: 28.5,
 };
+
 
 var zero = []
 var nonZero = []
@@ -127,7 +128,7 @@ const Map = ({checked}) => {
       <GoogleMap
         id="map"
         mapContainerStyle={matches ? normalStyle : printStyle}
-        zoom={3.66}
+        zoom={3.3}
         center={center}
         
       >
