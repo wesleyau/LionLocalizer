@@ -68,19 +68,19 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django_permissions_policy.PermissionsPolicyMiddleware",
-    #'csp.middleware.CSPMiddleware',
+    'csp.middleware.CSPMiddleware',
+
+   
 ]
 
 PERMISSIONS_POLICY = {
     "accelerometer": [],
-    "ambient-light-sensor": [],
     "autoplay": [],
     "camera": [],
     "document-domain": [],
     "encrypted-media": [],
     "geolocation": [],
     "gyroscope": [],
-    "interest-cohort": [],
     "magnetometer": [],
     "microphone": [],
     "midi": [],
@@ -88,26 +88,69 @@ PERMISSIONS_POLICY = {
     "usb": [],
 }
 
-#CSP_DEFAULT_SRC = ["'none'"]
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
 
-#CSP_SCRIPT_SRC = [
-#    "www.lionlocalizer.org",
-#    "lionlocalizer.org",
-#    "127.0.0.1",
-#    "http://lionlocalizer.org/",
-#    "https://lionlocalizer.org/",
-#    "http://lionlocalizer.org/mapping/sequence-list/"
-#    "http://lionlocalizer.org/mapping/align/",
-#    "http://127.0.0.1:8000/static/frontend/main.js",
-#    "lionlocalizer.org/static/frontend/main.js",
-#    'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
-#    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+CSP_DEFAULT_SRC = ["'self'", 
+                    'https://maps.googleapis.com/',
+                    'http://lionlocalizer.org/mapping/sequence-list/',
+                    'https://lionlocalizer.org/mapping/sequence-list/',
+                    'http://lionlocalizer.org/mapping/align/',
+]
+
+CSP_SCRIPT_SRC = [
+    "'unsafe-eval'",
+    'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+    'https://fonts.gstatic.com',
+    'http://127.0.0.1:8000/static/frontend/main.js',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'http://lionlocalizer.org/static/frontend/main.js',
+    'https://maps.googleapis.com/',
+]
+
+CSP_STYLE_SRC = [
+    "'unsafe-inline'",
+    'https://fonts.googleapis.com',
+    'http://127.0.0.1:8000',
+    'http://lionlocalizer.org',
+    'https://lionlocalizer.org',
+    'http://127.0.0.1:8000/static/frontend/main.js',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'http://lionlocalizer.org/static/frontend/main.js',
+]
+
+#CSP_SCRIPT_SRC_ELEM = [
+    
 #]
 
-#CSP_STYLE_SRC = [
-#    'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
-#    'http://127.0.0.1:8000/static/css/index.css',
-#]
+CSP_CONNECT_SRC = [
+    'http://lionlocalizer.org/mapping/sequence-list/',
+    'http://lionlocalizer.org/mapping/align/',
+    'https://lionlocalizer.org/mapping/sequence-list/',
+    'https://lionlocalizer.org/mapping/align/',
+    'https://maps.googleapis.com'
+]
+
+CSP_FONT_SRC = [
+    'https://fonts.gstatic.com',
+]
+
+CSP_IMG_SRC = [
+    "'self'",
+    'https://fonts.googleapis.com',
+    'http://127.0.0.1:8000/',
+    'https://maps.gstatic.com/',
+    'https://maps.googleapis.com/',
+    'data: w3.org/svg/2000',
+]
+
+CSP_OBJECT_SRC = [
+
+]
+
+CSP_INCLUDE_NONCE_IN = ["script-src"]
 
 ROOT_URLCONF = "localizer_project.urls"
 
@@ -122,7 +165,9 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                'csp.context_processors.nonce',
             ],
+            
         },
     },
 ]
