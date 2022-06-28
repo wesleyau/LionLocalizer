@@ -56,6 +56,7 @@ const styles = makeStyles((theme) => ({
 
 var first
 var seqLength
+var redirect
 
 const Output = () => {
     const classes = useStyles()
@@ -73,6 +74,13 @@ const Output = () => {
     var zero = []
     const [checked, setChecked] = useState([])
 
+        useEffect(() => {
+            console.log("output1")
+            //window.location.href = "/query";
+            
+        }
+        , [redirect])
+
         //useEffect is used when you need to run something based on a change of a variable, in this case it's queryInfo.isLoading
         useEffect(() => {
             if(queryInfo.isLoading == false){
@@ -86,12 +94,7 @@ const Output = () => {
         }
         }, [queryInfo.isLoading])
 
-        useEffect(() => {
-            console.log("output1")
-            window.location.href = "/query";
-            
-        }
-        , [queryInfo.sequences])
+        
         //console.log(checked, zero)
    
        
