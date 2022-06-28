@@ -55,7 +55,7 @@ def Align(request):
 
     # implied else
     sequenceList = []
-    querySeq = seq  # alignmentQ
+    querySeq = seq.upper()  # alignmentQ
     seqkey = seqName  # alignmentQID
     mismatchCount = 0  # mismatch
     matchCount = 0  # match

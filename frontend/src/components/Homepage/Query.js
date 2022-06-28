@@ -389,14 +389,13 @@ const Content = () => {
                             <Typography className={classes.textError}>
                                 Error: please check for the following errors in your query sequence<br></br>
                                 1. Sequence can only contain these characters: AGCT <br></br>
-                                2. Sequence must be in uppercase <br></br>
-                                3. Long sequence must be 1140bps<br></br>
-                                4. Short sequence must be 350bps
+                                2. Long sequence must be 1140bps<br></br>
+                                3. Short sequence must be 350bps
                             </Typography>
                         </Grid>   
                         )}
                         
-                        {(select == 0 || select == 2) && (Detail.length != 1140 || /^[AGCT]+$/.test(Detail)==false) && (
+                        {(select == 0 || select == 2) && (Detail.length != 1140 || /^[AGCTagct]+$/.test(Detail)==false) && (
                             <Button
                             onClick={() => {
                                 setErrorWarning(true)
@@ -409,7 +408,7 @@ const Content = () => {
                             </Button>            
                         )}
 
-                        {(select == 1 || select == 3) && (Detail.length != 350 || /^[AGCT]+$/.test(Detail)==false) && (
+                        {(select == 1 || select == 3) && (Detail.length != 350 || /^[AGCTagct]+$/.test(Detail)==false) && (
                             <Button
                             onClick={() => {
                                 setErrorWarning(true)
@@ -422,7 +421,7 @@ const Content = () => {
                             </Button> 
                         )}
                         
-                        {(select == 0 || select == 2) && (Detail.length == 1140) && (/^[AGCT]+$/.test(Detail)==true) && (
+                        {(select == 0 || select == 2) && (Detail.length == 1140) && (/^[AGCTagct]+$/.test(Detail)==true) && (
                            <Button
                            onClick={() => {
                                dispatch(addSequence({ ID, Detail }));
@@ -436,7 +435,7 @@ const Content = () => {
                             </Button>
                         )}
 
-                        {(select == 1 || select == 3) &&  (Detail.length == 350) && (/^[AGCT]+$/.test(Detail)==true) && (
+                        {(select == 1 || select == 3) &&  (Detail.length == 350) && (/^[AGCTagct]+$/.test(Detail)==true) && (
                            <Button
                            onClick={() => {
                                dispatch(addSequence({ ID, Detail }));
