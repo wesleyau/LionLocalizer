@@ -26,6 +26,14 @@ const useStyles = makeStyles({
         overflowY: 'scroll',
         
     },
+    textError: {
+        marginTop: 15,
+        marginBottom: 5,
+        marginLeft: 15,
+        marginRight: 5,
+        fontWeight: 'bold',
+        color: '#E51414'
+    },
     
 })
 
@@ -46,6 +54,9 @@ const styles = makeStyles((theme) => ({
     
 }))
 
+var first
+var seqLength
+
 const Output = () => {
     const classes = useStyles()
     const printClasses = styles()
@@ -55,6 +66,10 @@ const Output = () => {
     const queryInfo = useSelector(state => state.align)
     const [loading, setLoading] = useState(false)
     
+    const count = 0;
+
+   
+
     var zero = []
     const [checked, setChecked] = useState([])
 
@@ -62,12 +77,24 @@ const Output = () => {
         useEffect(() => {
             if(queryInfo.isLoading == false){
             var mismatch = alignList.filter(row => row.mismatch==0);
+            first = $(alignList).get(0).mismatch
+            seqLength = $(queryInfo.align.query).get(0).Detail.length
             var zeroList = mismatch.map(row => row.id);
             zero = alignList.filter(item => zeroList.includes(item.id))
             setChecked(zero)
+            
         }
         }, [queryInfo.isLoading])
+
+        useEffect(() => {
+            console.log("output1")
+            window.location.href = "/query";
+            
+        }
+        , [queryInfo.sequences])
         //console.log(checked, zero)
+   
+       
 
     return (
         
@@ -79,9 +106,17 @@ const Output = () => {
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
                     )} 
-                    {queryInfo.isLoading == false &&(
+                    {queryInfo.isLoading == false && ((seqLength = 1140 && first < 10) || (seqLength = 350 && first < 15)) &&(
                         <Map checked={checked}/>
                     )}
+                    {queryInfo.isLoading == false && ((seqLength = 1140 && first > 10) || (seqLength = 350 && first > 15)) &&(
+                                <Typography className={classes.textError}>
+                                Error: The lowest mismatch comparison to your query sequence is {first} which is too many <br></br>
+                                Please check for the following errors in your query sequence<br></br>
+                                1. Make sure to enter your sequence 5'-3'<br></br>
+                                2. The sequence is not a lion sequence <br></br>
+                            </Typography>
+                            )}
                     
                 </Grid>
                 
@@ -96,10 +131,10 @@ const Output = () => {
 
                                 <div>Loading...</div>
                             )}
-                            {queryInfo.isLoading == false &&(
-
+                            {queryInfo.isLoading == false && ((seqLength = 1140 && first < 10) || (seqLength = 350 && first < 15)) &&(
                                 <Input />
                             )}
+                            
                          </Grid>
 
                         
@@ -109,7 +144,7 @@ const Output = () => {
                                 <div>Loading...</div>
                             )}
 
-                            {queryInfo.isLoading == false && queryInfo.error == null && 
+                            {queryInfo.isLoading == false && queryInfo.error == null && ((seqLength = 1140 && first < 10) || (seqLength = 350 && first < 15)) &&
                                 <Table setChecked={setChecked}/>   
                             }
 
@@ -123,8 +158,8 @@ const Output = () => {
                 <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: FR: Forest Reserve GR: Game Reserve, NP: National Park, WS: Wildlife Sanctuary, CAR: Central African Republic, DRC: Democratic Republic of the Congo, RSA: Republic of South Africa, SA: South </Typography>
             </Grid>  
             <Grid item xs={12} direction="row">
-                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome or Safari browsers are recommended, the printout may not be formatted as well by Firefox </Typography>
-            </Grid> 
+                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome browser is recommended, the printout may not be formatted as well by Safari or Firefox </Typography>
+                </Grid> 
         </Grid>
     );
 };
