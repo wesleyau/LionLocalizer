@@ -312,7 +312,7 @@ const Content = () => {
                         {select == 0 && (
                         <TextField 
                             value={Detail}
-                            onChange={(e) => {setDetail(e.target.value);
+                            onChange={(e) => {setDetail(e.target.value.toUpperCase());
                             setErrorWarning(false)}}
                             label="Enter lion long DNA sequence"
                             variant="outlined"
@@ -331,7 +331,7 @@ const Content = () => {
                             <Grid xs={12}>
                             <TextField 
                                 value={Detail}
-                                onChange={(e) => {setDetail(e.target.value);
+                                onChange={(e) => {setDetail(e.target.value.toUpperCase());
                                 setErrorWarning(false)}}
                                 label="Enter lion short DNA sequence"
                                 variant="outlined"
