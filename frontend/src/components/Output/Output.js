@@ -65,24 +65,19 @@ const Output = () => {
 
     const alignList = useSelector(state => state.align.align.array)
     const queryInfo = useSelector(state => state.align)
+    const seqList = useSelector(state => state.sequences.sequences)
     const [loading, setLoading] = useState(false)
-    
-    const count = 0;
 
-   
 
     var zero = []
     const [checked, setChecked] = useState([])
 
-        useEffect(() => {
-            console.log("output1")
-            //window.location.href = "/query";
-            
-        }
-        , [redirect])
-
         //useEffect is used when you need to run something based on a change of a variable, in this case it's queryInfo.isLoading
         useEffect(() => {
+            //redirects /output to /query if the user directly goes to /output which would originally cause an error
+            if(seqList.length==0){
+                window.location.href = "/query";
+            }
             if(queryInfo.isLoading == false){
             var mismatch = alignList.filter(row => row.mismatch==0);
             first = $(alignList).get(0).mismatch
@@ -93,10 +88,6 @@ const Output = () => {
             
         }
         }, [queryInfo.isLoading])
-
-        
-        //console.log(checked, zero)
-   
        
 
     return (
