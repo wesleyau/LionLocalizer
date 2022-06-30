@@ -68,7 +68,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django_permissions_policy.PermissionsPolicyMiddleware",
-    'csp.middleware.CSPMiddleware',
+    #'csp.middleware.CSPMiddleware',
 
    
 ]
@@ -102,12 +102,15 @@ CSP_DEFAULT_SRC = ["'self'",
 
 CSP_SCRIPT_SRC = [
     "'unsafe-eval'",
+    "'unsafe-inline'",
     'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
     'https://fonts.gstatic.com',
     'http://127.0.0.1:8000/static/frontend/main.js',
     'https://lionlocalizer.org/static/frontend/main.js',
     'http://lionlocalizer.org/static/frontend/main.js',
     'https://maps.googleapis.com/',
+    'http://127.0.0.1:8000/',
+
 ]
 
 CSP_STYLE_SRC = [
@@ -119,6 +122,7 @@ CSP_STYLE_SRC = [
     'http://127.0.0.1:8000/static/frontend/main.js',
     'https://lionlocalizer.org/static/frontend/main.js',
     'http://lionlocalizer.org/static/frontend/main.js',
+    
 ]
 
 #CSP_SCRIPT_SRC_ELEM = [
@@ -135,6 +139,10 @@ CSP_CONNECT_SRC = [
 
 CSP_FONT_SRC = [
     'https://fonts.gstatic.com',
+    'http://127.0.0.1:8000/static',
+    'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff2',
+    'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff',
+    'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.ttf',
 ]
 
 CSP_IMG_SRC = [
