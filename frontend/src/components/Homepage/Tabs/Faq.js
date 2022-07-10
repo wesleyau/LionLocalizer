@@ -44,12 +44,14 @@ const Faq = () => {
                 <Typography className={classes.typography}><p>Please send additional questions or comments to Alfred Roca: <b>roca@illinois.edu</b> using the email subject “Lion Localizer”.</p>
                 <p>Important note: Some haplotypes (sequences) show a limited geographic distribution among lions and will be informative for establishing the provenance of lions or their products.<br/> 
                 However, some haplotypes are less informative due to the widespread distribution of lions carrying them, though these would be useful for establishing or excluding the regions of origin.</p></Typography>
+                
+                <Typography className={classes.typography}>There is no storage of information that is used as input to the Lion Localizer<br/></Typography>
             </Grid>
             <Grid item xs={12}>
                 <Typography className={classes.typography}>
-                    <i>Summary of Frequently Asked Questions (FAQs)</i>
-                    <p>• There is no storage of information that is used as input to the Lion Localizer<br/>
-                    • Reasons that published sequences may not be in the Lion Localizer<br/>
+                    <p><i>Summary of Frequently Asked Questions (FAQs)</i></p>
+                    
+                    <p>• Reasons that published sequences may not be in the Lion Localizer<br/>
                     • How to print the map and output listing from the Lion Localizer<br/>
                     • List of abbreviations used in the Lion Localizer<br/>
                     • Are unprovenanced or unpublished sequences included in the Lion Localizer database?<br/>
@@ -79,7 +81,7 @@ const Faq = () => {
             <Grid item xs={12}>
                 <Typography className={classes.typography}>The results can be printed using the print command on a web browser. This will allow results to be printed or to be saved as a pdf, including any changes made to the display of the page by the user. 
                 The output map will be shown as it appears on the webpage after which will appear the timestamp (Greenwich mean time), the query sequence, and a listing of all haplotypes beginning with the one(s) that most closely match the query sequence, 
-                listing all the haplotypes by the degree to which they match the query. The use of Chrome or Safari is recommended for printing results; the printout may not be formatted as well by Firefox.</Typography>
+                listing all the haplotypes by the degree to which they match the query. The use of Chrome is recommended for printing results; the printout may not be formatted as well by Safari and Firefox.</Typography>
             </Grid> 
 
             <Grid item xs={12}>

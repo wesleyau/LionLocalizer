@@ -19,15 +19,21 @@ const useStyles = makeStyles({
         fontSize: 16,
         marginRight: 500,
     },
+    linedUpWrap: {
+        marginLeft: 10,
+        fontFamily: 'courier',
+        fontSize: 16,
+        marginRight: 40,
+        overflowWrap: 'break-word'
+    },
     contain: {
         height: '350px',
-
-        
     },
     typographyMargin: {
         marginLeft: 10,
         marginTop: 5,
         marginBottom: 10,
+        overflowWrap: 'break-word',
     },
 })
 
@@ -58,15 +64,15 @@ const Input = () => {
                 <Typography className={classes.typography}>Sequence Queried:
                  </Typography>
             </Grid> 
-            <Grid item xs={12}>
-                 <Typography className={classes.linedUp}> {detailBreakUp.map((index) => (
-                     <span>{index} {"\n"}</span>
-                 ))}</Typography>
-            </Grid>   
             
             <Grid item xs={12}>
+                 <div className={classes.linedUpWrap}> 
+                 {Detail}</div>
+            </Grid>   
+
+            <Grid item xs={12}>
                 <div className={classes.typographyMargin}> 
-                    Locations may be shown or removed as pins on the map by clicking on the box next to each location name. However, this is enabled only for the closest <br/>
+                    Locations may be shown or removed as pins on the map by clicking on the box next to each location name. However, this is enabled only for the closest
                     matching haplotype at each geographic location. Location and closest haplotype information may also be shown by clicking on an icon or pin on the map itself.
                     </div>
             </Grid> 

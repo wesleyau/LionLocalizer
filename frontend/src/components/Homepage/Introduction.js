@@ -53,10 +53,10 @@ const Introduction = () => {
                 </Grid>   
             </Grid> 
             <Grid item xs={12} direction="row">
-                <Typography className={classes.text}>• In the box(es) below you may enter one short cytB sequence, or three short cytB sequences, as described <Typography to="/instructions" component={Link}>here</Typography> </Typography> 
+                <Typography className={classes.text}>• In the box(es) below you may enter one short cytB sequence, or one short cytB sequence, as described <Typography to="/instructions" component={Link}>here</Typography> </Typography> 
             </Grid>  
             <Grid item xs={12} direction="row">
-            <Typography className={classes.text}> • The description (optional ID) and sequence of the lion sample will be populated to the output page, but <Typography to="/faq" component={Link}>neither are saved</Typography> by the lion localizer software </Typography>
+            <Typography className={classes.text}> • The description (optional) and sequence of the lion sample will be populated to the output page, but <Typography to="/faq" component={Link}>neither are saved</Typography> by the lion localizer software </Typography>
             </Grid>  
             <Grid item xs={12} style={{background: "#84aeff"}}>
                 <Typography variant="h5" className={classes.textIntro}>Input Query Sequences</Typography>

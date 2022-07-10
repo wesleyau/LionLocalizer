@@ -304,7 +304,7 @@ const Content = () => {
                         
                         <Grid item xs={12}>
                             <Typography className={classes.textTopMargin}>
-                                3. Enter your lion DNA and then click to submit query, this will show up on the output page. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/protocol" component={Link}>here</Typography>
+                                3. Enter your lion DNA and then click the submit query, this will show up on the output page. Instructions to generate these sequence(s) can be found <Typography className={classes.hyperLink} to="/protocol" component={Link}>here</Typography>
                             </Typography>
                         </Grid>   
 
@@ -390,8 +390,9 @@ const Content = () => {
                             <Typography className={classes.textError}>
                                 Error: please check for the following errors in your query sequence<br></br>
                                 1. Sequence can only contain these characters: AGCT <br></br>
-                                2. Long sequence must be 1140bps<br></br>
-                                3. Short sequence must be 350bps
+                                2. Make sure you are choosing the correct seqeunce option<br></br>
+                                3. Long sequence must be 1140 bp<br></br>
+                                4. Short sequence must be 350 bp
                             </Typography>
                         </Grid>   
                         )}
