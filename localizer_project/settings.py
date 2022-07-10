@@ -134,7 +134,8 @@ CSP_CONNECT_SRC = [
     'http://lionlocalizer.org/mapping/align/',
     'https://lionlocalizer.org/mapping/sequence-list/',
     'https://lionlocalizer.org/mapping/align/',
-    'https://maps.googleapis.com'
+    'https://maps.googleapis.com',
+    'https://api.emailjs.com/api/v1.0/email/send-form',
 ]
 
 CSP_FONT_SRC = [
