@@ -30,7 +30,7 @@ const Extraction = () => {
         </Grid>    
         <Grid className={classes.margin}>
     
-        <a href='https://drive.google.com/file/d/1YhmDh_8eGXbZSfnKf67hO8DOT4_uypZh/view?usp=sharing' target="_blank"> Extraction Protocols </a>
+        <a href='https://drive.google.com/file/d/1YhmDh_8eGXbZSfnKf67hO8DOT4_uypZh/view?usp=sharing' target="_blank"> Extraction, PCR, and Sequencing Protocols </a>
         <br></br>
         <br></br>
         <a href='https://drive.google.com/file/d/1WX7Fo0-K-PIaNHc0Ofsl-MIXvSaOs60G/view?usp=sharing' target="_blank"> Trimming Protocols </a>
