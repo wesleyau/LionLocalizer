@@ -107,6 +107,7 @@ CSP_DEFAULT_SRC = ["'self'",
 CSP_SCRIPT_SRC = [
     "'unsafe-eval'",
     "'unsafe-inline'",
+    "'script-src-elem'",
     'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
     'https://fonts.gstatic.com',
     'http://127.0.0.1:8000/static/frontend/main.js',
@@ -117,6 +118,12 @@ CSP_SCRIPT_SRC = [
     'https://127.0.0.1:8000/',
     'https://lionlocalizer.org/static/frontend/main.js',
     'https://lionlocalizer.org/static/css/index.css',
+    'https://lionlocalizer.org/static/rest_framework/js/jquery-3.5.1.min.js',
+    'https://lionlocalizer.org/static/rest_framework/js/ajax-form.js',
+    'https://lionlocalizer.org/static/rest_framework/js/csrf.js',
+    'https://lionlocalizer.org/static/rest_framework/js/bootstrap.min.js',
+
+
 
 ]
 
@@ -131,7 +138,8 @@ CSP_STYLE_SRC = [
     'https://lionlocalizer.org/static/frontend/main.js',
     'http://lionlocalizer.org/static/frontend/main.js',
     'https://lionlocalizer.org/static/css/index.css',
-    
+    'https://lionlocalizer.org/static/rest_framework/js/prettify-min.js',
+    'https://lionlocalizer.org/static/rest_framework/js/default.js',
 ]
 
 #CSP_SCRIPT_SRC_ELEM = [
