@@ -99,6 +99,9 @@ CSP_DEFAULT_SRC = ["'self'",
                     'https://lionlocalizer.org/mapping/sequence-list/',
                     'http://lionlocalizer.org/mapping/align/',
                     'https://lionlocalizer.org/mapping/align/',
+                    'https://lionlocalizer.org/static/frontend/main.js',
+                    'https://lionlocalizer.org/static/css/index.css',
+
 ]
 
 CSP_SCRIPT_SRC = [
@@ -112,6 +115,8 @@ CSP_SCRIPT_SRC = [
     'https://maps.googleapis.com/',
     'http://127.0.0.1:8000/',
     'https://127.0.0.1:8000/',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'https://lionlocalizer.org/static/css/index.css',
 
 ]
 
@@ -125,6 +130,7 @@ CSP_STYLE_SRC = [
     'http://127.0.0.1:8000/static/frontend/main.js',
     'https://lionlocalizer.org/static/frontend/main.js',
     'http://lionlocalizer.org/static/frontend/main.js',
+    'https://lionlocalizer.org/static/css/index.css',
     
 ]
 
@@ -139,6 +145,8 @@ CSP_CONNECT_SRC = [
     'https://lionlocalizer.org/mapping/align/',
     'https://maps.googleapis.com',
     'https://api.emailjs.com/api/v1.0/email/send-form',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'https://lionlocalizer.org/static/css/index.css',
 ]
 
 CSP_FONT_SRC = [
@@ -151,6 +159,8 @@ CSP_FONT_SRC = [
     'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff2',
     'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff',
     'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.ttf',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'https://lionlocalizer.org/static/css/index.css',
 ]
 
 CSP_IMG_SRC = [
@@ -161,6 +171,8 @@ CSP_IMG_SRC = [
     'https://maps.gstatic.com/',
     'https://maps.googleapis.com/',
     'data: w3.org/svg/2000',
+    'https://lionlocalizer.org/static/frontend/main.js',
+    'https://lionlocalizer.org/static/css/index.css',
 ]
 
 CSP_OBJECT_SRC = [
