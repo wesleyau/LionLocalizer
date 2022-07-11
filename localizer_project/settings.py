@@ -98,6 +98,7 @@ CSP_DEFAULT_SRC = ["'self'",
                     'http://lionlocalizer.org/mapping/sequence-list/',
                     'https://lionlocalizer.org/mapping/sequence-list/',
                     'http://lionlocalizer.org/mapping/align/',
+                    'https://lionlocalizer.org/mapping/align/',
 ]
 
 CSP_SCRIPT_SRC = [
@@ -110,6 +111,7 @@ CSP_SCRIPT_SRC = [
     'http://lionlocalizer.org/static/frontend/main.js',
     'https://maps.googleapis.com/',
     'http://127.0.0.1:8000/',
+    'https://127.0.0.1:8000/',
 
 ]
 
@@ -117,6 +119,7 @@ CSP_STYLE_SRC = [
     "'unsafe-inline'",
     'https://fonts.googleapis.com',
     'http://127.0.0.1:8000',
+    'https://127.0.0.1:8000/',
     'http://lionlocalizer.org',
     'https://lionlocalizer.org',
     'http://127.0.0.1:8000/static/frontend/main.js',
@@ -144,12 +147,17 @@ CSP_FONT_SRC = [
     'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff2',
     'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff',
     'http://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.ttf',
+    'https://127.0.0.1:8000/static',
+    'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff2',
+    'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.woff',
+    'https://127.0.0.1:8000/static/rest_framework/fonts/glyphicons-halflings-regular.ttf',
 ]
 
 CSP_IMG_SRC = [
     "'self'",
     'https://fonts.googleapis.com',
     'http://127.0.0.1:8000/',
+    'https://127.0.0.1:8000/',
     'https://maps.gstatic.com/',
     'https://maps.googleapis.com/',
     'data: w3.org/svg/2000',
