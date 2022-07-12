@@ -169,10 +169,10 @@ const Content = () => {
                             setShortSeq2('');
                             setErrorWarning(false)
                             }}>
-                                <MenuItem value='0'>Enter one long 1140bp cytB sequence</MenuItem>
-                                <MenuItem value='1'>Enter one short 350bp cytB sequence</MenuItem>
-                                <MenuItem value='2'>Demo: Select one long 1140bp cytB lion sequence in the database</MenuItem>
-                                <MenuItem value='3'>Demo: Select one short 350bp cytB lion sequence in the database</MenuItem>
+                                <MenuItem value='0'>Enter one long 1140 bp cytB sequence</MenuItem>
+                                <MenuItem value='1'>Enter one short 350 bp cytB sequence</MenuItem>
+                                <MenuItem value='2'>Demo: Select one long 1140 bp cytB lion sequence in the database</MenuItem>
+                                <MenuItem value='3'>Demo: Select one short 350 bp cytB lion sequence in the database</MenuItem>
                             </Select>
                         </FormControl>
                         
@@ -390,7 +390,7 @@ const Content = () => {
                             <Typography className={classes.textError}>
                                 Error: please check for the following errors in your query sequence<br></br>
                                 1. Sequence can only contain these characters: AGCT <br></br>
-                                2. Make sure you are choosing the correct seqeunce option<br></br>
+                                2. Make sure you are choosing the correct sequence option<br></br>
                                 3. Long sequence must be 1140 bp<br></br>
                                 4. Short sequence must be 350 bp
                             </Typography>
