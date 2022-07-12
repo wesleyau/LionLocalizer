@@ -390,7 +390,7 @@ const Content = () => {
                             <Typography className={classes.textError}>
                                 Error: please check for the following errors in your query sequence<br></br>
                                 1. Sequence can only contain these characters: AGCT <br></br>
-                                2. Make sure you are choosing the correct sequence option<br></br>
+                                2. Make sure you are choosing the correct sequence option (1140 bp or 350 bp)<br></br>
                                 3. Long sequence must be 1140 bp<br></br>
                                 4. Short sequence must be 350 bp
                             </Typography>
