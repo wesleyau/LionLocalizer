@@ -8,13 +8,37 @@ const useStyles = makeStyles({
         marginLeft: 5,
         marginBottom: 665,   
     },
+    margin: {
+        marginTop: 15,
+        marginLeft: 5,
+        marginBottom: 15,
+        fontWeight: 'bold',
+        
+    },
+    textIntro: {
+        marginTop: 10,
+        marginBottom: 10,
+        marginLeft: 8,
+        fontWeight: 'bold',
+        display: 'block'
+    },
 })
 
 const Instructions = () => {
     const classes = useStyles()
     return (
-        <Typography className={classes.typography}>We are currently updating the instructions information. Please check back again.</Typography>
+        <Grid container>
+        <Grid item xs={12} style={{background: "#84aeff"}}>
+                <Typography variant="h5" className={classes.textIntro}>Instruction</Typography>
+        </Grid>    
+        <Grid className={classes.margin}>
+    
+        <a href='https://drive.google.com/file/d/1f-ZkdE3g0bQeS-SahgpcvIOs6hBUT-8y/view?usp=sharing' target="_blank"> Instructions </a>
+
+        </Grid>
+        </Grid>
     );
 };
 
 export default Instructions;
+
