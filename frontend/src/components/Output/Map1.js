@@ -63,7 +63,7 @@ const Map = ({checked}) => {
 
   const alignList = useSelector(state => state.align.align.array)
   const queryInfo = useSelector(state => state.align)
-  const countryList = [47, 60, 69, 119, 125, 137, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238]
+  const countryList = [47, 60, 69, 71, 119, 125, 137, 138, 165, 166, 167, 182, 183, 184, 185, 187, 190, 191, 192, 238, 275]
   //console.log(checked)
   
   // this is to get an array of both the 0 matches and more than 0 mismatches in order to build a comparison array later

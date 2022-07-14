@@ -69,7 +69,7 @@ const Table = ({setChecked}) => {
 
   
   return (
-    <div style={{ height: 520, width: '100%',}}>
+    <div style={{ height: 775, width: '100%',}}>
       
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 
@@ -81,8 +81,9 @@ const Table = ({setChecked}) => {
         columns={columns}
         checkboxSelection
         rowHeight={50}
+        rowCount={156}
         disableColumnFilter={true}
-        hideFooterPagination={true}
+        hideFooterPagination={false}
         
         selectionModel={selectionModel}
         onSelectionModelChange={newSelectionModel => {
