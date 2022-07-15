@@ -23,7 +23,7 @@ const useStyles = makeStyles({
         marginLeft: 10,
         fontFamily: 'courier',
         fontSize: 16,
-        marginRight: 40,
+        marginRight: 20,
         overflowWrap: 'break-word'
     },
     contain: {

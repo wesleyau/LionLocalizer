@@ -35,7 +35,7 @@ const Conclusion = () => {
                 <Typography variant="h5" className={classes.textIntro}>Citation</Typography>
             </Grid>    
             <Grid item xs={12}>
-                <Typography className={classes.text}>Citation for this software is pending.</Typography>
+                <Typography className={classes.text}>The citation for this software is pending.</Typography>
             </Grid>    
             <Grid item xs={12}>
                 
