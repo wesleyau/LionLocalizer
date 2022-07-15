@@ -106,7 +106,7 @@ const Output = () => {
                     {queryInfo.isLoading == false && ((seqLength = 1140 && first > 10) || (seqLength = 350 && first > 15)) &&(
                                 <Typography className={classes.textError}>
                                 Error: The lowest mismatch comparison to your query sequence is {first} which is too many. <br></br>
-                                Please check for the following errors in your query sequence<br></br>
+                                Please check for the following errors in your query sequence:<br></br>
                                 1. Make sure to enter your sequence 5'-3'<br></br>
                                 2. Make sure to trim your sequence appropriately<br></br>
                                 3. Make sure to submit the cytochrome B region<br></br>
