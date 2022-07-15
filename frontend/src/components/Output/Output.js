@@ -42,7 +42,7 @@ const styles = makeStyles((theme) => ({
         height: '775px',
         overflowY: 'scroll',
         [theme.breakpoints.down('md')]: {
-            height: "1500px"
+            height: "1750px"
           },
     },
     mapContain: {
