@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
 import emailjs from "emailjs-com"
@@ -18,6 +18,9 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         display: 'block'
     },
+    messageSent: {
+        color: '#E51414'
+    }
 })
 
 export default function Contact() {
@@ -34,6 +37,8 @@ export default function Contact() {
         e.target.reset()
     }
     const classes = useStyles()
+
+    const [click, setClick] = useState(false);
 
     return(
         <Grid container>
@@ -65,11 +70,18 @@ export default function Contact() {
                             <textarea className="form-control" id="" cols="30" rows="8" placeholder="Your message" name="message"></textarea>
                         </div>
                         
+                        <Grid>
                         <div className={classes.textIntro} >
-                            <input type="submit" className="btn btn-info" value="Send Message"></input>
+                            <button type="submit" className="btn btn-info" onClick={() => {setClick(true);}} >Send Message</button>
                         </div>
+                        </Grid>
                     </div>
                 </form>
+
+                
+                {click == true && (
+                        <Typography className={classes.messageSent}>Your message has been sent!</Typography>
+                        )}
             </div>
         </div>
         </Grid>
