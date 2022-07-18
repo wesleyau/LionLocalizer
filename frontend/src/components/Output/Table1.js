@@ -39,7 +39,7 @@ const Table = ({setChecked}) => {
   const [selectionModel, setSelectionModel] = React.useState(zeroArray)
   
  
-
+  const [page, setPage] = React.useState(0);
    
 
 
@@ -69,7 +69,7 @@ const Table = ({setChecked}) => {
 
   
   return (
-    <div style={{ height: 775, width: '100%',}}>
+    <div style={{ height: 5000, width: '100%',}}>
       
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 
@@ -81,9 +81,10 @@ const Table = ({setChecked}) => {
         columns={columns}
         checkboxSelection
         rowHeight={50}
-        rowCount={156}
+        rowsPerPageOptions={[25, 50, 100, 147]}
+        
         disableColumnFilter={true}
-        hideFooterPagination={false}
+        pagination
         
         selectionModel={selectionModel}
         onSelectionModelChange={newSelectionModel => {
