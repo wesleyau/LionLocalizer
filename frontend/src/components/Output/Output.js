@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef} from 'react';
 import { useReactToPrint } from 'react-to-print';
 import { Route, Redirect } from 'react-router'
-import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, ThemeProvider } from "@material-ui/core";
+import { AppBar, Toolbar, Typography, Grid, Tabs, Tab, } from "@material-ui/core";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { makeStyles } from '@material-ui/styles';
 import Map from './Map1';
 import Table from './Table1';
@@ -15,6 +16,7 @@ const useStyles = makeStyles({
     disclaimer: {
         marginTop: 5, 
         marginLeft: 5,   
+        
     },
     abbreviation: {
         marginTop:5, 
@@ -41,18 +43,29 @@ const styles = makeStyles((theme) => ({
     print: {
         height: '775px',
         overflowY: 'scroll',
-        [theme.breakpoints.down('md')]: {
-            height: "5850px"
-          },
+        "@media print": {
+            height: "5350px", //works for safari and firefox
+            [theme.breakpoints.down('md')]: {
+                marginBottom: 0, //margin below the table
+            }
+        },
     },
     mapContain: {
         width: "100vw",
-      [theme.breakpoints.down('md')]: {
-          width: "100vw",
+        "@media print": {
+            [theme.breakpoints.down('md')]: {
+                width: "100vw",
+                marginBottom: 700,
+              },
         },
     },
-    
+    gridContainer: {
+        "@media print": {
+            display: 'block', //safari solution to the components overlapping during print
+        },
+    },
 }))
+
 
 var first
 var seqLength
@@ -94,8 +107,8 @@ const Output = () => {
         
         <Grid container>
            
-            <Grid item container >
-                
+            <Grid item container className={printClasses.gridContainer}>
+            
                 <Grid className={printClasses.mapContain} xs = {12} md = {5}>
                     {queryInfo.isLoading == true && (
                         <div>Loading...</div>
@@ -115,7 +128,8 @@ const Output = () => {
                             )}
                     
                 </Grid>
-                
+        
+            
                 
                 
                 <Grid item container className={printClasses.print} xs={12} md = {7}>
@@ -149,13 +163,14 @@ const Output = () => {
                     </Grid>
                 </Grid>
             </Grid> 
-            
+            <Grid item container >
             <Grid item xs={12}>
-                <Typography variant="caption" display="block" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park RSA: Republic of South Africa SA: South Africa WS: Wildlife Sanctuary </Typography>
+                <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park RSA: Republic of South Africa SA: South Africa WS: Wildlife Sanctuary </Typography>
             </Grid>  
-            <Grid item xs={12} direction="row">
-                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome browser is recommended, the printout may not be formatted as well by Safari or Firefox </Typography>
-                </Grid> 
+            <Grid item xs={12} direction="row" >
+                    <Typography variant="caption" className={classes.disclaimer}> For printing purposes, the Chrome, Firefox, or Safari browsers is recommended, the printout may not be formatted as well by other browsers. </Typography>
+            </Grid> 
+            </Grid>
         </Grid>
     );
 };

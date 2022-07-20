@@ -151,7 +151,7 @@ const Content = () => {
         <Grid container>
                 
                 <Grid item xs={12} >
-                    <Introduction />
+                    <Introduction/>
                 </Grid>
                 
                 <Grid item xs={12} >
@@ -455,7 +455,7 @@ const Content = () => {
 
                     </form>
                 <Grid item xs={12} direction="row">
-                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome browser is recommended, the printout may not be formatted as well by Safari or Firefox </Typography>
+                    <Typography variant="caption" display="block" className={classes.disclaimer}> For printing purposes, the Chrome, Firefox, or Safari browsers is recommended, the printout may not be formatted as well by other browsers. </Typography>
                 </Grid>  
                 </Grid>     
                 <Grid item xs={12} >

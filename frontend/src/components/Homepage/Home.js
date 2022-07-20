@@ -116,7 +116,8 @@ const Home = props => {
             
             
             <Grid container direction="column">
-                <Grid item container>
+                
+                <Grid item container class="title-container">
                     <Grid xs = {12} >
                         <AppBar position="static">
                             <Toolbar>
@@ -129,7 +130,8 @@ const Home = props => {
                 <Grid item container>
                         <Grid xs = {12}>
                             <>
-                                <AppBar color="secondary" position="static">
+                                <Grid class="nav-container">
+                                <AppBar color="secondary" position="static" >
                                     <Tabs value={selectedTab} onChange={handleChange} indicatorColor="primary">
                                         <Tab className={classes.tabsQuery} label="Query" />
                                         <Tab className={classes.tabsInstruction} label="Instructions" />
@@ -138,6 +140,7 @@ const Home = props => {
                                         <Tab className={classes.tabsReference} label="References" />
                                     </Tabs>
                                 </AppBar>
+                                </Grid>
                                 {selectedTab != 8 && (
                                     <Grid item container>
                                         <Grid item xs={1} />
@@ -193,8 +196,8 @@ const Home = props => {
                         </Grid>
                 </Grid> 
 
-                <Grid item container>
-                    <Grid item xs={12}>
+                <Grid item container class="bottom-nav-container">
+                    <Grid item container xs={12}>
                     <>
                         <AppBar color="secondary" position="static">
                             <Toolbar>
@@ -207,11 +210,15 @@ const Home = props => {
                         </AppBar>
                     </>
                     </Grid>         
-                    <Grid xs = {12}>
-                        <Footer />
-                    </Grid>
+                    
                 </Grid>  
             </Grid>
+            <Grid item container >
+            <Grid xs = {12}>
+                <Footer />
+            </Grid>
+            </Grid>
+            
         </ThemeProvider>
     );
 };

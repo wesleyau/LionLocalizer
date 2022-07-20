@@ -51,6 +51,7 @@ const Input = () => {
     //console.log(detailBreakUp)
 
     return (
+        <div class="input-container">
         <Grid container >  
             <Grid item xs={12}>
                 <Typography className={classes.typographyMargin}><Time /></Typography>
@@ -83,6 +84,7 @@ const Input = () => {
             )}
             
         </Grid>
+        </div>
     );
 };
 

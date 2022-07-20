@@ -69,7 +69,7 @@ const Table = ({setChecked}) => {
 
   
   return (
-    <div style={{ height: 5000, width: '100%',}}>
+    <div class="table-container" style={{ height: 5000, width: '100%',}}>
       
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 

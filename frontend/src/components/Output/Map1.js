@@ -36,7 +36,7 @@ const styles = makeStyles((theme) => ({
 
 const normalStyle = {
   height: "775px",
-  width: "41.25vw",
+  width: "100%", //fix for firefox printing - map in full form
 };
 
 //reduce the width to make the print width of the map less, if complaint, would suggest 90vw
@@ -124,8 +124,9 @@ const Map = ({checked}) => {
 
  
   return (
-    <div>
+    <div class="map-container">
       <GoogleMap
+        class="map-component"
         id="map"
         mapContainerStyle={matches ? normalStyle : printStyle}
         zoom={3.3}
