@@ -168,7 +168,7 @@ const Output = () => {
                 <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park RSA: Republic of South Africa SA: South Africa WS: Wildlife Sanctuary </Typography>
             </Grid>  
             <Grid item xs={12} direction="row" >
-                    <Typography variant="caption" className={classes.disclaimer}> For printing purposes, the Chrome, Firefox, or Safari browsers is recommended, the printout may not be formatted as well by other browsers. </Typography>
+                    <Typography variant="caption" className={classes.disclaimer}> For printing purposes, the use of Chrome, Firefox, or Safari browsers are recommended, the printout may not be formatted as well by other browsers. </Typography>
             </Grid> 
             </Grid>
         </Grid>
