@@ -266,7 +266,6 @@ STATIC_URL = "/static/"
 import os
 STATIC_ROOT = ""
 
-STATICFILES_DIRS = (os.path.join('static'),)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
