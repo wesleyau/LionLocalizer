@@ -85,7 +85,7 @@ const Faq = () => {
                 <Typography className={classes.typography}>
                 <p>Published sequences may not be present in the Lion Localizer for the following reasons:<br />
                 • The sequence may have been excluded if it contained ambiguous sites, i.e., character states other than A, C, G or T <br />
-                • The sequence may not completely overlap the required lengths for queries <br />
+                • The sequence may not completely overlap the required length for inclusion in the database <br />
                 • The sequence may have been published too recently to be included in the Lion Localizer</p></Typography>
             </Grid> 
             <Grid item xs={12}>

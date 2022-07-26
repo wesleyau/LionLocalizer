@@ -6,21 +6,20 @@
 
     .map-container {
         width: 992px !important;
-        
-        
     }
 
     .input-container {
-        width: 950px !important;
+        width: 1000px !important;
         
     }
 
-    .input-table-container {
-        
+    .right-side-container {
+
     }
 
     .table-container {
-        
+        width: 1350px !important;
+        break-before: always !important;
     }
 
     .nav-container {

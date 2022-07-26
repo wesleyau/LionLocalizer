@@ -62,21 +62,6 @@ const References = () => {
 
                 </Typography>
 
-                <Typography className={classes.typography}>
-                <br></br>
-                <p><b>Relevant References Not Used in this Application</b></p>
-
-                Bagatharia, S. B., M. N. Joshi, R. V. Pandya, A. S. Pandit, R. P. Patel, S. M. Desai, A. Sharma, O. Panchal, F. P. Jasmani, & A. K. Saxena, 2013 Complete mitogenome of Asiatic lion resolves phylogenetic status within <i>Panthera</i>. BMC Genomics 14:572.
-
-                <p> Barnett, R., B. Shapire, I. Barnes, S. Y. W. Ho, J. Burger, N. Yamaguchi, T. F. G. Higham, H. T. Wheeler, W. Roseendahl, A. V. Sher, M. Sotnikove, T. Kuznetsova, G. F. Baryshnikov, L. D. Martin, C. R. Harington, J. A. Burns, A. Cooper, 2009 Phylogeography of lions (<i>Panthera leo</i> ssp.) reveals three distinct taxa and a late Pleistocene reduction in genetic diversity. Mol. Ecol. 18:1668-1677.</p>
-
-                Kitpipit, T., & A. M. T. Linacre, 2011 The complete mitochondrial genome analysis of the tiger (<i>Panthera tigris</i>). Molecular Biology Reports 39:5745-5754.
-                
-                <p>Wei, L., X. Wu, Z. Lixin & Z. Jiang, 2011 Mitogenomic analysis of the genus <i>Panthera</i>. Science China Life Sciences 54:917-930.</p>
-
-                Wu, X., T. Zheng, Z. Jiang & L. Wei, 2007 The mitochondrial genome structure of the clouded leopard (<i>Neofelis nebulosa</i>). Genome 50:252-257.
-
-                </Typography>
             </Grid> 
 
         </Grid>

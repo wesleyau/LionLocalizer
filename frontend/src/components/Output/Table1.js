@@ -66,10 +66,9 @@ const Table = ({setChecked}) => {
     Genbank: row.genBankAccession
   }));
 
-
-  
+  //need to change width below in order to render the right side of the table in print 
   return (
-    <div class="table-container" style={{ height: 5000, width: '100%',}}>
+    <div class="table-container" style={{height: 5000, width:1350,}} > 
       
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 

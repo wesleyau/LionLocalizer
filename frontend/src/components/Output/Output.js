@@ -43,11 +43,21 @@ const styles = makeStyles((theme) => ({
     print: {
         height: '775px',
         overflowY: 'scroll',
+        
         "@media print": {
-            height: "5350px", //works for safari and firefox
+            height: "5350px", //works for safari and firefox for lengthing the table
             [theme.breakpoints.down('md')]: {
-                marginBottom: 0, //margin below the table
+                marginBottom: 1125, //margin below the table for firefox so that the footer isn't interrupting the table
+                
             }
+        },
+    },
+    printTable: {
+        [theme.breakpoints.down('lg')]: {
+            //zoom: '67%', //to make the whole table fit in the screen - but it messes with the printing format in chrome and safari
+        },
+        "@media print": {
+            
         },
     },
     mapContain: {
@@ -55,17 +65,18 @@ const styles = makeStyles((theme) => ({
         "@media print": {
             [theme.breakpoints.down('md')]: {
                 width: "100vw",
-                marginBottom: 700,
+                marginBottom: 0, //margin under map for chrome
               },
         },
     },
     gridContainer: {
         "@media print": {
+            width: "200vw", //works for all browsers to make the who container fit the print page important
             display: 'block', //safari solution to the components overlapping during print
+           // zoom: "80%"
         },
     },
 }))
-
 
 var first
 var seqLength
@@ -149,7 +160,7 @@ const Output = () => {
 
                         
 
-                        <Grid xs = {12}>
+                        <Grid className={printClasses.printTable} xs = {12}>
                             {queryInfo.isLoading == true && (
                                 <div>Loading...</div>
                             )}
@@ -162,6 +173,7 @@ const Output = () => {
                         </Grid>
                     </Grid>
                 </Grid>
+                
             </Grid> 
             <Grid item container >
             <Grid item xs={12}>
