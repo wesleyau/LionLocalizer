@@ -68,7 +68,7 @@ const Table = ({setChecked}) => {
 
   //need to change width below in order to render the right side of the table in print 
   return (
-    <div class="table-container" style={{height: 5000, width:1350,}} > 
+    <div class="table-container" style={{height: 5000, width:1500,}} > 
       
       {queryInfo.isLoading == false && queryInfo.error == null &&(
         <DataGrid 
