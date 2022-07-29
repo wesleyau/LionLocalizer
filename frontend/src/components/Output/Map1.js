@@ -206,6 +206,7 @@ const Map = ({checked}) => {
             <font size="3"><b>GenBank:</b> {selected.genBankAccession}</font>
             </div>
           </InfoWindow>) : null}
+
           
       </GoogleMap>
     </div>
