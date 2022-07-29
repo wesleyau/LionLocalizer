@@ -19,11 +19,6 @@ const useStyles = makeStyles({
         fontSize: 16,
         marginRight: 500,
     },
-    idLinedUpWrap: {
-        marginLeft: 10,
-        marginRight: 20,
-        overflowWrap: 'break-word'
-    },
     linedUpWrap: {
         marginLeft: 10,
         fontFamily: 'courier',
@@ -62,7 +57,7 @@ const Input = () => {
                 <Typography className={classes.typographyMargin}><Time /></Typography>
             </Grid>     
             <Grid item xs={12}>
-                <Typography className={classes.idLinedUpWrap}>ID Entered: {ID} 
+                <Typography className={classes.typography}>ID Entered: {ID} 
                  </Typography>
             </Grid>    
             
