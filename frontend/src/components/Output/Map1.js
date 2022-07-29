@@ -194,7 +194,6 @@ const Map = ({checked}) => {
           }}
           > 
             <div>
-            <font size="3"><b>Location ID:</b> {selected.locationID}</font><br></br>
             <font size="3"><b>Locality Type:</b> {selected.locationType}</font><br></br>
             <font size="3"><b>Locality:</b> {selected.location} {selected.locationName} </font><br></br>
             <font size="3"><b>Country:</b> {selected.locality}</font>
@@ -207,7 +206,6 @@ const Map = ({checked}) => {
             <font size="3"><b>GenBank:</b> {selected.genBankAccession}</font>
             </div>
           </InfoWindow>) : null}
-
           
       </GoogleMap>
     </div>

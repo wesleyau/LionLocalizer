@@ -80,7 +80,7 @@ const Table = ({setChecked}) => {
         columns={columns}
         checkboxSelection
         rowHeight={50}
-        rowsPerPageOptions={[25, 50, 100, 147]}
+        rowsPerPageOptions={[25, 50, 100, 146]}
         
         disableColumnFilter={true}
         pagination
