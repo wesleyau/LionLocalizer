@@ -16,19 +16,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 
-
-
-//accordian the rows right here
-
-
 const Table = ({setChecked}) => {
   const dispatch = useDispatch();
   const alignList = useSelector(state => state.align.align.array)
   const queryInfo = useSelector(state => state.align)
-
-  //finding the ids of the arrays that have 0 mismatches 
-  //true false array - now compare this array
-  //let zeroMismatch = alignList.map(row => row.mismatch==0);
   
   //filters based on mismatch == 0 in alignList
   const zeroMismatch = alignList.filter(row => row.mismatch==0);
@@ -80,7 +71,7 @@ const Table = ({setChecked}) => {
         columns={columns}
         checkboxSelection
         rowHeight={50}
-        rowsPerPageOptions={[25, 50, 100, 147]}
+        rowsPerPageOptions={[25, 50, 100, 146]}
         
         disableColumnFilter={true}
         pagination
