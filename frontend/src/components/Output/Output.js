@@ -177,7 +177,7 @@ const Output = () => {
             </Grid> 
             <Grid item container >
             <Grid item xs={12}>
-                <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park RSA: Republic of South Africa SA: South Africa WS: Wildlife Sanctuary </Typography>
+                <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park WS: Wildlife Sanctuary </Typography>
             </Grid>  
             <Grid item xs={12} direction="row" >
                     <Typography variant="caption" className={classes.disclaimer}> For printing purposes, the use of Chrome or Firefox are recommended, the printout may not be formatted as well by Safari or other browsers. </Typography>

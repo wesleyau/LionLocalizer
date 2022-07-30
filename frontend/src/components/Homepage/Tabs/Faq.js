@@ -110,8 +110,6 @@ const Faq = () => {
                 FR: Forest Reserve<br />
                 GR: Game Reserve<br />
                 NP: National Park<br />
-                RSA: Republic of South Africa<br />
-                SA: South Africa<br />
                 WS: Wildlife Sanctuary
                 </Typography>
             </Grid> 
