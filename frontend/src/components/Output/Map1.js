@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import {
@@ -49,6 +49,8 @@ const center = {
     lat: 5,
     lng: 28.5,
 };
+
+
 
 
 var zero = []
@@ -121,7 +123,6 @@ const Map = ({checked}) => {
 
   if (loadError) return "Error";
   if (!isLoaded) return "Loading...";
-
  
   return (
     <div class="map-container">
@@ -131,7 +132,11 @@ const Map = ({checked}) => {
         mapContainerStyle={matches ? normalStyle : printStyle}
         zoom={3.3}
         center={center}
-        
+        options = {{
+          streetViewControl: false,
+          mapTypeControl: false,
+          //panControl: false,
+        }}
       >
         //filledpins for both country and locality info
         {countryResult.map(row => 
