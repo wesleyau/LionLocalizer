@@ -16,6 +16,7 @@ import { createGenerateClassName, makeStyles, Classes } from '@material-ui/style
 import unfilledPin from '../../../static/images/redpin.png';
 import filledPin from '../../../static/images/blackpin.png';
 import lionPin from '../../../static/images/lion5.png';
+import { Typography } from '@mui/material';
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -211,9 +212,8 @@ const Map = ({checked}) => {
             <font size="3"><b>GenBank:</b> {selected.genBankAccession}</font>
             </div>
           </InfoWindow>) : null}
-
-          
       </GoogleMap>
+
     </div>
   );
 }

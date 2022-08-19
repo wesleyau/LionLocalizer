@@ -11,6 +11,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSequences } from '../../Sequences/Sequences.actions';
 import '../../../static/CSS/style.css'
 
+import unfilledPin from '../../../static/images/redpin.png';
+import redPin from '../../../static/images/redPinMap.png';
+import filledPin from '../../../static/images/blackpin.png';
+import lionPin from '../../../static/images/lion5.png';
+
 
 const useStyles = makeStyles({ 
     disclaimer: {
@@ -19,9 +24,13 @@ const useStyles = makeStyles({
         
     },
     abbreviation: {
-        marginTop:5, 
+        marginTop:0, 
         marginLeft: 5,
-        
+    },
+    abbrev: {
+        marginTop:0, 
+        marginLeft: 5,
+        fontSize: 14,
     },
     contain: {
         height: '775px',
@@ -36,7 +45,30 @@ const useStyles = makeStyles({
         fontWeight: 'bold',
         color: '#E51414'
     },
-    
+    lion: {
+        height: '70%',
+        width: '1%',
+        marginLeft: 0,
+        marginTop: 0,
+    },
+    red: {
+        height: '70%',
+        width: '1%',
+        marginLeft: 0,
+        marginTop: 0,
+    },
+    unfilled: {
+        height: '70%',
+        width: '1.5%',
+        marginLeft: 0,
+        marginTop: 0,
+    },
+    filled: {
+        height: '70%',
+        width: '1.5%',
+        marginLeft: 0,
+        marginTop: 0,
+    },
 })
 
 const styles = makeStyles((theme) => ({ 
@@ -175,7 +207,10 @@ const Output = () => {
                 </Grid>
                 
             </Grid> 
-            <Grid item container >
+            <Grid item container>
+            <Grid item xs={12}>
+                <Typography variant="caption" className={classes.abbrev}>Legend: <img className={classes.lion} src={lionPin}/> Exact Match, <img className={classes.red} src={redPin}/> None-Exact Match, <img className={classes.unfilled} src={unfilledPin}/> Locality Information Available, <img className={classes.filled} src={filledPin}/> Only Country Information Reported</Typography>
+            </Grid>  
             <Grid item xs={12}>
                 <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park WS: Wildlife Sanctuary </Typography>
             </Grid>  
