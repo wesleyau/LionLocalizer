@@ -76,12 +76,12 @@ const useStyles = makeStyles({
         width: '20%',
     },
     u5: {
-        height: '30%',
-        width: '30%',
+        height: '25%',
+        width: '25%',
     },
     u6: {
-        height: '45%',
-        width: '45%',
+        height: '30%',
+        width: '30%',
     },
 })
 
