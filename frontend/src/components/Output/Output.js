@@ -209,7 +209,7 @@ const Output = () => {
             </Grid> 
             <Grid item container>
             <Grid item xs={12}>
-                <Typography variant="caption" className={classes.abbrev}>Legend: <img className={classes.lion} src={lionPin}/> Exact Match, <img className={classes.red} src={redPin}/> None-Exact Match, <img className={classes.unfilled} src={unfilledPin}/> Locality Information Available, <img className={classes.filled} src={filledPin}/> Only Country Information Reported</Typography>
+                <Typography variant="caption" className={classes.abbrev}>Legend: <img className={classes.lion} src={lionPin}/> Exact Match, <img className={classes.red} src={redPin}/> Non-Exact Match, <img className={classes.unfilled} src={unfilledPin}/> Locality Information Available, <img className={classes.filled} src={filledPin}/> Only Country Information Reported</Typography>
             </Grid>  
             <Grid item xs={12}>
                 <Typography variant="caption" className={classes.abbreviation}>Abbreviations: CAR: Central African Republic DRC: Democratic Republic of the Congo FR: Forest Reserve  GR: Game Reserve NP: National Park WS: Wildlife Sanctuary </Typography>
