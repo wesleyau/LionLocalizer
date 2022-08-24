@@ -60,24 +60,24 @@ const useStyles = makeStyles({
         display: 'block'
     },
     u1: {
-        height: '30%',
-        width: '30%',
+        height: '25%',
+        width: '25%',
     },
     u2: {
         height: '40%',
         width: '40%',
     },
     u3: {
-        height: '25%',
-        width: '25%',
+        height: '20%',
+        width: '20%',
     },
     u4: {
-        height: '25%',
-        width: '25%',
+        height: '20%',
+        width: '20%',
     },
     u5: {
-        height: '40%',
-        width: '40%',
+        height: '30%',
+        width: '30%',
     },
     u6: {
         height: '45%',
