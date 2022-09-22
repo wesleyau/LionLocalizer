@@ -40,7 +40,7 @@ const Table = ({setChecked}) => {
     { field: 'Mismatches', headerName: 'Mismatches', headerAlign: "center", align: "center", sortable: false, minWidth: 135 },
     { field: 'Matches', headerName: 'Matches', headerAlign: "center", align: "center", sortable: false, minWidth: 135},
     { field: 'Country', headerName: 'Country', sortable: false, width: 200, },
-    { field: 'Locality', headerName: 'Locality', sortable: false, width: 300, },
+    { field: 'Locality', headerName: 'Locality', sortable: false, width: 350, },
     { field: 'Publications', headerName: <a href='http://lionlocalizer.org/references' target="_blank"> Publications </a>, sortable: false, minWidth: 200 },
     { field: 'Genbank', headerName: <a href='https://www.ncbi.nlm.nih.gov/genbank/' target="_blank"> GenBank </a>, sortable: false, minWidth: 225 },
   ];

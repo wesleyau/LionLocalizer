@@ -26,10 +26,12 @@ const useStyles = makeStyles({
         width: '12%',
         marginLeft: 20,
         marginTop: 10,
+        marginRight: 15,
     },
     Logo: {
         height: '100%',
         width: '100%',
+        
         
     },
     TraceLogo: {
@@ -47,7 +49,7 @@ const useStyles = makeStyles({
         height: '13.5%',
         width: '13.5%',
         marginLeft: 15,
-        marginRight: 15,
+        marginRight: 30,
         marginTop: 9,
     },
     USAID: {
@@ -65,8 +67,10 @@ const useStyles = makeStyles({
         color: '#13294B',
         fontSize: 11.5,
         marginTop: 0, 
-        marginLeft: 15,   
-        marginBottom: 5
+        marginLeft: 42,   
+        marginBottom: 5,
+        marginRight: 42,   
+        
     },
     
 })

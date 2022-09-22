@@ -37,8 +37,10 @@ const Extraction = () => {
         <br></br>
         <br></br>
         <a href='https://drive.google.com/file/d/1Ps0frrA5xLXIf0J51Ooz19OJCXeT7KsB/view?usp=sharing' target="_blank"> Additional Information </a>
+        <br></br>
         </Grid>
         </Grid>
+        
     );
 };
 

@@ -84,6 +84,9 @@ export default function Contact() {
                         )}
             </div>
         </div>
+        <Grid item xs={12} >
+                    <br></br>
+                </Grid>
         </Grid>
     )
 }

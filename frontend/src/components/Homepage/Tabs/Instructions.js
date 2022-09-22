@@ -7,8 +7,8 @@ import i3 from '../../../../static/images/instruction3.png';
 import i4 from '../../../../static/images/instruction4.png';
 import i5 from '../../../../static/images/instruction5.png';
 import i6 from '../../../../static/images/instruction6.png';
-import i7 from '../../../../static/images/instruction7.png';
-import i8 from '../../../../static/images/instruction8.png';
+import i7 from '../../../../static/images/u7.png';
+import i8 from '../../../../static/images/u8.png';
 import i9 from '../../../../static/images/instruction9.png';
 import i10 from '../../../../static/images/instruction10.png';
 
@@ -83,6 +83,14 @@ const useStyles = makeStyles({
         height: '30%',
         width: '30%',
     },
+    u7: {
+        height: '50%',
+        width: '50%',
+    },
+    u8: {
+        height: '50%',
+        width: '50%',
+    },
 })
 
 const Instructions = () => {
@@ -96,19 +104,19 @@ const Instructions = () => {
     
         <a href='https://drive.google.com/file/d/1f-ZkdE3g0bQeS-SahgpcvIOs6hBUT-8y/view?usp=sharing' target="_blank"> Download Instructions </a>
 
-        <Typography className={classes.typography}>1. <br/>Instruction on how to generate your own cytochrome B (cytB) sequence of an appropriate length (trimming is very important) can be found at <a href='/protocol'>https://lionlocalizer.org/protocol</a>. Here you will find the following protocols:
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. DNA Extraction, PCR, and Sanger-sequencing protocols
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Trimming Protocols (1140 bp or 350 bp)
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Additional Infomation
+        <Typography className={classes.typography}>1. Instruction on how to generate your own cytochrome B (cytB) sequence of an appropriate length (trimming is very important) can be found at <a href='/protocol'>https://lionlocalizer.org/protocol</a>. Here you will find the following protocols:
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. DNA Extraction, PCR, and Sanger-sequencing protocols
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Trimming Protocols (1140 bp or 350 bp)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Additional Infomation
         <br/>
-        <br/>2. <br/> In order to query a cytB sequence, go to <a href='/query'>https://lionlocalizer.org/query</a>
+        <br/>2. In order to query a cytB sequence, go to <a href='/query'>https://lionlocalizer.org/query</a>
         <br/>
         <br/>Click on the dropdown menu under the "Input Query Sequences" section. This will bring up four options to select from:
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. The first option queries a user <b>generated</b> 1140 bp cytB sequence
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. The second option queries a user <b>generated</b> 350 bp cytB sequence
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. The third option queries a <b>demo</b> 1140 bp cytB sequence (using a sequence already in the database)
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. The fourth option queries a <b>demo</b> 350 bp cytB sequence (using a sequence already in the database)
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img className={classes.u1} src={i1} />
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. The first option queries a user <b>generated</b> 1140 bp cytB sequence
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. The second option queries a user <b>generated</b> 350 bp cytB sequence
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. The third option queries a <b>demo</b> 1140 bp cytB sequence (using a sequence already in the database)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. The fourth option queries a <b>demo</b> 350 bp cytB sequence (using a sequence already in the database)
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img className={classes.u1} src={i1} />
         <br/>
         <br/>2.1.1. If either of the first two options is selected, you will be prompted to enter any
             relevant information (such as your sample identification number and description) in
@@ -132,23 +140,22 @@ const Instructions = () => {
         <br/>
         <br/><img  className={classes.u6}src={i6} />
         <br/>
-        <br/>3.
-        <br/>Once the sequence is submitted, you will be taken to the output page, which will display
+        <br/>3. Once the sequence is submitted, you will be taken to the output page, which will display
             three sections:
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Query information
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Table
-        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Map
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Query information
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Table
+        <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Map
         <br/>
         <br/>3.1. The query information section will show you the ID (or other information) and the
             DNA sequence that you entered.
-        <br/><img src={i7} />
+        <br/><img className={classes.u7} src={i7} />
         <br/>
         <br/>3.2. The table section displays the listing of all the reported haplotype locations in Africa,
             sorted in order of how closely they match to the query sequence, with associated
             information on the numbers of mismatches and matches to your sequence, the country
             and locality from which lions with a sequence have been reported, and the publication
             and GenBank numbers for the previously reported sequences.
-        <br/><img src={i8} />
+        <br/><img className={classes.u8} src={i8} />
         <br/>
         <br/>3.3. The map section will display the listing on a map. Listings with 0 mismatches will
             show up as a lion icon, while listings that have 1 or more mismatches will show up as a

@@ -162,7 +162,9 @@ const Faq = () => {
                 • If the sequence contains more than one variable nucleotide, we strongly suggest excluding it, though potentially the variants could be cloned and sequenced separately.
                 <br/></Typography>
             </Grid> 
-
+            <Grid item xs={12} >
+                    <br></br>
+                </Grid>
         
 
         </Grid>
