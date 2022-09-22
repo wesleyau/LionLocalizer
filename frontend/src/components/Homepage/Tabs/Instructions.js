@@ -1,12 +1,12 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Grid, Button, Select, MenuItem, FormControl, FormHelperText, InputLabel, FormControlLabel } from "@material-ui/core";
 import { createGenerateClassName, makeStyles, Classes } from '@material-ui/styles';
-import i1 from '../../../../static/images/instruction1.png';
-import i2 from '../../../../static/images/instruction2.png';
-import i3 from '../../../../static/images/instruction3.png';
-import i4 from '../../../../static/images/instruction4.png';
+import i1 from '../../../../static/images/u1.png';
+import i2 from '../../../../static/images/u2.png';
+import i3 from '../../../../static/images/u3.png';
+import i4 from '../../../../static/images/u4.png';
 import i5 from '../../../../static/images/instruction5.png';
-import i6 from '../../../../static/images/instruction6.png';
+import i6 from '../../../../static/images/u6.png';
 import i7 from '../../../../static/images/u7.png';
 import i8 from '../../../../static/images/u8.png';
 import i9 from '../../../../static/images/instruction9.png';
@@ -60,28 +60,28 @@ const useStyles = makeStyles({
         display: 'block'
     },
     u1: {
-        height: '20%',
-        width: '20%',
+        height: '30%',
+        width: '30%',
     },
     u2: {
-        height: '40%',
-        width: '40%',
+        height: '50%',
+        width: '50%',
     },
     u3: {
-        height: '20%',
-        width: '20%',
+        height: '37',
+        width: '37%',
     },
     u4: {
-        height: '20%',
-        width: '20%',
+        height: '33%',
+        width: '33%',
     },
     u5: {
         height: '25%',
         width: '25%',
     },
     u6: {
-        height: '30%',
-        width: '30%',
+        height: '60%',
+        width: '60%',
     },
     u7: {
         height: '50%',
