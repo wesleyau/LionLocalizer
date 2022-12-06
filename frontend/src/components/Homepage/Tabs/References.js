@@ -54,7 +54,7 @@ const References = () => {
                 <p>Dubach, J. M., M. B. Briggs, P. A. White, B. A. Ament, & B. D. Patterson, 2013 Genetic perspectives on "Lion Conservation Units" in Eastern and Southern Africa. Conservation Genetics, 14(4), 741-755.</p>
 
                 Dubach, J., B. D. Patterson, M. B. Briggs, K. Venzke, J. Flamand, P. Stander, L. Scheepers, & R. W. Kays, 2005 Molecular genetic variation acrossthe southern and eastern geographic ranges of the African lion,Panthera. Conservation Genetics, 6(1), 15-24.
-
+                <br></br>
                 </Typography>
 
             </Grid> 
