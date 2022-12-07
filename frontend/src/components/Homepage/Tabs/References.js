@@ -43,7 +43,7 @@ const References = () => {
             <Grid item xs={12}>
                 <Typography className={classes.typography}>
                
-                <p>Barnett, R., M. H. S Sinding, F. G. Vieira, M. L. Z. Mendoza, M. Bonnet, A. Araldi, I. Kienast, A. Zambarda, N. Yamaguchi, P. Henschel, & M. T. P. Gilbert, 2018 No longer locally extinct? Tracing the origins of a lion (Panthera leo) living in Gabon. Conservation Genetics, 19(3), 611-618.</p>
+                <p>Barnett, R., M. H. S Sinding, F. G. Vieira, M. L. Z. Mendoza, M. Bonnet, A. Araldi, I. Kienast, A. Zambarda, N. Yamaguchi, P. Henschel, & M. T. P. Gilbert, 2018 No longer locally extinct? Tracing the origins of a lion (<i>Panthera leo</i>) living in Gabon. Conservation Genetics, 19(3), 611-618.</p>
                 
                 Bertola, L. D., H. Jongbloed, K. J. van der Gaag, P. de Knijff, N. Yamaguchi, H. Hooghiemstra, H. Bauer, P. Henschel, P. A. White, C. A. Driscoll, T. Tende, U. Ottosson, Y. Saidu, K. Vrieling & H. H. de Iongh, 
                 2016 Phylogeographic patterns in Africa and high resolution delineation of genetic clades in the lion (<i>Panthera leo</i>). Scientific Reports 6:30807.
