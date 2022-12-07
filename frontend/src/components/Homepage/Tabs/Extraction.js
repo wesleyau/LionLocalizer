@@ -30,13 +30,13 @@ const Extraction = () => {
         </Grid>    
         <Grid className={classes.margin}>
     
-        <a href='https://drive.google.com/file/d/1YhmDh_8eGXbZSfnKf67hO8DOT4_uypZh/view?usp=sharing' target="_blank"> Extraction, PCR, and Sanger-sequencing Protocols </a>
+        <a href='https://drive.google.com/file/d/1WGHXJjSDPfnuuPEMo_ycwKHrKHdHPJZj/view?usp=sharing' target="_blank"> Extraction, PCR, and Sanger-sequencing Protocols </a>
         <br></br>
         <br></br>
-        <a href='https://drive.google.com/file/d/1WX7Fo0-K-PIaNHc0Ofsl-MIXvSaOs60G/view?usp=sharing' target="_blank"> Trimming Protocols </a>
+        <a href='https://drive.google.com/file/d/1ChzsI69inyfhbZjdE-8EUSTRcrkT8dR0/view?usp=sharing' target="_blank"> Trimming Protocols </a>
         <br></br>
         <br></br>
-        <a href='https://drive.google.com/file/d/1Ps0frrA5xLXIf0J51Ooz19OJCXeT7KsB/view?usp=sharing' target="_blank"> Additional Information </a>
+        <a href='https://drive.google.com/file/d/1ItJQDGUSqowbGbcVVEHYU90Ye1PHLlfl/view?usp=sharing' target="_blank"> Additional Information </a>
         <br></br>
         </Grid>
         </Grid>

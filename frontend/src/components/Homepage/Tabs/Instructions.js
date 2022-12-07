@@ -102,7 +102,7 @@ const Instructions = () => {
         </Grid>    
         <Grid className={classes.margin}>
     
-        <a href='https://drive.google.com/file/d/1f-ZkdE3g0bQeS-SahgpcvIOs6hBUT-8y/view?usp=sharing' target="_blank"> Download Instructions </a>
+        <a href='https://drive.google.com/file/d/1NFabY6ULzEWNIIOeBrTBNpvHFYgpCOc6/view?usp=sharing' target="_blank"> Download Instructions </a>
 
         <Typography className={classes.typography}>1. Instruction on how to generate your own cytochrome B (cytB) sequence of an appropriate length (trimming is very important) can be found at <a href='/protocol'>https://lionlocalizer.org/protocol</a>. Here you will find the following protocols:
         <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. DNA Extraction, PCR, and Sanger-sequencing protocols

@@ -34,7 +34,7 @@ const References = () => {
                 <Typography variant="h5" className={classes.textIntro}>References in the Scientific Literature</Typography>
             </Grid>      
             <Grid item xs={12}>
-                <a className={classes.textIntro} href='https://drive.google.com/file/d/1TjvmQ7BlmgtFkfVkKIHQgONjlZHo6FFC/view?usp=sharing' target="_blank">Download Reference List</a>
+                <a className={classes.textIntro} href='https://drive.google.com/file/d/16aWB4FKYLTEm4_9tx6uol3egQNLM27rT/view?usp=sharing' target="_blank">Download Reference List</a>
                 <Typography className={classes.typography}><p>We thank our colleagues who have published mtDNA sequences and made them publicly available in Genbank. 
                     The sequences used by the Lion Localizer were obtained from GenBank entries deposited for the following papers:</p>
                 </Typography>

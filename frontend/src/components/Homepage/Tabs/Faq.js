@@ -46,7 +46,7 @@ const Faq = () => {
                 <Typography variant="h5" className={classes.textIntro}>Lion Localizer: Frequently Asked Questions and Additional Information</Typography>
             </Grid>      
             <Grid item xs={12}>
-                <a className={classes.textIntro} href='https://drive.google.com/file/d/1uFhU_SlFcqnKCaSplHkQrMSUg2Bzdmph/view?usp=sharing' target="_blank">Download FAQ</a>
+                <a className={classes.textIntro} href='https://drive.google.com/file/d/1l7fKVMSobHaN0GOpVDpSYwyY8NVsTN_Y/view?usp=sharing' target="_blank">Download FAQ</a>
 
                 <Typography className={classes.typography}><p>Please use the "<a href='/contact'>Contact Us</a>" link on the webpage to send additional questions or comments. It is also possible to email directly comments to: <b>roca@illinois.edu</b>, using the email subject “Lion Localizer”.</p>
                 <p>Important note: Some haplotypes (sequences) show a limited geographic distribution among lions and will be informative for establishing the provenance of lions or their products. However, some haplotypes are less informative due to the widespread distribution of lions carrying them, though these would be useful for establishing or excluding the regions of origin.</p></Typography>
